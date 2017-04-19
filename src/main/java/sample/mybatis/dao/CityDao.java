@@ -16,14 +16,13 @@
 package sample.mybatis.dao;
 
 import org.apache.ibatis.session.SqlSession;
-import sample.mybatis.domain.City;
-
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author Eddú Meléndez
  */
-@Component
+@Repository
+@NameSpace("aaa")
 public class CityDao {
 
 	private final SqlSession sqlSession;
@@ -32,7 +31,7 @@ public class CityDao {
 		this.sqlSession = sqlSession;
 	}
 
-	public City selectCityById(long id) {
+	public Object selectCityById(long id) {
 		return this.sqlSession.selectOne("selectCityById", id);
 	}
 
