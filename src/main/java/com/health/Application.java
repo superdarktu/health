@@ -1,5 +1,5 @@
 /**
- *    Copyright 2015-2016 the original author or authors.
+ *    Copyright 2015-2017 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,18 +13,23 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package sample.mybatis.mapper;
+package com.health;
 
-import org.apache.ibatis.annotations.Mapper;
 
-import sample.mybatis.domain.Hotel;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author Eduardo Macarron
- */
-@Mapper
-public interface HotelMapper {
+@SpringBootApplication
+public class Application implements CommandLineRunner {
 
-	Hotel selectByCityId(int city_id);
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+	}
 
 }

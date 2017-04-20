@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.service.FoodMapper" >
+<mapper namespace="food" >
   <resultMap id="BaseResultMap" type="com.health.model.po.Food" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
@@ -16,6 +16,11 @@
     from food
     where ID = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="count" resultType="java.lang.Integer" parameterType="com.health.model.po.Food">
+    select count(*) from food
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from food
     where ID = #{id,jdbcType=INTEGER}
