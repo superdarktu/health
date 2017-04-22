@@ -5,20 +5,44 @@ import java.util.Date;
 public class Class {
     private Integer id;
 
+    /**
+     * 课程名称
+     */
     private String name;
 
+    /**
+     * 教师姓名
+     */
     private String teacherName;
 
+    /**
+     * 教师id 弃用
+     */
     private Integer teacherId;
 
+    /**
+     * 上课时间 周几
+     */
     private String daytime;
 
+    /**
+     * 上课地点
+     */
     private String place;
 
+    /**
+     * 开课时间
+     */
     private Date startTime;
 
+    /**
+     * 结束时间
+     */
     private Date endTime;
 
+    /**
+     * 开课时间段
+     */
     private String longTime;
 
     public Integer getId() {

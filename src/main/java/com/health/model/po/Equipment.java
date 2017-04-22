@@ -1,14 +1,30 @@
 package com.health.model.po;
 
 public class Equipment {
+
+    /**
+     * id
+     */
     private Integer id;
 
+    /**
+     * 器材名字
+     */
     private String name;
 
+    /**
+     * 锻炼部位
+     */
     private String part;
 
+    /**
+     * 使用方法说明
+     */
     private String useway;
 
+    /**
+     * 使用注意方式
+     */
     private String useattention;
 
     public Integer getId() {
