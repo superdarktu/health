@@ -24,6 +24,15 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
+    public int save(Class record) {
+        if (record.getId() == null) {
+            return classDao.insertSelective(record);
+        } else {
+            return classDao.updateByPrimaryKeySelective(record);
+        }
+    }
+
+    @Override
     public int deleteByPrimaryKey(Integer id) {
         return classDao.deleteByPrimaryKey(id);
     }

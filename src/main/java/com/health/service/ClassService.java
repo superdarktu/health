@@ -18,4 +18,6 @@ public interface ClassService {
     int updateByPrimaryKeySelective(Class record);
 
     int updateByPrimaryKey(Class record);
+
+    int save(Class record);
 }

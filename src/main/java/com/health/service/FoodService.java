@@ -18,4 +18,6 @@ public interface FoodService {
     int updateByPrimaryKeySelective(Food record);
 
     int updateByPrimaryKey(Food record);
+
+    int save(Food record);
 }

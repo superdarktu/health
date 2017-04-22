@@ -26,6 +26,15 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public int save(Food record) {
+        if (record.getId() == null) {
+            return foodDao.insertSelective(record);
+        } else {
+            return foodDao.updateByPrimaryKeySelective(record);
+        }
+    }
+
+    @Override
     public int deleteByPrimaryKey(Integer id) {
         return foodDao.deleteByPrimaryKey(id);
     }

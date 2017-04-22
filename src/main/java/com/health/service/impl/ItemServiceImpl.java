@@ -25,6 +25,7 @@ public class ItemServiceImpl implements ItemService {
         return itemDao.pageByKeyWord(record, page, pageSize);
     }
 
+
     @Override
     public int deleteByPrimaryKey(Integer id) {
         return itemDao.deleteByPrimaryKey(id);
