@@ -84,4 +84,16 @@
       NUMBER = #{number,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+    select
+    <include refid="Base_Column_List" />
+    from class
+    where 1=1
+    <if test="name != null" >
+      and NAME LIKE concat('%' , #{name,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="sort != null" >
+      and SORT LIKE concat('%' , #{sort,jdbcType=VARCHAR}, '%')
+    </if>
+  </select>
 </mapper>

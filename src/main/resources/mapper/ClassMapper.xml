@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.service.ClassMapper" >
+<mapper namespace="classMapper" >
   <resultMap id="BaseResultMap" type="com.health.model.po.Class" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
@@ -138,4 +138,14 @@
       LONG_TIME = #{longTime,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+    select
+    <include refid="Base_Column_List" />
+    from class
+    where 1=1
+    <if test="name != null" >
+      and NAME LIKE concat('%' , #{name,jdbcType=VARCHAR}, '%')
+    </if>
+
+  </select>
 </mapper>
