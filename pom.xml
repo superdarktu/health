@@ -72,7 +72,8 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-velocity</artifactId>
 		    <version>1.4.1.RELEASE</version>
-		  </dependency>
+        </dependency>
+
 
         <!-- Junit -->
         <dependency>

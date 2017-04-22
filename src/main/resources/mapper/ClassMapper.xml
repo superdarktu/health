@@ -143,8 +143,8 @@
     <include refid="Base_Column_List" />
     from class
     where 1=1
-    <if test="longTime != null" >
-      and NAME = #{name,jdbcType=VARCHAR}
+    <if test="name != null" >
+      and NAME LIKE concat('%' , #{name,jdbcType=VARCHAR}, '%')
     </if>
 
   </select>
