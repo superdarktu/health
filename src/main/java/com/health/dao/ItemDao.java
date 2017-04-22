@@ -14,30 +14,30 @@ public class ItemDao {
 	private SQLManager sqlManager;
 
 	public Item selectCityById (long id) {
-		return (Item)sqlManager.query("classMapper.selectByPrimaryKey", id);
+		return (Item)sqlManager.query("item.selectByPrimaryKey", id);
 	}
 
 	public int insert (Item record) {
-		return sqlManager.insert("classMapper.insert", record);
+		return sqlManager.insert("item.insert", record);
 	}
 
 	public int insertSelective (Item record) {
-		return sqlManager.insert("classMapper.insertSelective", record);
+		return sqlManager.insert("item.insertSelective", record);
 	}
 
 	public int updateByPrimaryKeySelective (Item record) {
-		return sqlManager.update("classMapper.updateByPrimaryKeySelective", record);
+		return sqlManager.update("item.updateByPrimaryKeySelective", record);
 	}
 
 	public int updateByPrimaryKey (Item record) {
-		return sqlManager.update("classMapper.updateByPrimaryKey", record);
+		return sqlManager.update("item.updateByPrimaryKey", record);
 	}
 
 	public int deleteByPrimaryKey (long id) {
-		return sqlManager.delete("classMapper.deleteByPrimaryKey", id);
+		return sqlManager.delete("item.deleteByPrimaryKey", id);
 	}
 
 	public List<Item> pageByKeyWord (Item record, Integer page, Integer pageSize) {
-		return (List<Item>) sqlManager.list("classMapper.pageByKeyWord", record, page, pageSize);
+		return (List<Item>) sqlManager.list("item.pageByKeyWord", record, page, pageSize);
 	}
 }

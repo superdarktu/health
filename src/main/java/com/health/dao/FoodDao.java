@@ -14,30 +14,30 @@ public class FoodDao {
 	private SQLManager sqlManager;
 
 	public Food selectCityById (long id) {
-		return (Food)sqlManager.query("classMapper.selectByPrimaryKey", id);
+		return (Food)sqlManager.query("food.selectByPrimaryKey", id);
 	}
 
 	public int insert (Food record) {
-		return sqlManager.insert("classMapper.insert", record);
+		return sqlManager.insert("food.insert", record);
 	}
 
 	public int insertSelective (Food record) {
-		return sqlManager.insert("classMapper.insertSelective", record);
+		return sqlManager.insert("food.insertSelective", record);
 	}
 
 	public int updateByPrimaryKeySelective (Food record) {
-		return sqlManager.update("classMapper.updateByPrimaryKeySelective", record);
+		return sqlManager.update("food.updateByPrimaryKeySelective", record);
 	}
 
 	public int updateByPrimaryKey (Food record) {
-		return sqlManager.update("classMapper.updateByPrimaryKey", record);
+		return sqlManager.update("food.updateByPrimaryKey", record);
 	}
 
 	public int deleteByPrimaryKey (long id) {
-		return sqlManager.delete("classMapper.deleteByPrimaryKey", id);
+		return sqlManager.delete("food.deleteByPrimaryKey", id);
 	}
 
 	public List<Food> pageByKeyWord (Food record, Integer page, Integer pageSize) {
-		return (List<Food>) sqlManager.list("classMapper.pageByKeyWord", record, page, pageSize);
+		return (List<Food>) sqlManager.list("food.pageByKeyWord", record, page, pageSize);
 	}
 }
