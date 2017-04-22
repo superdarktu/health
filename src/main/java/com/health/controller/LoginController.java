@@ -16,10 +16,9 @@ public class LoginController {
 	private LoginService loginService;
 
 	@RequestMapping("/login")
-    @ResponseBody
-    public boolean login() {
+    public String login(String username,String password) {
 		
-		return true;
+		return "";
     }
 	
 	@RequestMapping("/")

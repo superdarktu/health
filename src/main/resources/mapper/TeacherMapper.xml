@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.service.TeacherMapper" >
+<mapper namespace="teacher" >
   <resultMap id="BaseResultMap" type="com.health.model.po.Teacher" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
@@ -11,9 +11,10 @@
     <result column="EMAIL" property="email" jdbcType="VARCHAR" />
     <result column="JG" property="jg" jdbcType="VARCHAR" />
     <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER" />
+    <result column="NO" property="no" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG ,LOGIN_ID
+    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG ,LOGIN_ID,NO
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -21,17 +22,36 @@
     from teacher
     where ID = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="count" resultMap="java.lang.Integer" >
+    select 
+    count(*)
+    from teacher
+  </select>
+  
+  <select id="selectByStr" resultMap="BaseResultMap" parameterType="com.health.model.po.Teacher" >
+    select 
+    <include refid="Base_Column_List" />
+    from teacher
+    <where>
+		<if test="name !=null and name != ''">and name like CONCAT('%','${name}','%')
+			and no like CONCAT('%','${name}','%')
+		</if>
+	</where>
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from teacher
     where ID = #{id,jdbcType=INTEGER}
   </delete>
+  
   <insert id="insert" parameterType="com.health.model.po.Teacher" >
     insert into teacher (ID, NAME, SEX, BIRTHDAY, 
       SFID, PHONE, EMAIL, 
       JG)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, 
       #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER})
+      #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Teacher" >
     insert into teacher

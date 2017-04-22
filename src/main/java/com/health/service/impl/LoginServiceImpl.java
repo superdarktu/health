@@ -34,8 +34,11 @@ public class LoginServiceImpl implements LoginService{
 	/**
 	 * 登录
 	 */
-	public Login login(Login login) {
+	public Login login(String username , String password) {
 		
+		Login login = new Login();
+		login.setUsername(username);
+		login.setPassword(password);
 		return loginDao.login(login);
 	}
 
