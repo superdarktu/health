@@ -3,10 +3,19 @@ package com.health.model.po;
 public class Food {
     private Integer id;
 
+    /**
+     * 食物名称
+     */
     private String name;
 
+    /**
+     * 食物类别
+     */
     private String sort;
 
+    /**
+     * 食物热量
+     */
     private Integer number;
 
     public Integer getId() {
