@@ -10,9 +10,10 @@
     <result column="PHONE" property="phone" jdbcType="VARCHAR" />
     <result column="EMAIL" property="email" jdbcType="VARCHAR" />
     <result column="JG" property="jg" jdbcType="VARCHAR" />
+    <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG
+    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG ,LOGIN_ID
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -30,7 +31,7 @@
       JG)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, 
       #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{jg,jdbcType=VARCHAR})
+      #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Teacher" >
     insert into teacher

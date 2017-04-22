@@ -12,40 +12,40 @@ public class LoginServiceImpl implements LoginService{
 
 	@Autowired
 	private LoginDao loginDao;
-	
-	public int deleteByPrimaryKey(Integer id) {
+
+	/**
+	 * 删除
+	 */
+	public boolean deleteByPrimaryKey(Integer id) {
 		
-		return loginDao.selectCityById(1);
+		Login login = new Login();
+		login.setId(id);
+		return loginDao.delete(login);
 	}
 
-	@Override
-	public int insert(Login record) {
-		// TODO Auto-generated method stub
-		return 0;
+	/**
+	 * 添加
+	 */
+	public int insert(Login login) {
+		
+		return loginDao.insert(login);
 	}
 
-	@Override
-	public int insertSelective(Login record) {
-		// TODO Auto-generated method stub
-		return 0;
+	/**
+	 * 登录
+	 */
+	public Login login(Login login) {
+		
+		return loginDao.login(login);
 	}
 
-	@Override
-	public Login selectByPrimaryKey(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 修改
+	 */
+	public boolean update(Login login) {
+		
+		return loginDao.update(login);
 	}
-
-	@Override
-	public int updateByPrimaryKeySelective(Login record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int updateByPrimaryKey(Login record) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }

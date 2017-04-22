@@ -3,15 +3,13 @@ package com.health.service;
 import com.health.model.po.Login;
 
 public interface LoginService {
-    int deleteByPrimaryKey(Integer id);
+	
+    boolean deleteByPrimaryKey(Integer id);
 
-    int insert(Login record);
+    int insert(Login login);
 
-    int insertSelective(Login record);
+    Login login(Login login);
 
-    Login selectByPrimaryKey(Integer id);
+    boolean update(Login login);
 
-    int updateByPrimaryKeySelective(Login record);
-
-    int updateByPrimaryKey(Login record);
 }

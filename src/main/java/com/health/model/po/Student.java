@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Student {
     private Integer id;
+    
+    private Integer loginId;
 
     private String name;
 
@@ -33,7 +35,15 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
+    public Integer getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(Integer loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getName() {
         return name;
     }
 

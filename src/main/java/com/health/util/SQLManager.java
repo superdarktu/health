@@ -33,12 +33,13 @@ public class SQLManager {
 	 * @param sqlId
 	 * @param data
 	 * @param page
+	 * @param pageSize
 	 * @return
 	 */
-	public List<?> list(String sqlId, Object data,Object page) {
+	public List<?> list(String sqlId, Object data,Integer page,Integer pageSize) {
 		
-		if(true)
-			PageHelper.startPage(1, 1);
+		if(page != null && pageSize != null)
+			PageHelper.startPage(page, pageSize);
 		return this.getSqlSessionTemplate().selectList(sqlId, data);
 	}
 	
@@ -49,9 +50,9 @@ public class SQLManager {
 	 * @param data
 	 * @return
 	 */
-	public Object insert(String sqlId, Object data) {
+	public Integer insert(String sqlId, Object data) {
 		
-		return (Object) this.getSqlSessionTemplate().insert(sqlId, data);
+		return (Integer) this.getSqlSessionTemplate().insert(sqlId, data);
 	}
 	
 	/**

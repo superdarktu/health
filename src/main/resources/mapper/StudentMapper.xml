@@ -12,10 +12,11 @@
     <result column="EMAIL" property="email" jdbcType="VARCHAR" />
     <result column="JG" property="jg" jdbcType="VARCHAR" />
     <result column="TCDID" property="tcdid" jdbcType="INTEGER" />
+    <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER" />
     <result column="JSFAID" property="jsfaid" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID
+    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID ,LOGIN_ID
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -33,7 +34,7 @@
       JG, TCDID, JSFAID)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, 
       #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=INTEGER})
+      #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=INTEGER}, #{loginId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Student" >
     insert into student

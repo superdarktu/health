@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Teacher {
     private Integer id;
+    
+    private Integer loginId;
 
     private String name;
 
@@ -27,7 +29,15 @@ public class Teacher {
         this.id = id;
     }
 
-    public String getName() {
+    public Integer getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(Integer loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getName() {
         return name;
     }
 

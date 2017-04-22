@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.service.LoginMapper" >
+<mapper namespace="login" >
   <resultMap id="BaseResultMap" type="com.health.model.po.Login" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="USERTYPE" property="usertype" jdbcType="CHAR" />
@@ -16,6 +16,14 @@
     from login
     where ID = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="login" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from login
+    where USERNAME = #{userName,jdbcType=VARCHAR} and PASSWORD = #{password,jdbcType=VARCHAR}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from login
     where ID = #{id,jdbcType=INTEGER}
@@ -74,9 +82,17 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.health.model.po.Login" >
     update login
-    set USERTYPE = #{usertype,jdbcType=CHAR},
-      USERNAME = #{username,jdbcType=VARCHAR},
-      PASSWORD = #{password,jdbcType=VARCHAR}
+    <set >
+      <if test="usertype != null" >
+        USERTYPE = #{usertype,jdbcType=CHAR},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null"  >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

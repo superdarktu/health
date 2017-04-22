@@ -15,10 +15,11 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@RequestMapping("/test")
+	@RequestMapping("/login")
     @ResponseBody
-    public int home() {
-        return loginService.deleteByPrimaryKey(1);
+    public boolean login() {
+		
+		return true;
     }
 	
 	@RequestMapping("/")
