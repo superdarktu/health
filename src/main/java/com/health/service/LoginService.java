@@ -8,7 +8,7 @@ public interface LoginService {
 
     int insert(Login login);
 
-    Login login(Login login);
+    Login login(String username , String password);
 
     boolean update(Login login);
 

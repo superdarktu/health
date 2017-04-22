@@ -1,17 +1,18 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.Teacher;
 
 public interface TeacherService {
-    int deleteByPrimaryKey(Integer id);
+	
+    boolean deleteByPrimaryKey(Integer id);
 
-    int insert(Teacher record);
-
-    int insertSelective(Teacher record);
+    int insert(Teacher teacher);
 
     Teacher selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Teacher record);
+    boolean updateByPrimaryKeySelective(Teacher teacher);
 
-    int updateByPrimaryKey(Teacher record);
+    List<Teacher> page(Teacher teacher,Integer page,Integer pageSize);
 }

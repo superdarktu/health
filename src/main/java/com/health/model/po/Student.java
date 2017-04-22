@@ -26,6 +26,8 @@ public class Student {
     private Integer tcdid;
 
     private Integer jsfaid;
+    
+    private String no;
 
     public Integer getId() {
         return id;
@@ -122,4 +124,13 @@ public class Student {
     public void setJsfaid(Integer jsfaid) {
         this.jsfaid = jsfaid;
     }
+
+	public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+    
 }

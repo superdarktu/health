@@ -20,6 +20,8 @@ public class Teacher {
     private String email;
 
     private String jg;
+    
+    private String no;
 
     public Integer getId() {
         return id;
@@ -92,4 +94,13 @@ public class Teacher {
     public void setJg(String jg) {
         this.jg = jg;
     }
+
+	public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+    
 }
