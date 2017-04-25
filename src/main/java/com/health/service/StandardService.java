@@ -1,17 +1,46 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.Standard;
 
 public interface StandardService {
-    int deleteByPrimaryKey(Integer id);
+	
+	/**
+	 * 根据ID删除
+	 * @param id
+	 * @return
+	 */
+    boolean deleteByPrimaryKey(Integer id);
 
-    int insert(Standard record);
+    /**
+     * 添加
+     * @param standard
+     * @return
+     */
+    int insert(Standard standard);
 
-    int insertSelective(Standard record);
-
+    /**
+     * 根据ID查询
+     * @param id
+     * @return
+     */
     Standard selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Standard record);
+    /**
+     * 修改
+     * @param standard
+     * @return
+     */
+    boolean updateByPrimaryKeySelective(Standard standard);
+    
+    /**
+     * 分页查询
+     * @param standard
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<Standard> page(Standard standard,Integer page ,Integer pageSize);
 
-    int updateByPrimaryKey(Standard record);
 }

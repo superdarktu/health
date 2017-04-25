@@ -1,17 +1,46 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.TestData;
 
 public interface TestDataService {
-    int deleteByPrimaryKey(Integer id);
+	
+	/**
+	 * 删除
+	 * @param id
+	 * @return
+	 */
+    boolean delete(Integer id);
 
-    int insert(TestData record);
+    /**
+     * 添加
+     * @param testData
+     * @return
+     */
+    int insert(TestData testData);
 
-    int insertSelective(TestData record);
+    /**
+     * 查询
+     * @param id
+     * @return
+     */
+    TestData query(Integer id);
 
-    TestData selectByPrimaryKey(Integer id);
+    /**
+     * 修改
+     * @param testData
+     * @return
+     */
+    boolean update(TestData testData);
+    
+    /**
+     * 分页查询
+     * @param testData
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<TestData> page(TestData testData,Integer page ,Integer pageSize);
 
-    int updateByPrimaryKeySelective(TestData record);
-
-    int updateByPrimaryKey(TestData record);
 }

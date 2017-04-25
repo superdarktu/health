@@ -11,7 +11,7 @@ public interface ProgramService {
 	 * @param id
 	 * @return
 	 */
-    int deleteByPrimaryKey(Integer id);
+	boolean deleteByPrimaryKey(Integer id);
 
     /**
      * 添加
@@ -32,7 +32,7 @@ public interface ProgramService {
      * @param program
      * @return
      */
-    int updateByPrimaryKeySelective(Program program);
+    boolean updateByPrimaryKeySelective(Program program);
     
     /**
      * 分页查询

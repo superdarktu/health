@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.service.TestDataMapper" >
+<mapper namespace="testData" >
   <resultMap id="BaseResultMap" type="com.health.model.po.TestData" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="STUDENT_ID" property="studentId" jdbcType="INTEGER" />
@@ -24,13 +24,21 @@
     ID, STUDENT_ID, TEST_DATE, HEIGHT, WEIGHT, WAIST, HIP, PULMONARY, TJSY, WL, YWQZ, 
     FWC, ZWTQQ, BMR, YTB, BMI, SJFXJY
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from test_data
     where ID = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  
+  <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.TestData" >
+    select 
+    <include refid="Base_Column_List" />
+    from test_data
+  </select>
+  
+  
+  <delete id="delete" parameterType="java.lang.Integer" >
     delete from test_data
     where ID = #{id,jdbcType=INTEGER}
   </delete>
@@ -157,7 +165,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.TestData" >
+  <update id="update" parameterType="com.health.model.po.TestData" >
     update test_data
     <set >
       <if test="studentId != null" >
