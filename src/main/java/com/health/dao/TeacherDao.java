@@ -3,16 +3,18 @@ package com.health.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.health.model.po.Teacher;
 import com.health.util.SQLManager;
 
+@Repository
 public class TeacherDao {
 	
 	@Autowired
 	private SQLManager sqlManager;
 	
-public int insert(Teacher teacher){
+	public int insert(Teacher teacher){
 		
 		return sqlManager.insert("teacher.insert", teacher);
 	}

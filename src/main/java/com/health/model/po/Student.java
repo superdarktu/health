@@ -3,30 +3,69 @@ package com.health.model.po;
 import java.util.Date;
 
 public class Student {
+	/**
+	 * 学生ID
+	 */
     private Integer id;
     
+    /**
+     * 登录ID
+     */
     private Integer loginId;
 
+    /**
+     * 姓名
+     */
     private String name;
 
+    /**
+     * 性别
+     */
     private String sex;
 
+    /**
+     * 生日
+     */
     private Date birthday;
 
+    /**
+     * 身份证号
+     */
     private String sfid;
 
+    /**
+     * 联系号码
+     */
     private String phone;
 
+    /**
+     * 工作
+     */
     private String job;
 
+    /**
+     * 邮箱
+     */
     private String email;
 
+    /**
+     * 籍贯
+     */
     private String jg;
 
+    /**
+     * 体测单ID
+     */
     private Integer tcdid;
 
+    /**
+     * 健身方案ID
+     */
     private Integer jsfaid;
     
+    /**
+     * 学员编号
+     */
     private String no;
 
     public Integer getId() {

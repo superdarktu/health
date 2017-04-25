@@ -1,24 +1,55 @@
 package com.health.model.po;
 
 public class Standard {
+	
+	/**
+	 * ID
+	 */
     private Integer id;
 
+    /**
+     * 运动项目
+     */
     private String name;
 
+    /**
+     * 性别
+     */
     private String sex;
 
+    /**
+     * 开始年龄
+     */
     private Integer startAge;
 
+    /**
+     * 结束年龄
+     */
     private Integer endAge;
 
+    /**
+     * 一分的标准
+     */
     private Double one;
 
+    /**
+     * 二分的标准
+     */
     private Double two;
 
+    /**
+     * 三分的标准
+     */
     private Double three;
 
+    /**
+     * 四分的标准
+     */
     private Double four;
 
+    /**
+     * 五分的标准
+     */
     private Double five;
 
     public Integer getId() {

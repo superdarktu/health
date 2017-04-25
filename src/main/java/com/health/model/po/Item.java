@@ -1,24 +1,55 @@
 package com.health.model.po;
 
 public class Item {
+	
+	/**
+	 * 方案ID
+	 */
     private Integer programId;
 
+    /**
+     * 运动项目
+     */
     private String name;
 
+    /**
+     * 负荷
+     */
     private Double load;
 
+    /**
+     * 时间间隔
+     */
     private Integer interval;
 
+    /**
+     * 组词/次数
+     */
     private Integer number;
 
+    /**
+     * 动作要点
+     */
     private String points;
 
+    /**
+     * 注意事项
+     */
     private String matter;
 
+    /**
+     * 食物名称
+     */
     private String food;
 
+    /**
+     * 食用时间
+     */
     private String eatDate;
 
+    /**
+     * 食用量
+     */
     private String eatNumber;
 
     public Integer getProgramId() {

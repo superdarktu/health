@@ -1,12 +1,25 @@
 package com.health.model.po;
 
 public class Login {
+	
+	/**
+	 * ID
+	 */
     private Integer id;
 
+    /**
+     * 用户类型 1：管理员 2：教练  3：学员
+     */
     private String usertype;
 
+    /**
+     * 用户名
+     */
     private String username;
 
+    /**
+     * 密码
+     */
     private String password;
 
     public Integer getId() {

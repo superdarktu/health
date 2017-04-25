@@ -3,38 +3,89 @@ package com.health.model.po;
 import java.util.Date;
 
 public class TestData {
+	/**
+	 * ID
+	 */
     private Integer id;
 
+    /**
+     * 学员ID
+     */
     private Integer studentId;
 
+    /**
+     * 测试日期
+     */
     private Date testDate;
 
+    /**
+     * 身高
+     */
     private Double height;
 
+    /**
+     * 体重
+     */
     private Double weight;
 
+    /**
+     * 腰围
+     */
     private Double waist;
 
+    /**
+     * 臀围
+     */
     private Double hip;
 
+    /**
+     * 肺活量
+     */
     private Integer pulmonary;
 
+    /**
+     * 台阶试炼
+     */
     private Double tjsy;
 
+    /**
+     * 握力
+     */
     private Double wl;
 
+    /**
+     * 仰卧起坐
+     */
     private Integer ywqz;
 
+    /**
+     * 俯卧撑
+     */
     private Integer fwc;
 
+    /**
+     * 坐位体前屈
+     */
     private Double zwtqq;
 
+    /**
+     * 基础代谢率
+     */
     private Double bmr;
 
+    /**
+     * 腰臀比
+     */
     private Double ytb;
 
+    /**
+     * 身高体重指数
+     */
     private Double bmi;
 
+    /**
+     * 数据分析建议
+     */
     private String sjfxjy;
 
     public Integer getId() {
