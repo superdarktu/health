@@ -3,6 +3,8 @@ package com.health.service.impl;
 import com.health.dao.ItemDao;
 import com.health.model.po.Item;
 import com.health.service.ItemService;
+import com.health.util.SQLManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,43 +19,46 @@ import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
 
+   /* @Autowired
+    private ItemDao itemDao;*/
+    
     @Autowired
-    private ItemDao itemDao;
+   	private SQLManager sqlManager;
 
     @Override
-    public List<Item> pageByKeyWord(Item record, Integer page, Integer pageSize) {
-        return itemDao.pageByKeyWord(record, page, pageSize);
+    public List<Item> pageByKeyWord(Item item, Integer page, Integer pageSize) {
+        return (List<Item>) sqlManager.list("item.pageByKeyWord", item, page, pageSize);
     }
 
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
-        return itemDao.deleteByPrimaryKey(id);
+        return sqlManager.delete("item.deleteByPrimaryKey", id);
     }
 
     @Override
-    public int insert(Item record) {
-       return  itemDao.insert(record);
+    public int insert(Item item) {
+       return  sqlManager.insert("item.insert", item);
     }
 
     @Override
-    public int insertSelective(Item record) {
-        return itemDao.insertSelective(record);
+    public int insertSelective(Item item) {
+        return sqlManager.insert("item.insertSelective", item);
     }
 
     @Override
     public Item selectByPrimaryKey(Integer id) {
-        return itemDao.selectCityById(id);
+        return (Item)sqlManager.query("item.selectByPrimaryKey", id);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Item record) {
-        return itemDao.updateByPrimaryKeySelective(record);
+    public int updateByPrimaryKeySelective(Item item) {
+        return sqlManager.update("item.updateByPrimaryKeySelective", item);
     }
 
     @Override
-    public int updateByPrimaryKey(Item record) {
-        return itemDao.updateByPrimaryKey(record);
+    public int updateByPrimaryKey(Item item) {
+        return sqlManager.update("item.updateByPrimaryKey", item);
     }
 
 }

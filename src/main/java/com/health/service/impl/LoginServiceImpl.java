@@ -6,12 +6,16 @@ import org.springframework.stereotype.Service;
 import com.health.dao.LoginDao;
 import com.health.model.po.Login;
 import com.health.service.LoginService;
+import com.health.util.SQLManager;
 
 @Service
 public class LoginServiceImpl implements LoginService{
 
+	/*@Autowired
+	private LoginDao loginDao;*/
+	
 	@Autowired
-	private LoginDao loginDao;
+   	private SQLManager sqlManager;
 
 	/**
 	 * 删除
@@ -20,7 +24,7 @@ public class LoginServiceImpl implements LoginService{
 		
 		Login login = new Login();
 		login.setId(id);
-		return loginDao.delete(login);
+		return sqlManager.delete("login.deleteByPrimaryKey", login) > 0 ? true : false;
 	}
 
 	/**
@@ -28,7 +32,7 @@ public class LoginServiceImpl implements LoginService{
 	 */
 	public int insert(Login login) {
 		
-		return loginDao.insert(login);
+		return  sqlManager.insert("login.insert", login);
 	}
 
 	/**
@@ -39,7 +43,7 @@ public class LoginServiceImpl implements LoginService{
 		Login login = new Login();
 		login.setUsername(username);
 		login.setPassword(password);
-		return loginDao.login(login);
+		return (Login) sqlManager.query("login.login",login);
 	}
 
 	/**
@@ -47,7 +51,7 @@ public class LoginServiceImpl implements LoginService{
 	 */
 	public boolean update(Login login) {
 		
-		return loginDao.update(login);
+		return sqlManager.update("login.updateByPrimaryKey", login) > 0 ? true : false;
 	}
 	
 

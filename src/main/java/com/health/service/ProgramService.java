@@ -1,17 +1,46 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.Program;
 
 public interface ProgramService {
+	
+	/**
+	 * 根据ID删除
+	 * @param id
+	 * @return
+	 */
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Program record);
+    /**
+     * 添加
+     * @param program
+     * @return
+     */
+    int insert(Program program);
 
-    int insertSelective(Program record);
-
+    /**
+     * 根据ID查询
+     * @param id
+     * @return
+     */
     Program selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Program record);
+    /**
+     * 修改
+     * @param program
+     * @return
+     */
+    int updateByPrimaryKeySelective(Program program);
+    
+    /**
+     * 分页查询
+     * @param program
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<Program> page(Program program,Integer page,Integer pageSize);
 
-    int updateByPrimaryKey(Program record);
 }

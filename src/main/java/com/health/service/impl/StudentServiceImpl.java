@@ -7,18 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.health.dao.StudentDao;
 import com.health.model.po.Student;
 import com.health.service.StudentService;
+import com.health.util.SQLManager;
 
 public class StudentServiceImpl implements StudentService{
 
+	/*@Autowired
+	private StudentDao studentDao;*/
+	
 	@Autowired
-	private StudentDao studentDao;
+   	private SQLManager sqlManager;
 	
 	/**
 	 * 根据ID删除
 	 */
 	public boolean deleteByPrimaryKey(Integer id) {
 		
-		return studentDao.delete(id);
+		return sqlManager.delete("student.deleteByPrimaryKey", id) > 0 ? true :false;
 	}
 
 	/**
@@ -26,14 +30,14 @@ public class StudentServiceImpl implements StudentService{
 	 */
 	public int insert(Student student) {
 		
-		String no = (studentDao.count()+1)+"";
+		String no = (sqlManager.count("student.count", null)+1)+"";
 		StringBuilder sb = new StringBuilder("");
 		for(int i=0;i<(8-no.length());i++){
 			sb.append("0");
 		}
 		sb.append(no);
 		student.setNo(sb.toString());
-		return studentDao.insert(student);
+		return sqlManager.insert("student.insert", student);
 	}
 
 	/**
@@ -41,7 +45,7 @@ public class StudentServiceImpl implements StudentService{
 	 */
 	public Student selectByPrimaryKey(Integer id) {
 		
-		return studentDao.query(id);
+		return (Student) sqlManager.query("student.selectByPrimaryKey", id);
 	}
 
 	/**
@@ -49,7 +53,7 @@ public class StudentServiceImpl implements StudentService{
 	 */
 	public boolean update(Student student) {
 		
-		return studentDao.update(student);
+		return sqlManager.update("student.updateByPrimaryKeySelective", student) > 0 ? true :false;
 	}
 	
 	/**
@@ -57,7 +61,7 @@ public class StudentServiceImpl implements StudentService{
 	 */
 	public List<Student> page(Student student, Integer page, Integer pageSize) {
 		
-		return studentDao.list(student, page, pageSize);
+		return (List<Student>) sqlManager.list("student.selectByStr", student, page, pageSize);
 	}
 
 }
