@@ -11,8 +11,8 @@ import com.health.util.SQLManager;
 @Service
 public class LoginServiceImpl implements LoginService{
 
-	/*@Autowired
-	private LoginDao loginDao;*/
+	@Autowired
+	private LoginDao loginDao;
 	
 	@Autowired
    	private SQLManager sqlManager;
@@ -43,7 +43,7 @@ public class LoginServiceImpl implements LoginService{
 		Login login = new Login();
 		login.setUsername(username);
 		login.setPassword(password);
-		return (Login) sqlManager.query("login.login",login);
+		return loginDao.login(login);
 	}
 
 	/**

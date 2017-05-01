@@ -3,12 +3,13 @@ package com.health.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.health.dao.StudentDao;
 import com.health.model.po.Student;
 import com.health.service.StudentService;
 import com.health.util.SQLManager;
 
+@Service
 public class StudentServiceImpl implements StudentService{
 
 	/*@Autowired
@@ -46,6 +47,14 @@ public class StudentServiceImpl implements StudentService{
 	public Student selectByPrimaryKey(Integer id) {
 		
 		return (Student) sqlManager.query("student.selectByPrimaryKey", id);
+	}
+	
+	/**
+	 * 根据ID查询
+	 */
+	public Student selectByLoginId(Integer loginId) {
+		
+		return (Student) sqlManager.query("student.selectByLoginId", loginId);
 	}
 
 	/**

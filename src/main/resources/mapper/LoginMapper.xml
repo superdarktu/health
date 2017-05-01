@@ -17,11 +17,11 @@
     where ID = #{id,jdbcType=INTEGER}
   </select>
   
-  <select id="login" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="login" resultMap="BaseResultMap" parameterType="com.health.model.po.Login" >
     select 
     <include refid="Base_Column_List" />
     from login
-    where USERNAME = #{userName,jdbcType=VARCHAR} and PASSWORD = #{password,jdbcType=VARCHAR}
+    where USERNAME = #{username,jdbcType=VARCHAR} and PASSWORD = #{password,jdbcType=VARCHAR}
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

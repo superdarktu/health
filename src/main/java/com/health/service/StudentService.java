@@ -26,6 +26,13 @@ public interface StudentService {
      * @return
      */
     Student selectByPrimaryKey(Integer id);
+    
+    /**
+     * 根据登录ID查询
+     * @param id
+     * @return
+     */
+    Student selectByLoginId(Integer loginId);
 
     /**
      * 修改

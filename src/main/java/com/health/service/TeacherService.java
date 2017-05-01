@@ -26,6 +26,13 @@ public interface TeacherService {
      * @return
      */
     Teacher selectByPrimaryKey(Integer id);
+    
+    /**
+     * 根据登录ID查询
+     * @param id
+     * @return
+     */
+    Teacher selectByLoginId(Integer loginId);
 
     /**
      * 修改信息

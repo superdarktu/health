@@ -33,12 +33,12 @@
 
             <form class="m-t" role="form" action="index.html">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="用户名" required="">
+                    <input type="email" id="username" class="form-control" placeholder="用户名" required="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="密码" required="">
+                    <input type="password" id="password" class="form-control" placeholder="密码" required="">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                <button type="button" id="submit" class="btn btn-primary block full-width m-b">登 录</button>
 
                 <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a>
                 </p>
@@ -48,6 +48,7 @@
     </div>
     <script src="js/jquery.min.js?v=2.1.4"></script>
     <script src="js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="js/login/login.js"></script>
 </body>
 
 </html>

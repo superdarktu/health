@@ -8,11 +8,12 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.github.pagehelper.PageHelper;
+//import com.github.pagehelper.PageHelper;
 
-@Component("SQLManager")
+@Component
 public class SQLManager {
 
+	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
 	
@@ -38,8 +39,8 @@ public class SQLManager {
 	 */
 	public List<?> list(String sqlId, Object data,Integer page,Integer pageSize) {
 		
-		if(page != null && pageSize != null)
-			PageHelper.startPage(page, pageSize);
+	//	if(page != null && pageSize != null)
+		//	PageHelper.startPage(page, pageSize);
 		return this.getSqlSessionTemplate().selectList(sqlId, data);
 	}
 	
