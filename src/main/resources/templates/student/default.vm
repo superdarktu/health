@@ -21,13 +21,13 @@
 <body class="gray-bg">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-sm-8">
-            <h2>王小明</h2>
+            <h2>$!{student.name}</h2>
             <ol class="breadcrumb">
                 <li>
-                    <span>会员编号 203432332332</span>
+                    <span>会员编号 $!{student.no}</span>
                 </li>
                 <li>
-                    <span>身份证号 203402003034534</span>
+                    <span>身份证号 $!{student.sfid}</span>
                 </li>
             </ol>
         </div>
@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">性别</label>
                                 <div class="col-sm-10">
-                                    <p class="form-control-static">男</p>
+                                    <p class="form-control-static">#if("${student.sex}" == "1" ) man #else woman #end</p>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">出生年月</label>
                                 <div class="col-sm-5">
-                                    <p class="form-control-static">1990-01-01</p>
+                                    <p class="form-control-static">$!{student.birthday}</p>
                                 </div>
                             </div>
 
@@ -68,7 +68,7 @@
                                 <label class="col-sm-2 control-label">联系电话</label>
 
                                 <div class="col-sm-5">
-                                    <p class="form-control-static">13800000000</p>
+                                    <p class="form-control-static">$!{student.phone}</p>
                                 </div>
                             </div>
 
@@ -77,7 +77,7 @@
                                 <label class="col-sm-2 control-label">邮箱</label>
 
                                 <div class="col-sm-5">
-                                    <p class="form-control-static">13800000000@163.com</p>
+                                    <p class="form-control-static">$!{student.email}</p>
                                 </div>
                             </div>
 
@@ -86,7 +86,7 @@
                                 <label class="col-sm-2 control-label">职业</label>
 
                                 <div class="col-sm-5">
-                                    <p class="form-control-static">学生</p>
+                                    <p class="form-control-static">$!{student.job}</p>
                                 </div>
                             </div>
 
@@ -95,7 +95,7 @@
                                 <label class="col-sm-2 control-label">籍贯</label>
 
                                 <div class="col-sm-5">
-                                    <p class="form-control-static">浙江杭州</p>
+                                    <p class="form-control-static">$!{student.jg}</p>
                                 </div>
                             </div>
                             

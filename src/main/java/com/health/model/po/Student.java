@@ -26,7 +26,7 @@ public class Student {
     /**
      * 生日
      */
-    private Date birthday;
+    private String birthday;
 
     /**
      * 身份证号
@@ -67,6 +67,11 @@ public class Student {
      * 学员编号
      */
     private String no;
+    
+    /**
+     * 年龄
+     */
+    private Integer age;
 
     public Integer getId() {
         return id;
@@ -100,11 +105,11 @@ public class Student {
         this.sex = sex;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -170,6 +175,14 @@ public class Student {
 
 	public void setNo(String no) {
 		this.no = no;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
     
 }

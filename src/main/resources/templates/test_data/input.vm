@@ -9,12 +9,12 @@
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
-    <link href="css/bodybuilder.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/bodybuilder.css" rel="stylesheet">
 
 </head>
 
@@ -37,35 +37,35 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">身高(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="height" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">体重(kg)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="weight" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">腰围(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="waist" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">臀围(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="hip" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">肺活量(ml)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="pulmonary" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
@@ -75,35 +75,35 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">握力(kg)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="wl" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">仰卧起坐(个/min)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="ywqz" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">俯卧撑(个/min)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="fwc" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">坐位体前屈(个/min)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" name="" id="zwtqq" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">台阶指数：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据"><span class="help-block m-b-none">台阶指数 = [运动持续时间(s)/(3次测量脉搏数之和 x2)] x100</span>
+                                                <input type="text" name="" id="tjsy" class="form-control" placeholder="请输入数据"><span class="help-block m-b-none">台阶指数 = [运动持续时间(s)/(3次测量脉搏数之和 x2)] x100</span>
                                             </div>
                                         </div>
 
@@ -114,7 +114,7 @@
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-2">
-                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-primary" id="submit" type="button">保存内容</button>
                                         </div>
                                     </div>
                                 </div>
@@ -128,9 +128,10 @@
         </div>
     </div>
 
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+    <script src="../js/test_data/input.js"></script>
 </body>
 
 </html>

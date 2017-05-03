@@ -49,7 +49,7 @@
                         </div>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="user_about_edit.html">
+                        <a class="J_menuItem" href="student/to_edit">
                             <i class="fa fa-user"></i>
                             <span class="nav-label">个人信息</span>
                         </a>
@@ -60,9 +60,9 @@
                     <li>
                         <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">体测管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="buildata_input.html">体测数据录入</a>
+                            <li><a class="J_menuItem" href="test_data/to_input">体测数据录入</a>
                             </li>
-                            <li><a class="J_menuItem" href="buildata_result.html">数据分析结果</a>
+                            <li><a class="J_menuItem" href="test_data/to_result">数据分析结果</a>
                             </li>
                             <li><a class="J_menuItem" href="buildata_search.html">历史数据查询</a>
                             </li>
@@ -159,7 +159,7 @@
             </div>
            
             <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="user_about_default.html" frameborder="0" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="default" frameborder="0" seamless></iframe>
             </div>
             <div class="footer">
                 <div class="pull-right">&copy; 2017 <a href="http://www.ruanis.com" target="_blank">Design by Wendale</BODY></a>

@@ -24,6 +24,14 @@
     ID, STUDENT_ID, TEST_DATE, HEIGHT, WEIGHT, WAIST, HIP, PULMONARY, TJSY, WL, YWQZ, 
     FWC, ZWTQQ, BMR, YTB, BMI, SJFXJY
   </sql>
+  
+  <select id="queryByStudentLast" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from test_data
+    where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by desc limit 1
+  </select>
+  
   <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -49,7 +57,7 @@
       WL, YWQZ, FWC, ZWTQQ, 
       BMR, YTB, BMI, SJFXJY
       )
-    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{testDate,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, now(), 
       #{height,jdbcType=DOUBLE}, #{weight,jdbcType=DOUBLE}, #{waist,jdbcType=DOUBLE}, 
       #{hip,jdbcType=DOUBLE}, #{pulmonary,jdbcType=INTEGER}, #{tjsy,jdbcType=DOUBLE}, 
       #{wl,jdbcType=DOUBLE}, #{ywqz,jdbcType=INTEGER}, #{fwc,jdbcType=INTEGER}, #{zwtqq,jdbcType=DOUBLE}, 

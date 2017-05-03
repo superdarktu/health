@@ -5,7 +5,7 @@
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
     <result column="SEX" property="sex" jdbcType="CHAR" />
-    <result column="BIRTHDAY" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="VARCHAR" />
     <result column="SFID" property="sfid" jdbcType="VARCHAR" />
     <result column="PHONE" property="phone" jdbcType="VARCHAR" />
     <result column="EMAIL" property="email" jdbcType="VARCHAR" />
@@ -57,7 +57,7 @@
     insert into teacher (ID, NAME, SEX, BIRTHDAY, 
       SFID, PHONE, EMAIL, 
       JG)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR}, 
       #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR})
   </insert>
@@ -100,7 +100,7 @@
         #{sex,jdbcType=CHAR},
       </if>
       <if test="birthday != null" >
-        #{birthday,jdbcType=TIMESTAMP},
+        #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="sfid != null" >
         #{sfid,jdbcType=VARCHAR},
@@ -126,7 +126,7 @@
         SEX = #{sex,jdbcType=CHAR},
       </if>
       <if test="birthday != null" >
-        BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+        BIRTHDAY = #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="sfid != null" >
         SFID = #{sfid,jdbcType=VARCHAR},
@@ -147,7 +147,7 @@
     update teacher
     set NAME = #{name,jdbcType=VARCHAR},
       SEX = #{sex,jdbcType=CHAR},
-      BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      BIRTHDAY = #{birthday,jdbcType=VARCHAR},
       SFID = #{sfid,jdbcType=VARCHAR},
       PHONE = #{phone,jdbcType=VARCHAR},
       EMAIL = #{email,jdbcType=VARCHAR},

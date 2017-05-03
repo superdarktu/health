@@ -2,6 +2,7 @@ package com.health.service;
 
 import java.util.List;
 
+import com.health.model.po.Student;
 import com.health.model.po.TestData;
 
 public interface TestDataService {
@@ -18,7 +19,7 @@ public interface TestDataService {
      * @param testData
      * @return
      */
-    int insert(TestData testData);
+    int insert(TestData testData,Student student);
 
     /**
      * 查询
@@ -26,6 +27,13 @@ public interface TestDataService {
      * @return
      */
     TestData query(Integer id);
+    
+    /**
+     * 查询
+     * @param id
+     * @return
+     */
+    TestData queryByStudentLast(Integer id);
 
     /**
      * 修改
