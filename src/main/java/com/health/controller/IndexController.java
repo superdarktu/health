@@ -18,12 +18,21 @@ public class IndexController {
 	@Autowired
 	private StudentService studentService;
 	
+	
 	@RequestMapping("/index")
 	public String index(Map<String,Object> map,HttpServletRequest req){
 		
 		HttpSession session = req.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		map.put("student", studentService.selectByPrimaryKey(1));
+		return "index";
+	}
+	
+	
+	
+	@RequestMapping("/manage_index")
+	public String manageIndex(Map<String,Object> map,HttpServletRequest req){
+		
 		return "index";
 	}
 	

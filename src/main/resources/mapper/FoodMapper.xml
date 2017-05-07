@@ -17,6 +17,15 @@
     where ID = #{id,jdbcType=INTEGER}
   </select>
   
+  <select id="pageByName" resultMap="BaseResultMap" parameterType="com.health.model.po.Food" >
+    select 
+    <include refid="Base_Column_List" />
+    from food
+    <if test="name != null and name !=''">and NAME like CONCAT('%','${name}','%')</if>
+  </select>
+  
+  
+  
   <select id="count" resultType="java.lang.Integer" parameterType="com.health.model.po.Food">
     select count(*) from food
   </select>
@@ -84,10 +93,10 @@
       NUMBER = #{number,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+  <select id="pageByKeyWord" resultMap="BaseResultMap" parameterType="com.health.model.po.Food">
     select
     <include refid="Base_Column_List" />
-    from class
+    from food
     where 1=1
     <if test="name != null" >
       and NAME LIKE concat('%' , #{name,jdbcType=VARCHAR}, '%')

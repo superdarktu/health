@@ -29,6 +29,10 @@ public class EquipmentServiceImpl implements EquipmentService {
     public List<Equipment> pageByKeyWord(Equipment equipment, Integer page, Integer pageSize) {
         return (List<Equipment>) sqlManager.list("equipment.pageByKeyWord", equipment, page, pageSize);
     }
+    
+    public List<Equipment> pageByName(Equipment equipment) {
+        return (List<Equipment>) sqlManager.list("equipment.pageByName", equipment);
+    }
 
     @Override
     public int save(Equipment equipment) {

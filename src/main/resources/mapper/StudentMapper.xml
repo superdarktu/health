@@ -45,11 +45,9 @@
     select 
     <include refid="Base_Column_List" />
     from student
-    <where>
-		<if test="name !=null and name != ''">and name like CONCAT('%','${name}','%')
-			and no like CONCAT('%','${name}','%')
-		</if>
-	</where>
+	<if test="name !=null and name != ''">where NAME like CONCAT('%','${name}','%')
+		or NO like CONCAT('%','${no}','%')
+	</if>
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

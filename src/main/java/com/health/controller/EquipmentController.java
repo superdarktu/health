@@ -1,14 +1,20 @@
 package com.health.controller;
 
-import com.health.model.po.Equipment;
-import com.health.service.EquipmentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.health.model.po.Equipment;
+import com.health.model.po.Equipment;
+import com.health.model.ro.ResultRO;
+import com.health.service.EquipmentService;
 
 @Controller
 @RequestMapping("/equipment")
@@ -36,15 +42,10 @@ public class EquipmentController {
      */
     @ResponseBody
     @RequestMapping("list")
-    public Map listEquipment(@RequestParam(required = false, defaultValue = "1") int page,
-                         @RequestParam(required = false, defaultValue = "10") int pageSize,
-                         @RequestParam(required = false) String keyWord) {
+    public ResultRO listEquipment(int page, int pageSize,String name) {
         Equipment record = new Equipment();
-        record.setName(keyWord);
-        List<Equipment> list = equipmentService.pageByKeyWord(record, page, pageSize);
-        Map resultMap = new HashMap();
-        resultMap.put("pageList", list);
-        return resultMap;
+        record.setName(name);
+        return new ResultRO(equipmentService.pageByKeyWord(record, page, pageSize));
     }
 
     /**
@@ -52,34 +53,31 @@ public class EquipmentController {
      */
     @ResponseBody
     @RequestMapping("save")
-    public Map insertOrUpdate(@RequestBody Equipment record) {
-        Map resultMap = new HashMap();
-        try {
-            Integer id = equipmentService.save(record);
-            resultMap.put("success", true);
-            return resultMap;
-        } catch (Exception e) {
-            System.out.print(e);
-        }
-        resultMap.put("success", false);
-        return resultMap;
+    public ResultRO insertOrUpdate(Equipment record) {
+    	
+    	if(record.getId() == null){
+    		if(equipmentService.insert(record) > 0){
+    			return new ResultRO(true);
+    		}
+    	}else{
+    		if(equipmentService.updateByPrimaryKeySelective(record) > 0){
+    			return new ResultRO(true);
+    		}
+    	}
+    	
+        return new ResultRO("保存失败");
     }
 
     /**
      * 删除
      */
     @ResponseBody
-    @RequestMapping("remove/{id}")
-    public Map remove(@PathVariable("id") int cid) {
-        Map resultMap = new HashMap();
-        try {
-            equipmentService.deleteByPrimaryKey(cid);
-            resultMap.put("success", true);
-            return resultMap;
-        } catch (Exception e) {
-            System.out.print(e);
-        }
-        resultMap.put("success", false);
-        return resultMap;
+    @RequestMapping("delete")
+    public ResultRO remove(Integer id) {
+    	
+    	if(equipmentService.deleteByPrimaryKey(id) > 0){
+    		return new ResultRO(true);
+    	}
+        return new ResultRO("删除失败");
     }
 }

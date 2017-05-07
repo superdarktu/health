@@ -44,4 +44,47 @@ public class StudentController {
 		}
 		return new ResultRO("保存失败");
 	}
+	
+	@RequestMapping("admin_update")
+	@ResponseBody
+	public ResultRO adminUpdate(HttpServletRequest req,Student student){
+		
+		if(studentService.update(student)){
+			
+			return new ResultRO(true);
+		}
+		return new ResultRO("保存失败");
+	}
+	
+	@RequestMapping("add")
+	@ResponseBody
+	public ResultRO add(HttpServletRequest req,Student student){
+		
+		if(studentService.insert(student) > 0){
+			
+			return new ResultRO(true);
+		}
+		return new ResultRO("添加失败");
+	}
+	
+	@RequestMapping("list")
+	@ResponseBody
+	public ResultRO list(String keyword,Integer page ,Integer pageSize){
+		
+		Student student  = new Student();
+		student.setName(keyword);
+		student.setNo(keyword);
+		return new ResultRO(studentService.page(student, page, pageSize));
+	}
+	
+	@RequestMapping("delete")
+	@ResponseBody
+	public ResultRO delete(Integer id){
+		
+		if(studentService.deleteByPrimaryKey(id)){
+			
+			return new ResultRO(true);
+		}
+		return new ResultRO("删除失败");
+	}
 }

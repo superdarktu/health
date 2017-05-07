@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="class" >
-  <resultMap id="BaseResultMap" type="com.health.model.po.Class" >
+  <resultMap id="BaseResultMap" type="com.health.model.po.Classs" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
     <result column="TEACHER_NAME" property="teacherName" jdbcType="VARCHAR" />
@@ -21,11 +21,22 @@
     from class
     where ID = #{id,jdbcType=INTEGER}
   </select>
+  
+  
+  <select id="pageByName" resultMap="BaseResultMap" parameterType="com.health.model.po.Classs" >
+    select 
+    <include refid="Base_Column_List" />
+    from class
+    <if test="name != null and name !=''">and NAME like CONCAT('%','${name}','%')</if>
+  </select>
+  
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from class
     where ID = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.health.model.po.Class" >
+  <insert id="insert" parameterType="com.health.model.po.Classs" >
     insert into class (ID, NAME, TEACHER_NAME, 
       TEACHER_ID, DAYTIME, PLACE, 
       START_TIME, END_TIME, LONG_TIME
@@ -35,7 +46,7 @@
       #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{longTime,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.health.model.po.Class" >
+  <insert id="insertSelective" parameterType="com.health.model.po.Classs" >
     insert into class
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -96,7 +107,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Class" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Classs" >
     update class
     <set >
       <if test="name != null" >
@@ -126,7 +137,7 @@
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.health.model.po.Class" >
+  <update id="updateByPrimaryKey" parameterType="com.health.model.po.Classs" >
     update class
     set NAME = #{name,jdbcType=VARCHAR},
       TEACHER_NAME = #{teacherName,jdbcType=VARCHAR},
@@ -138,7 +149,7 @@
       LONG_TIME = #{longTime,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+  <select id="pageByKeyWord" resultMap="BaseResultMap" parameterType="com.health.model.po.Classs">
     select
     <include refid="Base_Column_List" />
     from class

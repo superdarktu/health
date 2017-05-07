@@ -17,6 +17,16 @@
     from equipment
     where ID = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="pageByName" resultMap="BaseResultMap" parameterType="com.health.model.po.Equipment" >
+    select 
+    <include refid="Base_Column_List" />
+    from equipment
+    <if test="name != null and name !=''">and NAME like CONCAT('%','${name}','%')</if>
+  </select>
+  
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from equipment
     where ID = #{id,jdbcType=INTEGER}
@@ -90,10 +100,10 @@
       USEATTENTION = #{useattention,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+  <select id="pageByKeyWord" resultMap="BaseResultMap" parameterType="com.health.model.po.Equipment">
     select
     <include refid="Base_Column_List" />
-    from class
+    from equipment
     where 1=1
     <if test="name != null" >
       and NAME LIKE concat('%' , #{name,jdbcType=VARCHAR}, '%')

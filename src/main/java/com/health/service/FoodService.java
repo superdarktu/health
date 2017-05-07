@@ -5,9 +5,11 @@ import com.health.model.po.Food;
 import java.util.List;
 
 public interface FoodService {
-    List<Food> pageByKeyWord(Food record, Integer page, Integer pageSize);
+	List<Food> pageByKeyWord(Food record, Integer page, Integer pageSize);
+	
+	List<Food> pageByName(Food record);
 
-    int deleteByPrimaryKey(Integer id);
+    Integer deleteByPrimaryKey(Integer id);
 
     int insert(Food record);
 

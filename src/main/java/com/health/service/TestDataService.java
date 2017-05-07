@@ -50,5 +50,12 @@ public interface TestDataService {
      * @return
      */
     List<TestData> page(TestData testData,Integer page ,Integer pageSize);
+    
+    /**
+     * 分页查询
+     * @param testData
+     * @return
+     */
+    List<TestData> pageAll(TestData testData);
 
 }

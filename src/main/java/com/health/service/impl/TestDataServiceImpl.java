@@ -71,4 +71,10 @@ public class TestDataServiceImpl implements TestDataService{
 		return (TestData) sqlManager.query("testData.queryByStudentLast", studentId);
 	}
 
+	@Override
+	public List<TestData> pageAll(TestData testData) {
+		
+		return (List<TestData>) sqlManager.list("testData.page",testData);
+	}
+
 }

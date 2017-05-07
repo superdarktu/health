@@ -149,7 +149,7 @@
       EAT_NUMBER = #{eatNumber,jdbcType=VARCHAR}
     where PROGRAM_ID = #{programId,jdbcType=INTEGER}
   </update>
-  <select id="pageByKeyWord" parameterType="com.health.model.po.Class">
+  <select id="pageByKeyWord" parameterType="com.health.model.po.Item">
     select
     <include refid="Base_Column_List" />
     from class

@@ -33,6 +33,16 @@ public class TestDataController {
 		
 		return "test_data/input";
 	}
+
+	@RequestMapping("to_search")
+	public String toSearch(HttpServletRequest req,TestData testData,Map<String,Object> map){
+		
+		HttpSession session = req.getSession();
+		Integer userId = (Integer)session.getAttribute("userId");
+		testData.setStudentId(1);
+		map.put("datas",testDataService.pageAll(testData));
+		return "test_data/search";
+	}
 	
 	@RequestMapping("to_result")
 	public String toResult(HttpServletRequest req,Map<String,Object> map){
@@ -56,5 +66,25 @@ public class TestDataController {
 			return new ResultRO(true,"to_result");
 		}
 		return new ResultRO("数据输入失败");
+	}
+
+	@RequestMapping("list")
+	@ResponseBody
+	public ResultRO create(HttpServletRequest req,TestData testData,Integer page,Integer pageSize){
+		
+		HttpSession session = req.getSession();
+		Integer userId = (Integer)session.getAttribute("userId");
+		testData.setStudentId(1);
+		return new ResultRO(testDataService.page(testData,page,pageSize));
+	}
+	
+	@RequestMapping("page")
+	@ResponseBody
+	public ResultRO pageAll(HttpServletRequest req,TestData testData){
+		
+		HttpSession session = req.getSession();
+		Integer userId = (Integer)session.getAttribute("userId");
+		testData.setStudentId(1);
+		return new ResultRO(testDataService.pageAll(testData));
 	}
 }

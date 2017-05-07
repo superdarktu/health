@@ -1,14 +1,13 @@
 package com.health.service.impl;
 
-import com.health.dao.FoodDao;
-import com.health.model.po.Food;
-import com.health.service.FoodService;
-import com.health.util.SQLManager;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.health.model.po.Food;
+import com.health.service.FoodService;
+import com.health.util.SQLManager;
 
 /**
  * Created by forip on 2017/4/22.
@@ -29,6 +28,10 @@ public class FoodServiceImpl implements FoodService {
     public List<Food> pageByKeyWord(Food food, Integer page, Integer pageSize) {
         return (List<Food>) sqlManager.list("food.pageByKeyWord", food, page, pageSize);
     }
+    
+    public List<Food> pageByName(Food food) {
+        return (List<Food>) sqlManager.list("food.pageByKeyWord", food);
+    }
 
     @Override
     public int save(Food food) {
@@ -41,7 +44,7 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
-    public int deleteByPrimaryKey(Integer id) {
+    public Integer deleteByPrimaryKey(Integer id) {
         return sqlManager.delete("food.deleteByPrimaryKey", id);
     }
 

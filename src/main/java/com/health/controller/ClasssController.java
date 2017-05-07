@@ -1,6 +1,7 @@
 package com.health.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,23 +9,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.health.model.po.Food;
+import com.health.model.po.Classs;
+import com.health.model.po.Classs;
 import com.health.model.ro.ResultRO;
-import com.health.service.FoodService;
+import com.health.service.ClasssService;
 
 @Controller
-@RequestMapping("/food")
-public class FoodController {
+@RequestMapping("/classs")
+public class ClasssController {
 
     @Autowired
-    private FoodService foodService;
+    private ClasssService ClasssService;
 
     @RequestMapping("/test")
     @ResponseBody
     public int home() {
-        return foodService.deleteByPrimaryKey(1);
+        return ClasssService.deleteByPrimaryKey(1);
     }
 
     /**
@@ -40,11 +43,17 @@ public class FoodController {
      */
     @ResponseBody
     @RequestMapping("list")
-    public ResultRO listFood(int page, int pageSize, String name) {
-        Food record = new Food();
+    public ResultRO listClasss(int page, int pageSize,String name) {
+        Classs record = new Classs();
         record.setName(name);
-        record.setSort(name);
-        return new ResultRO(foodService.pageByKeyWord(record, page, pageSize));
+        return new ResultRO(ClasssService.pageByKeyWord(record, page, pageSize));
+    }
+    
+    @ResponseBody
+    @RequestMapping("search")
+    public ResultRO search(String name){
+    	
+    	return new ResultRO("查询失败");
     }
 
     /**
@@ -52,14 +61,14 @@ public class FoodController {
      */
     @ResponseBody
     @RequestMapping("save")
-    public ResultRO insertOrUpdate(Food record) {
+    public ResultRO insertOrUpdate(Classs record) {
     	
     	if(record.getId() == null){
-    		if(foodService.insert(record) > 0){
+    		if(ClasssService.insert(record) > 0){
     			return new ResultRO(true);
     		}
     	}else{
-    		if(foodService.updateByPrimaryKeySelective(record) > 0){
+    		if(ClasssService.updateByPrimaryKeySelective(record) > 0){
     			return new ResultRO(true);
     		}
     	}
@@ -74,7 +83,7 @@ public class FoodController {
     @RequestMapping("delete")
     public ResultRO remove(Integer id) {
     	
-    	if(foodService.deleteByPrimaryKey(id) > 0){
+    	if(ClasssService.deleteByPrimaryKey(id) > 0){
     		return new ResultRO(true);
     	}
         return new ResultRO("删除失败");

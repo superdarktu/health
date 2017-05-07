@@ -5,7 +5,9 @@ import com.health.model.po.Equipment;
 import java.util.List;
 
 public interface EquipmentService {
-    List<Equipment> pageByKeyWord(Equipment record, Integer page, Integer pageSize);
+	List<Equipment> pageByKeyWord(Equipment record, Integer page, Integer pageSize);
+	
+	List<Equipment> pageByName(Equipment record);
 
     int deleteByPrimaryKey(Integer id);
 
