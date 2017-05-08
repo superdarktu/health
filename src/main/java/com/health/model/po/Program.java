@@ -38,8 +38,20 @@ public class Program {
      * 添加日期
      */
     private Date createDate;
+    
+    private String no;
+    
+    
 
-    public Integer getId() {
+    public String getNo() {
+		return no;
+	}
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+
+	public Integer getId() {
         return id;
     }
 

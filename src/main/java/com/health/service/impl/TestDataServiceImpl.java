@@ -70,6 +70,10 @@ public class TestDataServiceImpl implements TestDataService{
 	public TestData queryByStudentLast(Integer studentId) {
 		return (TestData) sqlManager.query("testData.queryByStudentLast", studentId);
 	}
+	
+	public TestData queryByStudentFirst(Integer studentId) {
+		return (TestData) sqlManager.query("testData.queryByStudentFirst", studentId);
+	}
 
 	@Override
 	public List<TestData> pageAll(TestData testData) {

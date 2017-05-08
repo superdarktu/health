@@ -27,6 +27,16 @@
     select 
     <include refid="Base_Column_List" />
     from standard
+    <if test="name != null" >
+        where  NAME = #{name,jdbcType=VARCHAR},
+      </if>
+  </select>
+  
+  <select id="list" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from standard
+    group by NAME where  START_AGE < #{id,jdbcType=INTEGER}
   </select>
   
   <delete id="delete" parameterType="java.lang.Integer" >

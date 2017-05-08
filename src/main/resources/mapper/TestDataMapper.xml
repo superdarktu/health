@@ -32,6 +32,13 @@
     where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc limit 1
   </select>
   
+  <select id="queryByStudentLast" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from test_data
+    where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID  limit 1
+  </select>
+  
   <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

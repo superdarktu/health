@@ -33,7 +33,7 @@ public class Classs {
     /**
      * 开课时间
      */
-    private Date startTime;
+    private String classTime;
 
     /**
      * 结束时间
@@ -93,15 +93,16 @@ public class Classs {
         this.place = place;
     }
 
-    public Date getStartTime() {
-        return startTime;
-    }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
+    public String getClassTime() {
+		return classTime;
+	}
 
-    public Date getEndTime() {
+	public void setClassTime(String classTime) {
+		this.classTime = classTime;
+	}
+
+	public Date getEndTime() {
         return endTime;
     }
 

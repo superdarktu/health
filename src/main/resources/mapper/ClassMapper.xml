@@ -8,12 +8,12 @@
     <result column="TEACHER_ID" property="teacherId" jdbcType="INTEGER" />
     <result column="DAYTIME" property="daytime" jdbcType="VARCHAR" />
     <result column="PLACE" property="place" jdbcType="VARCHAR" />
-    <result column="START_TIME" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="CLASS_TIME" property="classTime" jdbcType="VARCHAR" />
     <result column="END_TIME" property="endTime" jdbcType="TIMESTAMP" />
     <result column="LONG_TIME" property="longTime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, NAME, TEACHER_NAME, TEACHER_ID, DAYTIME, PLACE, START_TIME, END_TIME, LONG_TIME
+    ID, NAME, TEACHER_NAME, TEACHER_ID, DAYTIME, PLACE, CLASS_TIME, END_TIME, LONG_TIME
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -39,11 +39,11 @@
   <insert id="insert" parameterType="com.health.model.po.Classs" >
     insert into class (ID, NAME, TEACHER_NAME, 
       TEACHER_ID, DAYTIME, PLACE, 
-      START_TIME, END_TIME, LONG_TIME
+      CLASS_TIME, END_TIME, LONG_TIME
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, 
       #{teacherId,jdbcType=INTEGER}, #{daytime,jdbcType=VARCHAR}, #{place,jdbcType=VARCHAR}, 
-      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{longTime,jdbcType=VARCHAR}
+      #{classTime,jdbcType=VARCHAR}, #{endTime,jdbcType=TIMESTAMP}, #{longTime,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Classs" >
@@ -126,7 +126,7 @@
         PLACE = #{place,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null" >
-        START_TIME = #{startTime,jdbcType=TIMESTAMP},
+        CLASS_TIME = #{classTime,jdbcType=VARCHAR},
       </if>
       <if test="endTime != null" >
         END_TIME = #{endTime,jdbcType=TIMESTAMP},

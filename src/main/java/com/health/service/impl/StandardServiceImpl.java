@@ -51,8 +51,18 @@ public class StandardServiceImpl implements StandardService{
 	 * 分页查询
 	 */
 	public List<Standard> page(Standard standard, Integer page, Integer pageSize) {
-		
+			
 		return (List<Standard>) sqlManager.list("standard.page", standard, page, pageSize);
+	}
+	
+	public List<Standard> list(Standard standard) {
+		
+		return (List<Standard>) sqlManager.list("standard.page", standard);
+	}
+	
+	public List<Standard> getAllByAge(Integer  age) {
+		
+		return (List<Standard>) sqlManager.list("standard.list", age);
 	}
 
 }

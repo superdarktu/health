@@ -34,6 +34,13 @@ public interface TestDataService {
      * @return
      */
     TestData queryByStudentLast(Integer id);
+    
+    /**
+     * 查询
+     * @param id
+     * @return
+     */
+    TestData queryByStudentFirst(Integer id);
 
     /**
      * 修改

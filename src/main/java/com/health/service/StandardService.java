@@ -42,5 +42,11 @@ public interface StandardService {
      * @return
      */
     List<Standard> page(Standard standard,Integer page ,Integer pageSize);
+    
+    
+    List<Standard> list(Standard standard);
+    
+    
+    List<Standard> getAllByAge(Integer  age);
 
 }

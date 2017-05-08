@@ -12,23 +12,7 @@
     <javaModelGenerator targetPackage="com.health.model.po" targetProject="health" />
     <sqlMapGenerator targetPackage="com.health.mapper" targetProject="health" />
     <javaClientGenerator targetPackage="com.health.service" targetProject="health" type="XMLMAPPER" />
-    <table schema="health_db" tableName="class" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="equipment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="food" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="item" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="program" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="standard" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="student" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="teacher" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-    </table>
-    <table schema="health_db" tableName="test_data" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    <table schema="health_db" tableName="message" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
     </table>
   </context>
 </generatorConfiguration>

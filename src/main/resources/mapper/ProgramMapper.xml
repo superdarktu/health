@@ -9,9 +9,10 @@
     <result column="TEACHER_NAME" property="teacherName" jdbcType="VARCHAR" />
     <result column="DAYS" property="days" jdbcType="INTEGER" />
     <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="NO" property="no" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, CFMD, TEACHER_ID, JSZYD, TEACHER_NAME, DAYS, CREATE_DATE
+    ID, CFMD, TEACHER_ID, JSZYD, TEACHER_NAME, DAYS, CREATE_DATE,NO
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -34,10 +35,10 @@
   <insert id="insert" parameterType="com.health.model.po.Program" >
     insert into program (ID, CFMD, TEACHER_ID, 
       JSZYD, TEACHER_NAME, DAYS, 
-      CREATE_DATE)
+      CREATE_DATE,NO)
     values (#{id,jdbcType=INTEGER}, #{cfmd,jdbcType=VARCHAR}, #{teacherId,jdbcType=INTEGER}, 
       #{jszyd,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER}, 
-      #{createDate,jdbcType=TIMESTAMP})
+      #{createDate,jdbcType=TIMESTAMP},#{no,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Program" >
     insert into program
