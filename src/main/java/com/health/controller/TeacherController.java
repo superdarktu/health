@@ -1,6 +1,7 @@
 package com.health.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,8 @@ import com.health.model.po.Student;
 import com.health.model.po.Teacher;
 import com.health.model.ro.ResultRO;
 import com.health.service.TeacherService;
+
+import java.util.Map;
 
 
 @Controller
@@ -23,12 +26,24 @@ public class TeacherController {
 	@RequestMapping("admin_update")
 	@ResponseBody
 	public ResultRO adminUpdate(HttpServletRequest req,Teacher teacher){
-		
+
+		HttpSession session = req.getSession();
+		Integer teacherId = (Integer)session.getAttribute("teacherId");
+		teacher.setId(teacherId);
 		if(teacherService.updateByPrimaryKeySelective(teacher)){
 			
 			return new ResultRO(true);
 		}
 		return new ResultRO("保存失败");
+	}
+
+	@RequestMapping("to_edit")
+	public String toEdit(Map<String,Object> map, HttpServletRequest req){
+
+		HttpSession session = req.getSession();
+		Integer teacherId = (Integer)session.getAttribute("teacherId");
+		map.put("teacher", teacherService.selectByPrimaryKey(1));
+		return "teacher/edit";
 	}
 	
 	@RequestMapping("add")

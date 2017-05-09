@@ -4,40 +4,49 @@
   <resultMap id="BaseResultMap" type="com.health.model.po.Program" >
     <id column="ID" property="id" jdbcType="INTEGER" />
     <result column="CFMD" property="cfmd" jdbcType="VARCHAR" />
-    <result column="TEACHER_ID" property="teacherId" jdbcType="INTEGER" />
     <result column="JSZYD" property="jszyd" jdbcType="VARCHAR" />
-    <result column="TEACHER_NAME" property="teacherName" jdbcType="VARCHAR" />
+    <result column="TEACHER_NO" property="teacherNo" jdbcType="VARCHAR" />
+    <result column="DAYS" property="days" jdbcType="INTEGER" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="NO" property="no" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="BaseResultMap2" type="com.health.model.vo.ProgramVO" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="CFMD" property="cfmd" jdbcType="VARCHAR" />
+    <result column="JSZYD" property="jszyd" jdbcType="VARCHAR" />
+    <result column="TEACHER_NO" property="teacherNo" jdbcType="VARCHAR" />
     <result column="DAYS" property="days" jdbcType="INTEGER" />
     <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
     <result column="NO" property="no" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, CFMD, TEACHER_ID, JSZYD, TEACHER_NAME, DAYS, CREATE_DATE,NO
+    ID, CFMD, JSZYD, TEACHER_NO, DAYS, CREATE_DATE,NO
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByNo" resultMap="BaseResultMap2" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from program
-    where ID = #{id,jdbcType=INTEGER}
+    where NO = #{no,jdbcType=VARCHAR}
   </select>
   
   <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.Program" >
     select 
     <include refid="Base_Column_List" />
-    from program
+    from program group by NO
   </select>
   
   
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from program
-    where ID = #{id,jdbcType=INTEGER}
+    where NO = #{no,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.health.model.po.Program" >
     insert into program (ID, CFMD, TEACHER_ID, 
       JSZYD, TEACHER_NAME, DAYS, 
       CREATE_DATE,NO)
-    values (#{id,jdbcType=INTEGER}, #{cfmd,jdbcType=VARCHAR}, #{teacherId,jdbcType=INTEGER}, 
-      #{jszyd,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{cfmd,jdbcType=VARCHAR},
+      #{jszyd,jdbcType=VARCHAR}, #{teacherNo,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER},
       #{createDate,jdbcType=TIMESTAMP},#{no,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.Program" >

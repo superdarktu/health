@@ -16,32 +16,24 @@
   <sql id="Base_Column_List" >
     ID, NAME, SEX, START_AGE, END_AGE, ONE, TWO, THREE, FOUR, FIVE
   </sql>
-  <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from standard
-    where ID = #{id,jdbcType=INTEGER}
+    where NAME = #{name,jdbcType=VARCHAR}
   </select>
   
-  <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.Standard" >
+
+  <select id="list" resultMap="BaseResultMap" parameterType="com.health.model.po.Standard" >
     select 
     <include refid="Base_Column_List" />
-    from standard
-    <if test="name != null" >
-        where  NAME = #{name,jdbcType=VARCHAR},
-      </if>
+    from (select * from standard where  START_AGE < #{startAge,jdbcType=INTEGER} and SEX = #{sex,jdbcType=CHAR} order by id DESC ) as t
+    group by NAME
   </select>
   
-  <select id="list" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from standard
-    group by NAME where  START_AGE < #{id,jdbcType=INTEGER}
-  </select>
-  
-  <delete id="delete" parameterType="java.lang.Integer" >
+  <delete id="delete" parameterType="java.lang.String" >
     delete from standard
-    where ID = #{id,jdbcType=INTEGER}
+    where NAME = #{name,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.health.model.po.Standard" >
     insert into standard (ID, NAME, SEX, START_AGE, 

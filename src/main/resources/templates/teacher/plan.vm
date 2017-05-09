@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>健身俱乐部管理系统</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="css/bodybuilder.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    
+
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>处方列表</h5>
+                        <a href="javascript:;" class="pull-right">添加处方</a>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>处方编号</th>
+                                        <th>处方目的</th>
+                                        <th>制作者编号</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>840000</td>
+                                        <td>王小明</td>
+                                        <td>男</td>
+                                        <td>
+                                            <a id="add"><i class="fa fa-pencil text-navy"></i></a>
+                                            <a id="delete"><i class="fa fa-close text-navy"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>840000</td>
+                                        <td>王小明</td>
+                                        <td>男</td>
+                                        <td>
+                                            <a href=""><i class="fa fa-pencil text-navy"></i></a>
+                                            <a href=""><i class="fa fa-close text-navy"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>处方基本信息</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="form-group col-sm-4">
+                                        <label class="col-sm-4 control-label">处方编号：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-sm-4">
+                                        <label class="col-sm-4 control-label">处方目的：</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-sm-4">
+                                        <label class="col-sm-5 control-label">制作者编号：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>运动方案</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>天数</th>
+                                    <th>项目</th>
+                                    <th>负荷</th>
+                                    <th>时间/间隔</th>
+                                    <th>组数/次数</th>
+                                    <th>动作要点</th>
+                                    <th>注意事项</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="10%" rowspan="2">第1天</td>
+                                    <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+                                    <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6"><a href="javascript:;">添加行</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">第2天</td>
+                                    <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+                                    <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+                                </tr>
+                                <tr>
+                                    <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+                                    <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+                                    <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7"><a href="javascript:;">添加行</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>饮食方案</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">天数</th>
+                                    <th colspan="2">早餐</th>
+                                    <th colspan="2">中餐</th>
+                                    <th colspan="2">晚餐</th>
+                                </tr>
+                                 <tr>
+                                    <th>食物名称</th>
+                                    <th>食用量</th>
+                                    <th>食物名称</th>
+                                    <th>食用量</th>
+                                    <th>食物名称</th>
+                                    <th>食用量</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">第1天</td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6"><a href="javascript:;">添加行</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">第2天</td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                </tr>
+                                <tr>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                    <td width="14%"><input type="text" style="width: 100%"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7"><a href="javascript:;">添加行</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>健身注意点</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <input type="text" style="width: 100%" placeholder="请输入要备注的注意点">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+ 
+    
+</body>
+
+</html>

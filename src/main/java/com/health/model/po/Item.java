@@ -5,7 +5,11 @@ public class Item {
 	/**
 	 * 方案ID
 	 */
+    private Integer id;
+
     private Integer programId;
+
+    private String no;
 
     /**
      * 运动项目
@@ -130,5 +134,21 @@ public class Item {
 
     public void setEatNumber(String eatNumber) {
         this.eatNumber = eatNumber;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
     }
 }

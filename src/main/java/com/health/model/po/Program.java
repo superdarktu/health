@@ -17,17 +17,13 @@ public class Program {
     /**
      * 教练ID
      */
-    private Integer teacherId;
+    private String teacherNo;
 
     /**
      * 健身注意点
      */
     private String jszyd;
 
-    /**
-     * 教练名字
-     */
-    private String teacherName;
 
     /**
      * 天数
@@ -67,12 +63,12 @@ public class Program {
         this.cfmd = cfmd;
     }
 
-    public Integer getTeacherId() {
-        return teacherId;
+    public String getTeacherNo() {
+        return teacherNo;
     }
 
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
+    public void setTeacherNo(String teacherNo) {
+        this.teacherNo = teacherNo;
     }
 
     public String getJszyd() {
@@ -83,13 +79,6 @@ public class Program {
         this.jszyd = jszyd;
     }
 
-    public String getTeacherName() {
-        return teacherName;
-    }
-
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
-    }
 
     public Integer getDays() {
         return days;

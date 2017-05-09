@@ -2,6 +2,10 @@ package com.health.service.impl;
 
 import java.util.List;
 
+import com.health.model.po.TestData;
+import com.health.model.vo.ProgramVO;
+import com.health.service.ProgramService;
+import com.health.service.TestDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +21,12 @@ public class StudentServiceImpl implements StudentService{
 	
 	@Autowired
    	private SQLManager sqlManager;
+
+	@Autowired
+	private ProgramService programService;
+
+	@Autowired
+	private TestDataService testDataService;
 	
 	/**
 	 * 根据ID删除
@@ -73,4 +83,18 @@ public class StudentServiceImpl implements StudentService{
 		return (List<Student>) sqlManager.list("student.selectByStr", student, page, pageSize);
 	}
 
+	public List<ProgramVO> getProgram(Integer studentId) {
+
+		Student student = selectByPrimaryKey(studentId);
+		if(student.getJsfaid() == null){
+
+			TestData testData = testDataService.queryByStudentLast(studentId);
+			return null;
+		}
+		String jsid = student.getJsfaid();
+
+		List<ProgramVO> list = programService.selectByNo(jsid);
+
+		return list;
+	}
 }

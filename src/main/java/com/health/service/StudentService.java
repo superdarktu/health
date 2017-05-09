@@ -3,6 +3,7 @@ package com.health.service;
 import java.util.List;
 
 import com.health.model.po.Student;
+import com.health.model.vo.ProgramVO;
 
 public interface StudentService {
 	
@@ -29,7 +30,7 @@ public interface StudentService {
     
     /**
      * 根据登录ID查询
-     * @param id
+     * @param loginId
      * @return
      */
     Student selectByLoginId(Integer loginId);
@@ -49,4 +50,6 @@ public interface StudentService {
      * @return
      */
     List<Student> page(Student student,Integer page ,Integer pageSize);
+
+    List<ProgramVO> getProgram(Integer studentId);
 }

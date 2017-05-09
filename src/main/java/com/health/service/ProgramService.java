@@ -3,6 +3,7 @@ package com.health.service;
 import java.util.List;
 
 import com.health.model.po.Program;
+import com.health.model.vo.ProgramVO;
 
 public interface ProgramService {
 	
@@ -11,29 +12,17 @@ public interface ProgramService {
 	 * @param id
 	 * @return
 	 */
-	boolean deleteByPrimaryKey(Integer id);
+	boolean deleteByPrimaryKey(String no);
+
 
     /**
-     * 添加
-     * @param program
+     * 根据no查询
+     * @param no
      * @return
      */
-    int insert(Program program);
+    List<ProgramVO> selectByNo(String no);
 
-    /**
-     * 根据ID查询
-     * @param id
-     * @return
-     */
-    Program selectByPrimaryKey(Integer id);
 
-    /**
-     * 修改
-     * @param program
-     * @return
-     */
-    boolean updateByPrimaryKeySelective(Program program);
-    
     /**
      * 分页查询
      * @param program
@@ -42,5 +31,9 @@ public interface ProgramService {
      * @return
      */
     List<Program> page(Program program,Integer page,Integer pageSize);
+
+
+
+    boolean addProgram(List<ProgramVO> list,String no);
 
 }

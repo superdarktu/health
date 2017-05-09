@@ -61,7 +61,7 @@ public class Student {
     /**
      * 健身方案ID
      */
-    private Integer jsfaid;
+    private String jsfaid;
     
     /**
      * 学员编号
@@ -161,11 +161,11 @@ public class Student {
         this.tcdid = tcdid;
     }
 
-    public Integer getJsfaid() {
+    public String getJsfaid() {
         return jsfaid;
     }
 
-    public void setJsfaid(Integer jsfaid) {
+    public void setJsfaid(String jsfaid) {
         this.jsfaid = jsfaid;
     }
 

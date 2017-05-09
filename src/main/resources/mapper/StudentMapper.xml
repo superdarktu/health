@@ -13,7 +13,7 @@
     <result column="JG" property="jg" jdbcType="VARCHAR" />
     <result column="TCDID" property="tcdid" jdbcType="INTEGER" />
     <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER" />
-    <result column="JSFAID" property="jsfaid" jdbcType="INTEGER" />
+    <result column="JSFAID" property="jsfaid" jdbcType="VARCHAR" />
     <result column="NO" property="no" jdbcType="VARCHAR" />
     <result column="AGE" property="age" jdbcType="INTEGER" />
   </resultMap>
@@ -60,7 +60,7 @@
       JG, TCDID, JSFAID,NO)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR}, 
       #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=INTEGER}, #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+      #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Student" >
     update student

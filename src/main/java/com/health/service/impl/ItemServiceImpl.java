@@ -25,41 +25,19 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
    	private SQLManager sqlManager;
 
-    @Override
-    public List<Item> pageByKeyWord(Item item, Integer page, Integer pageSize) {
-        return (List<Item>) sqlManager.list("item.pageByKeyWord", item, page, pageSize);
+    public List<Item> pageByKeyWord(Integer programId) {
+        return (List<Item>) sqlManager.list("item.selectByPrimaryKey", programId);
     }
 
-
-    @Override
-    public int deleteByPrimaryKey(Integer id) {
-        return sqlManager.delete("item.deleteByPrimaryKey", id);
+    public int deleteByPrimaryKey(String no) {
+        return sqlManager.delete("item.deleteByPrimaryKey", no);
     }
 
-    @Override
     public int insert(Item item) {
        return  sqlManager.insert("item.insert", item);
     }
 
-    @Override
-    public int insertSelective(Item item) {
-        return sqlManager.insert("item.insertSelective", item);
-    }
 
-    @Override
-    public Item selectByPrimaryKey(Integer id) {
-        return (Item)sqlManager.query("item.selectByPrimaryKey", id);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(Item item) {
-        return sqlManager.update("item.updateByPrimaryKeySelective", item);
-    }
-
-    @Override
-    public int updateByPrimaryKey(Item item) {
-        return sqlManager.update("item.updateByPrimaryKey", item);
-    }
 
 }
 

@@ -6,47 +6,22 @@ import com.health.model.po.Standard;
 
 public interface StandardService {
 	
-	/**
-	 * 根据ID删除
-	 * @param id
-	 * @return
-	 */
-    boolean deleteByPrimaryKey(Integer id);
 
     /**
      * 添加
-     * @param standard
+     * @param list
      * @return
      */
-    int insert(Standard standard);
+    int insert(List<Standard> list);
 
     /**
      * 根据ID查询
-     * @param id
+     * @param name
      * @return
      */
-    Standard selectByPrimaryKey(Integer id);
+    List<Standard> selectByPrimaryKey(String  name);
 
-    /**
-     * 修改
-     * @param standard
-     * @return
-     */
-    boolean updateByPrimaryKeySelective(Standard standard);
-    
-    /**
-     * 分页查询
-     * @param standard
-     * @param page
-     * @param pageSize
-     * @return
-     */
-    List<Standard> page(Standard standard,Integer page ,Integer pageSize);
-    
-    
-    List<Standard> list(Standard standard);
-    
-    
-    List<Standard> getAllByAge(Integer  age);
+
+    List<Standard> selectByAge(Integer age,String sex);
 
 }
