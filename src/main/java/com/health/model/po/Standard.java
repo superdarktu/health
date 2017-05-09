@@ -51,8 +51,20 @@ public class Standard {
      * 五分的标准
      */
     private Double five;
+    
+    
+    private Integer num;
+    
 
-    public Integer getId() {
+    public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+	public Integer getId() {
         return id;
     }
 

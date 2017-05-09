@@ -29,10 +29,10 @@ public class TeacherController {
 
 		HttpSession session = req.getSession();
 		Integer teacherId = (Integer)session.getAttribute("teacherId");
-		teacher.setId(teacherId);
+		teacher.setId(1);
 		if(teacherService.updateByPrimaryKeySelective(teacher)){
 			
-			return new ResultRO(true);
+			return new ResultRO(true,"../teacher_about");
 		}
 		return new ResultRO("保存失败");
 	}

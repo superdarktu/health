@@ -9,12 +9,12 @@
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
-    <link href="css/bodybuilder.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/bodybuilder.css" rel="stylesheet">
 
 </head>
 
@@ -104,7 +104,7 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-primary" type="button" id="submit">保存内容</button>
+                                    <button class="btn btn-primary" type="button" id="change">保存内容</button>
                                 </div>
                             </div>
                         </form>
@@ -114,9 +114,10 @@
         </div>
     </div>
 
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+    <script src="../js/teacher/edit.js"></script>
 </body>
 
 </html>

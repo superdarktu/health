@@ -21,7 +21,7 @@
 <body class="gray-bg">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-sm-8">
-            <h2>王小明</h2>
+            <h2>$!{teacher.name}</h2>
             <ol class="breadcrumb">
                 <li>
                     <span>指导员编号 $!{teacher.no}</span>

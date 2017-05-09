@@ -45,20 +45,6 @@ public class StandardServiceImpl implements StandardService{
 		return (List<Standard>) sqlManager.list("standard.list", standard);
 	}
 
-	public String jisuan(Standard sd,Double fenshu){
-		if(fenshu >= sd.getFive()){
-			return "5";
-		}else if(fenshu >= sd.getFour()){
-			return "4";
-		}else if(fenshu >= sd.getThree()){
-			return "3";
-		}else if(fenshu >= sd.getTwo()){
-			return "2";
-		}else if(fenshu >= sd.getOne()){
-			return "1";
-		}else{
-			return "0";
-		}
-	}
+	
 
 }

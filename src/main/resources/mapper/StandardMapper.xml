@@ -12,14 +12,15 @@
     <result column="THREE" property="three" jdbcType="DOUBLE" />
     <result column="FOUR" property="four" jdbcType="DOUBLE" />
     <result column="FIVE" property="five" jdbcType="DOUBLE" />
+    <result column="NUM" property="num" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, NAME, SEX, START_AGE, END_AGE, ONE, TWO, THREE, FOUR, FIVE
+    ID, NAME, SEX, START_AGE, END_AGE, ONE, TWO, THREE, FOUR, FIVE,NUM
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from standard
+    from standards
     where NAME = #{name,jdbcType=VARCHAR}
   </select>
   
@@ -27,8 +28,8 @@
   <select id="list" resultMap="BaseResultMap" parameterType="com.health.model.po.Standard" >
     select 
     <include refid="Base_Column_List" />
-    from (select * from standard where  START_AGE < #{startAge,jdbcType=INTEGER} and SEX = #{sex,jdbcType=CHAR} order by id DESC ) as t
-    group by NAME
+    from (select * from standard where  START_AGE &lt; #{startAge,jdbcType=INTEGER} and SEX = #{sex,jdbcType=CHAR} order by id DESC ) as t
+    group by NAME order by NUM
   </select>
   
   <delete id="delete" parameterType="java.lang.String" >

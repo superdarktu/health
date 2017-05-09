@@ -55,7 +55,7 @@ public class IndexController {
 		HttpSession session = req.getSession();
 		Integer teacherId = (Integer)session.getAttribute("teacherId");
 		map.put("teacher", teacherService.selectByPrimaryKey(1));
-		return "teacher/index";
+		return "teacher/about";
 	}
 	
 	@RequestMapping("/default")

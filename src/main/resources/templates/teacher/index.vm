@@ -33,7 +33,7 @@
                             <!-- <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span> -->
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold">王小明</strong></span>
+                               <span class="block m-t-xs"><strong class="font-bold">$!{teacher.name}</strong></span>
                                 <span class="text-muted text-xs block">教练组<b class="caret"></b></span>
                                 </span>
                             </a>
@@ -49,7 +49,7 @@
                         </div>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="edit.vm">
+                        <a class="J_menuItem" href="teacher/to_edit">
                             <i class="fa fa-user"></i>
                             <span class="nav-label">个人信息</span>
                         </a>
@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="leader_admin_message.html">
+                        <a class="J_menuItem" href="message/index">
                             <i class="fa fa-desktop"></i>
                             <span class="nav-label">消息</span>
                         </a>
@@ -91,7 +91,7 @@
             </div>
            
             <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="about.vm" frameborder="0" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="teacher_about" frameborder="0" seamless></iframe>
             </div>
             <div class="footer">
                 <div class="pull-right">&copy; 2017 <a href="http://www.ruanis.com" target="_blank">Design by Wendale</BODY></a>

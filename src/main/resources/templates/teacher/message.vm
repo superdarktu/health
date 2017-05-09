@@ -9,14 +9,14 @@
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
-    <link href="css/bodybuilder.css" rel="stylesheet">
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/bodybuilder.css" rel="stylesheet">
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
 </head>
 
@@ -25,28 +25,31 @@
 
     <div class="wrapper wrapper-content">
         <div class="row">
+        	#foreach( $!message in $!messages)
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>编号：93049387 方案 生成失败</h5>
-                        <a href="javascript:;" class="pull-right">删除</a>
+                        <h5>编号：$!{message.no} 方案 生成失败</h5>
+                        <a href="javascript:;" onclick="delete($!{message.id})" class="pull-right">删除</a>
                     </div>
                     <div class="ibox-content">
-                        <p>XXX 教练你好：</p> 
-                        <p>编号：93049387 健身方案生成失败，请及时更新处方数据库，谢谢！</p>
-                        <p>时间：2017-02-02</p>
+                        <!--<p>XXX 教练你好：</p> -->
+                        <p>编号：$!{message.no} 健身方案生成失败，请及时更新处方数据库，谢谢！</p>
+                        <p>时间：$!{message.date}</p>
                     </div>
                 </div>
             </div>
+            #end
 
         </div>
         
         
     </div>
 
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+    <script src="../js/teacher/message.js"></script>
 
     
 </body>
