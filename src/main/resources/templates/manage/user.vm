@@ -158,38 +158,6 @@
                             </tr>
                             </thead>
                             <tbody id="student_list">
-                            <tr>
-                                <td>840000</td>
-                                <td>王小明</td>
-                                <td>男</td>
-                                <td>1976.03.05</td>
-                                <td>30972487927495837</td>
-                                <td>13800000000</td>
-                                <td>学生</td>
-                                <td>30972@163.com</td>
-                                <td>浙江杭州</td>
-                                <td>30972487</td>
-                                <td>
-                                    <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                    <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>840000</td>
-                                <td>王小明</td>
-                                <td>男</td>
-                                <td>1976.03.05</td>
-                                <td>30972487927495837</td>
-                                <td>13800000000</td>
-                                <td>学生</td>
-                                <td>30972@163.com</td>
-                                <td>浙江杭州</td>
-                                <td>30972487</td>
-                                <td>
-                                    <a href=""><i class="fa fa-pencil text-navy"></i></a>
-                                    <a href=""><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -206,6 +174,7 @@
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
 <script src="../js/plugins/layer/layer.js"></script>
+<script src="../js/manage/student.js"></script>
 <script type="text/javascript">
     $('#delete').on('click', function () {
         layer.msg('确定删除吗？', {
@@ -224,7 +193,7 @@
             title: '信息修改',
             area: ['600px', '360px'],
             shadeClose: true, //点击遮罩关闭
-            content: '111'
+            content: 'manage/usered'
 
         });
     });

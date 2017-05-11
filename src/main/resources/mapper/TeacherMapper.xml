@@ -56,7 +56,7 @@
     <insert id="insert" parameterType="com.health.model.po.Teacher">
         insert into teacher (ID, NAME, SEX, BIRTHDAY,
         SFID, PHONE, EMAIL,
-        JG)
+        JG,LOGIN_ID,NO)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR},
         #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
         #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR})

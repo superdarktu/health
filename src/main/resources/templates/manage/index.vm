@@ -52,9 +52,9 @@
                     <a href=""><i class="fa fa-edit"></i> <span class="nav-label">用户管理</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="user.vm">会员管理</a>
+                        <li><a class="J_menuItem" href="manage/user">会员管理</a>
                         </li>
-                        <li><a class="J_menuItem" href="leader.vm">教练管理</a>
+                        <li><a class="J_menuItem" href="manage/leader">教练管理</a>
                         </li>
                     </ul>
                 </li>

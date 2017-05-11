@@ -14,7 +14,7 @@ function del(id) {
                 }
             });
         }
-    })
+    });
 }
 function init(page, pageSise) {
     $.get("../classs/list", {

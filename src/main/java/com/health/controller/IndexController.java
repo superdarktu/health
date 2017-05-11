@@ -42,7 +42,7 @@ public class IndexController {
 
         HttpSession session = req.getSession();
         Integer teacherId = (Integer) session.getAttribute("teacherId");
-        map.put("teacher", teacherService.selectByPrimaryKey(1));
+        map.put("teacher", teacherService.selectByPrimaryKey(2));
         return "teacher/index";
     }
 
@@ -51,7 +51,7 @@ public class IndexController {
 
         HttpSession session = req.getSession();
         Integer teacherId = (Integer) session.getAttribute("teacherId");
-        map.put("teacher", teacherService.selectByPrimaryKey(1));
+        map.put("teacher", teacherService.selectByPrimaryKey(2));
         return "teacher/about";
     }
 

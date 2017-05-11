@@ -39,8 +39,20 @@ public class TeacherController {
 
         HttpSession session = req.getSession();
         Integer teacherId = (Integer) session.getAttribute("teacherId");
-        map.put("teacher", teacherService.selectByPrimaryKey(1));
+        map.put("teacher", teacherService.selectByPrimaryKey(2));
         return "teacher/edit";
+    }
+    
+    @RequestMapping("to_standard")
+    public String toStandard() {
+
+        return "teacher/standard";
+    }
+    
+    @RequestMapping("to_plan")
+    public String toPlan() {
+
+        return "teacher/plan";
     }
 
     @RequestMapping("add")
@@ -49,7 +61,7 @@ public class TeacherController {
 
         if (teacherService.insert(teacher) > 0) {
 
-            return new ResultRO(true);
+            return new ResultRO(true,"leader");
         }
         return new ResultRO("添加失败");
     }
@@ -70,7 +82,7 @@ public class TeacherController {
 
         if (teacherService.deleteByPrimaryKey(id)) {
 
-            return new ResultRO(true);
+            return new ResultRO(true,"leader");
         }
         return new ResultRO("删除失败");
     }

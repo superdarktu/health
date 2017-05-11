@@ -56,13 +56,13 @@
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="standard.vm">
+                    <a class="J_menuItem" href="teacher/to_standard">
                         <i class="fa fa-desktop"></i>
                         <span class="nav-label">评价标准</span>
                     </a>
                 </li>
                 <li>
-                    <a class="J_menuItem" href="plan.vm">
+                    <a class="J_menuItem" href="teacher/to_plan">
                         <i class="fa fa-desktop"></i>
                         <span class="nav-label">处方管理</span>
                     </a>

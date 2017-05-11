@@ -149,34 +149,6 @@
                             </tr>
                             </thead>
                             <tbody id="leader_main">
-                            <tr>
-                                <td>840000</td>
-                                <td>王小明</td>
-                                <td>男</td>
-                                <td>1976.03.05</td>
-                                <td>30972487927495837</td>
-                                <td>13800000000</td>
-                                <td>30972@163.com</td>
-                                <td>浙江杭州</td>
-                                <td>
-                                    <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                    <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>840000</td>
-                                <td>王小明</td>
-                                <td>男</td>
-                                <td>1976.03.05</td>
-                                <td>30972487927495837</td>
-                                <td>13800000000</td>
-                                <td>30972@163.com</td>
-                                <td>浙江杭州</td>
-                                <td>
-                                    <a href=""><i class="fa fa-pencil text-navy"></i></a>
-                                    <a href=""><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -193,8 +165,9 @@
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
 <script src="../js/plugins/layer/layer.js"></script>
+<script src="../js/manage/leader.js"></script>
 <script type="text/javascript">
-    $('#delete').on('click', function () {
+  /*  $('#delete').on('click', function () {
         layer.msg('确定删除吗？', {
             time: 0 //不自动关闭
             , btn: ['确定删除', '还是算了吧']
@@ -203,7 +176,7 @@
                 alert("你点了确定");
             }
         });
-    });
+    });*/
 
     /*$('#add').on('click', function(){
         layer.open({
@@ -211,7 +184,7 @@
             title: '信息修改',
             area: ['600px', '360px'],
             shadeClose: true, //点击遮罩关闭
-            content: '1111'
+            content: 'manage/leaded'
 
         });
     });*/

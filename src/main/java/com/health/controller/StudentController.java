@@ -49,7 +49,7 @@ public class StudentController {
 
         if (studentService.update(student)) {
 
-            return new ResultRO(true);
+            return new ResultRO(true,"user");
         }
         return new ResultRO("保存失败");
     }
@@ -60,7 +60,7 @@ public class StudentController {
 
         if (studentService.insert(student) > 0) {
 
-            return new ResultRO(true);
+            return new ResultRO(true,"user");
         }
         return new ResultRO("添加失败");
     }
@@ -81,7 +81,7 @@ public class StudentController {
 
         if (studentService.deleteByPrimaryKey(id)) {
 
-            return new ResultRO(true);
+            return new ResultRO(true,"user");
         }
         return new ResultRO("删除失败");
     }

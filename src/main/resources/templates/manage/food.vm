@@ -109,15 +109,6 @@
                             </tr>
                             </thead>
                             <tbody id="food_list">
-                            <tr>
-                                <td>牛肉</td>
-                                <td>肉类</td>
-                                <td>500</td>
-                                <td>
-                                    <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                    <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>

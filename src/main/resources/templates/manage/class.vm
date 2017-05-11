@@ -140,19 +140,6 @@
                             </tr>
                             </thead>
                             <tbody id="class_list">
-                            <tr>
-                                <td>G679</td>
-                                <td>杠铃</td>
-                                <td>手臂</td>
-                                <td>按说明书使用</td>
-                                <td>注意安全</td>
-                                <td>注意安全</td>
-                                <td>注意安全</td>
-                                <td>
-                                    <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                    <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                </td>
-                            </tr>
 
                             </tbody>
                         </table>

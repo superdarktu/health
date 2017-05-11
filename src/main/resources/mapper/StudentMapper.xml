@@ -57,10 +57,10 @@
     <insert id="insert" parameterType="com.health.model.po.Student">
         insert into student (ID, NAME, SEX, BIRTHDAY,
         SFID, PHONE, JOB, EMAIL,
-        JG, TCDID, JSFAID,NO)
+        JG, TCDID, JSFAID,LOGIN_ID,NO,AGE)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR},
         #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
-        #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER},
+        #{jg,jdbcType=VARCHAR}, 0, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER},
         #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Student">

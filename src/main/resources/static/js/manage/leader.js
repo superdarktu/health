@@ -1,22 +1,32 @@
 function del(id) {
-    $.post("delete", {
-        "id": id,
-    }, function (result) {
-        if (result.status == true) {
-            location.href = result.href;
-        } else {
-            alert(result.message);
+	layer.msg('确定删除吗？', {
+        time: 0 //不自动关闭
+        , btn: ['确定删除', '还是算了吧']
+        , yes: function (index) {
+            $.post("../teacher/delete", {
+                "id": id,
+            }, function (result) {
+                if (result.status == true) {
+                    location.href = result.href;
+                } else {
+                    alert(result.message);
+                    layer.close(index);
+                }
+            });
         }
     });
 }
-function init(page, pageSise) {
-    $.get("list", {
+function init(page, pageSize) {
+    $.get("../teacher/list", {
         "name": $("#name").val(),
+        "page":page,
+        "pageSize":pageSize
     }, function (result) {
         if (result.status == true) {
             data = result.data;
-            html = "<tr>";
+            html = "";
             for (i = 0; i < data.length; i++) {
+                html += "<tr>";
                 html += "<td>" + data[i].no + "</td><td>" + data[i].name + "</td>";
                 if (data.sex == "1") html += "<td>男</td>";
                 else html += "<td>女</td>"
@@ -24,9 +34,9 @@ function init(page, pageSise) {
                 html += "<td>" + data[i].phone + "</td><td>" + data[i].email + "</td>";
                 html += "<td>" + data[i].jg + "</td>";
                 html += '<td><a id="add"><i class="fa fa-pencil text-navy"></i></a> ';
-                html += '<a id="delete"><i class="fa fa-close text-navy"></i></a></td>';
+                html += '<a id="delete" onclick="del('+data[i].id+')"><i class="fa fa-close text-navy"></i></a></td>';
+                html += "</tr>";
             }
-            html += "</tr>";
             $("#leader_main").html(html);
         } else {
             alert(result.message);
@@ -38,8 +48,9 @@ $(document).ready(function () {
 
     var page = 0;
     var pageSize = 10;
+    init(page,pageSize);
     $("#submit").click(function () {
-        $.post("add", {
+        $.post("../teacher/add", {
             "name": $("#name").val(),
             "email": $("#email").val(),
             "birthday": $("#birthday").val(),
@@ -63,7 +74,8 @@ $(document).ready(function () {
 
 
     $("#change").click(function () {
-        $.post("admin_update", {
+        $.post("../teacher/admin_update", {
+        	"id":$("#id").val(),
             "email": $("#email").val(),
             "birthday": $("#birthday").val(),
             "jg": $("#jg").val(),
