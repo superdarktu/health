@@ -1,10 +1,10 @@
 package com.health.model.po;
 
 public class Login {
-	
-	/**
-	 * ID
-	 */
+
+    /**
+     * ID
+     */
     private Integer id;
 
     /**

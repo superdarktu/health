@@ -5,112 +5,114 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
     <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
     <link href="../css/bodybuilder.css" rel="stylesheet">
 
 </head>
 
 <body class="gray-bg">
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>教练修改</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <form method="get" class="form-horizontal">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="col-sm-6">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>教练修改</h5>
+            </div>
+            <div class="ibox-content">
+                <form method="get" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
 
 
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">姓名</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="name" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">性别</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="sex" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">出生年月</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="birthday" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        
-
-                                    </div>
-                                    <div class="col-sm-6">
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">联系电话</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="phone" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">邮箱</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="email" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">籍贯</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="jg" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">身份证号</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="sfid" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <div class="col-sm-4 col-sm-offset-2">
-                                            <button class="btn btn-primary" id="submit" type="button">确认添加</button>
-                                        </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">姓名</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="name" name="" class="form-control" placeholder="请输入数据">
                                     </div>
                                 </div>
-                                
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">性别</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="sex" name="" class="form-control" placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">出生年月</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="birthday" name="" class="form-control"
+                                               placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+
                             </div>
-                            
-                        </form>
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">联系电话</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="phone" name="" class="form-control" placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">邮箱</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="email" name="" class="form-control" placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">籍贯</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="jg" name="" class="form-control" placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">身份证号</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="sfid" name="" class="form-control" placeholder="请输入数据">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" id="submit" type="button">确认添加</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
+
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+<script src="../js/content.min.js?v=1.0.0"></script>
 </body>
 
 </html>

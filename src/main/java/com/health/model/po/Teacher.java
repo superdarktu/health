@@ -1,14 +1,12 @@
 package com.health.model.po;
 
-import java.util.Date;
-
 public class Teacher {
-	
-	/**
-	 * 教师ID
-	 */
+
+    /**
+     * 教师ID
+     */
     private Integer id;
-    
+
     /**
      * 登录ID
      */
@@ -63,14 +61,14 @@ public class Teacher {
     }
 
     public Integer getLoginId() {
-		return loginId;
-	}
+        return loginId;
+    }
 
-	public void setLoginId(Integer loginId) {
-		this.loginId = loginId;
-	}
+    public void setLoginId(Integer loginId) {
+        this.loginId = loginId;
+    }
 
-	public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -126,12 +124,12 @@ public class Teacher {
         this.jg = jg;
     }
 
-	public String getNo() {
-		return no;
-	}
+    public String getNo() {
+        return no;
+    }
 
-	public void setNo(String no) {
-		this.no = no;
-	}
-    
+    public void setNo(String no) {
+        this.no = no;
+    }
+
 }

@@ -3,10 +3,10 @@ package com.health.model.po;
 import java.util.Date;
 
 public class Program {
-	
-	/**
-	 * 健身方案ID
-	 */
+
+    /**
+     * 健身方案ID
+     */
     private Integer id;
 
     /**
@@ -34,20 +34,19 @@ public class Program {
      * 添加日期
      */
     private Date createDate;
-    
+
     private String no;
-    
-    
+
 
     public String getNo() {
-		return no;
-	}
+        return no;
+    }
 
-	public void setNo(String no) {
-		this.no = no;
-	}
+    public void setNo(String no) {
+        this.no = no;
+    }
 
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

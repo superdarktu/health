@@ -1,119 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="student" >
-  <resultMap id="BaseResultMap" type="com.health.model.po.Student" >
-    <id column="ID" property="id" jdbcType="INTEGER" />
-    <result column="NAME" property="name" jdbcType="VARCHAR" />
-    <result column="SEX" property="sex" jdbcType="CHAR" />
-    <result column="BIRTHDAY" property="birthday" jdbcType="VARCHAR" />
-    <result column="SFID" property="sfid" jdbcType="VARCHAR" />
-    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
-    <result column="JOB" property="job" jdbcType="VARCHAR" />
-    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
-    <result column="JG" property="jg" jdbcType="VARCHAR" />
-    <result column="TCDID" property="tcdid" jdbcType="INTEGER" />
-    <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER" />
-    <result column="JSFAID" property="jsfaid" jdbcType="VARCHAR" />
-    <result column="NO" property="no" jdbcType="VARCHAR" />
-    <result column="AGE" property="age" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID ,LOGIN_ID,NO,AGE
-  </sql>
-  
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from student
-    where ID = #{id,jdbcType=INTEGER}
-  </select>
-  
-  <select id="selectByLoginId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from student
-    where LOGIN_ID = #{loginId,jdbcType=INTEGER}
-  </select>
-  
-  <select id="count" resultType="java.lang.Integer" >
-    select 
-    count(*)
-    from student
-  </select>
-  
-  <select id="selectByStr" resultMap="BaseResultMap" parameterType="com.health.model.po.Student" >
-    select 
-    <include refid="Base_Column_List" />
-    from student
-	<if test="name !=null and name != ''">where NAME like CONCAT('%','${name}','%')
-		or NO like CONCAT('%','${no}','%')
-	</if>
-  </select>
-  
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from student
-    where ID = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.health.model.po.Student" >
-    insert into student (ID, NAME, SEX, BIRTHDAY, 
-      SFID, PHONE, JOB, EMAIL, 
-      JG, TCDID, JSFAID,NO)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR}, 
-      #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Student" >
-    update student
-    <set >
-      <if test="name != null" >
-        NAME = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null" >
+<mapper namespace="student">
+    <resultMap id="BaseResultMap" type="com.health.model.po.Student">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="CHAR"/>
+        <result column="BIRTHDAY" property="birthday" jdbcType="VARCHAR"/>
+        <result column="SFID" property="sfid" jdbcType="VARCHAR"/>
+        <result column="PHONE" property="phone" jdbcType="VARCHAR"/>
+        <result column="JOB" property="job" jdbcType="VARCHAR"/>
+        <result column="EMAIL" property="email" jdbcType="VARCHAR"/>
+        <result column="JG" property="jg" jdbcType="VARCHAR"/>
+        <result column="TCDID" property="tcdid" jdbcType="INTEGER"/>
+        <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER"/>
+        <result column="JSFAID" property="jsfaid" jdbcType="VARCHAR"/>
+        <result column="NO" property="no" jdbcType="VARCHAR"/>
+        <result column="AGE" property="age" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID ,LOGIN_ID,NO,AGE
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where ID = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByLoginId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where LOGIN_ID = #{loginId,jdbcType=INTEGER}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select
+        count(*)
+        from student
+    </select>
+
+    <select id="selectByStr" resultMap="BaseResultMap" parameterType="com.health.model.po.Student">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        <if test="name !=null and name != ''">where NAME like CONCAT('%','${name}','%')
+            or NO like CONCAT('%','${no}','%')
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from student
+        where ID = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.health.model.po.Student">
+        insert into student (ID, NAME, SEX, BIRTHDAY,
+        SFID, PHONE, JOB, EMAIL,
+        JG, TCDID, JSFAID,NO)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR},
+        #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+        #{jg,jdbcType=VARCHAR}, #{tcdid,jdbcType=INTEGER}, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER},
+        #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Student">
+        update student
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                SEX = #{sex,jdbcType=CHAR},
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY = #{birthday,jdbcType=VARCHAR},
+            </if>
+            <if test="sfid != null">
+                SFID = #{sfid,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                PHONE = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="job != null">
+                JOB = #{job,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="jg != null">
+                JG = #{jg,jdbcType=VARCHAR},
+            </if>
+            <if test="tcdid != null">
+                TCDID = #{tcdid,jdbcType=INTEGER},
+            </if>
+            <if test="jsfaid != null">
+                JSFAID = #{jsfaid,jdbcType=INTEGER},
+            </if>
+            <if test="age != null">
+                AGE = #{age,jdbcType=INTEGER},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.health.model.po.Student">
+        update student
+        set NAME = #{name,jdbcType=VARCHAR},
         SEX = #{sex,jdbcType=CHAR},
-      </if>
-      <if test="birthday != null" >
         BIRTHDAY = #{birthday,jdbcType=VARCHAR},
-      </if>
-      <if test="sfid != null" >
         SFID = #{sfid,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null" >
         PHONE = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="job != null" >
         JOB = #{job,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
         EMAIL = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="jg != null" >
         JG = #{jg,jdbcType=VARCHAR},
-      </if>
-      <if test="tcdid != null" >
         TCDID = #{tcdid,jdbcType=INTEGER},
-      </if>
-      <if test="jsfaid != null" >
         JSFAID = #{jsfaid,jdbcType=INTEGER},
-      </if>
-      <if test="age != null" >
         AGE = #{age,jdbcType=INTEGER},
-      </if>
-    </set>
-    where ID = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.health.model.po.Student" >
-    update student
-    set NAME = #{name,jdbcType=VARCHAR},
-      SEX = #{sex,jdbcType=CHAR},
-      BIRTHDAY = #{birthday,jdbcType=VARCHAR},
-      SFID = #{sfid,jdbcType=VARCHAR},
-      PHONE = #{phone,jdbcType=VARCHAR},
-      JOB = #{job,jdbcType=VARCHAR},
-      EMAIL = #{email,jdbcType=VARCHAR},
-      JG = #{jg,jdbcType=VARCHAR},
-      TCDID = #{tcdid,jdbcType=INTEGER},
-      JSFAID = #{jsfaid,jdbcType=INTEGER},
-      AGE = #{age,jdbcType=INTEGER},
-    where ID = #{id,jdbcType=INTEGER}
-  </update>
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -1,10 +1,8 @@
 package com.health.service.impl;
 
-import com.health.dao.ClasssDao;
 import com.health.model.po.Classs;
 import com.health.service.ClasssService;
 import com.health.util.SQLManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,25 +17,16 @@ public class ClasssServiceImpl implements ClasssService {
 
     /*@Autowired
     private ClasssDao ClasssDao;*/
-    
+
     @Autowired
-	private SQLManager sqlManager;
+    private SQLManager sqlManager;
 
     @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public List<Classs> pageByKeyWord(Classs record, Integer page, Integer pageSize) {
         return (List<Classs>) sqlManager.list("class.pageByKeyWord", record, page, pageSize);
     }
 
-    @Override
-    public int save(Classs record) {
-        /*if (record.getId() == null) {
-            return ClasssDao.insertSelective(record);
-        } else {
-            return ClasssDao.updateByPrimaryKeySelective(record);
-        }*/
-    	return 0;
-    }
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -46,7 +35,7 @@ public class ClasssServiceImpl implements ClasssService {
 
     @Override
     public int insert(Classs record) {
-       return  sqlManager.insert("class.insert", record);
+        return sqlManager.insert("class.insert", record);
     }
 
     @Override
@@ -56,7 +45,7 @@ public class ClasssServiceImpl implements ClasssService {
 
     @Override
     public Classs selectByPrimaryKey(Integer id) {
-        return (Classs)sqlManager.query("class.selectByPrimaryKey", id);
+        return (Classs) sqlManager.query("class.selectByPrimaryKey", id);
     }
 
     @Override
@@ -69,12 +58,12 @@ public class ClasssServiceImpl implements ClasssService {
         return sqlManager.update("class.updateByPrimaryKey", record);
     }
 
-	public List<Classs> pageByName(String name) {
-		
-		Classs record = new Classs();
-		record.setName(name);
-		
-		return (List<Classs>) sqlManager.list("class.pageByName", record);
-	}
+    public List<Classs> pageByName(String name) {
+
+        Classs record = new Classs();
+        record.setName(name);
+
+        return (List<Classs>) sqlManager.list("class.pageByName", record);
+    }
 
 }

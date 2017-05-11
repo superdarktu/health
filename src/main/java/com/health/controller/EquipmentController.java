@@ -1,20 +1,12 @@
 package com.health.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.health.model.po.Equipment;
 import com.health.model.po.Equipment;
 import com.health.model.ro.ResultRO;
 import com.health.service.EquipmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/equipment")
@@ -42,7 +34,7 @@ public class EquipmentController {
      */
     @ResponseBody
     @RequestMapping("list")
-    public ResultRO listEquipment(int page, int pageSize,String name) {
+    public ResultRO listEquipment(int page, int pageSize, String name) {
         Equipment record = new Equipment();
         record.setName(name);
         return new ResultRO(equipmentService.pageByKeyWord(record, page, pageSize));
@@ -54,17 +46,19 @@ public class EquipmentController {
     @ResponseBody
     @RequestMapping("save")
     public ResultRO insertOrUpdate(Equipment record) {
-    	
-    	if(record.getId() == null){
-    		if(equipmentService.insert(record) > 0){
-    			return new ResultRO(true);
-    		}
-    	}else{
-    		if(equipmentService.updateByPrimaryKeySelective(record) > 0){
-    			return new ResultRO(true);
-    		}
-    	}
-    	
+
+        if (record.getId() == null) {
+            if(record.getName() == null)
+                return new ResultRO("名字不能为空");
+            if (equipmentService.insert(record) > 0) {
+                return new ResultRO(true,"equipment");
+            }
+        } else {
+            if (equipmentService.updateByPrimaryKeySelective(record) > 0) {
+                return new ResultRO(true);
+            }
+        }
+
         return new ResultRO("保存失败");
     }
 
@@ -74,10 +68,10 @@ public class EquipmentController {
     @ResponseBody
     @RequestMapping("delete")
     public ResultRO remove(Integer id) {
-    	
-    	if(equipmentService.deleteByPrimaryKey(id) > 0){
-    		return new ResultRO(true);
-    	}
+
+        if (equipmentService.deleteByPrimaryKey(id) > 0) {
+            return new ResultRO(true,"equipment");
+        }
         return new ResultRO("删除失败");
     }
 }

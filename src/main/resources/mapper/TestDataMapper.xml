@@ -1,252 +1,252 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="testData" >
-  <resultMap id="BaseResultMap" type="com.health.model.po.TestData" >
-    <id column="ID" property="id" jdbcType="INTEGER" />
-    <result column="STUDENT_ID" property="studentId" jdbcType="INTEGER" />
-    <result column="TEST_DATE" property="testDate" jdbcType="TIMESTAMP" />
-    <result column="HEIGHT" property="height" jdbcType="DOUBLE" />
-    <result column="WEIGHT" property="weight" jdbcType="DOUBLE" />
-    <result column="WAIST" property="waist" jdbcType="DOUBLE" />
-    <result column="HIP" property="hip" jdbcType="DOUBLE" />
-    <result column="PULMONARY" property="pulmonary" jdbcType="INTEGER" />
-    <result column="TJSY" property="tjsy" jdbcType="DOUBLE" />
-    <result column="WL" property="wl" jdbcType="DOUBLE" />
-    <result column="YWQZ" property="ywqz" jdbcType="INTEGER" />
-    <result column="FWC" property="fwc" jdbcType="INTEGER" />
-    <result column="ZWTQQ" property="zwtqq" jdbcType="DOUBLE" />
-    <result column="BMR" property="bmr" jdbcType="DOUBLE" />
-    <result column="YTB" property="ytb" jdbcType="DOUBLE" />
-    <result column="BMI" property="bmi" jdbcType="DOUBLE" />
-    <result column="SJFXJY" property="sjfxjy" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    ID, STUDENT_ID, TEST_DATE, HEIGHT, WEIGHT, WAIST, HIP, PULMONARY, TJSY, WL, YWQZ, 
-    FWC, ZWTQQ, BMR, YTB, BMI, SJFXJY
-  </sql>
-  
-  <select id="queryByStudentLast" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from test_data
-    where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc limit 1
-  </select>
-  
-  
-  <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from test_data
-    where ID = #{id,jdbcType=INTEGER}
-  </select>
-  
-  <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.TestData" >
-    select 
-    <include refid="Base_Column_List" />
-    from test_data
-    where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc
-  </select>
-  
-  
-  <delete id="delete" parameterType="java.lang.Integer" >
-    delete from test_data
-    where ID = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.health.model.po.TestData" >
-    insert into test_data (ID, STUDENT_ID, TEST_DATE, 
-      HEIGHT, WEIGHT, WAIST, 
-      HIP, PULMONARY, TJSY, 
-      WL, YWQZ, FWC, ZWTQQ, 
-      BMR, YTB, BMI, SJFXJY
-      )
-    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, now(), 
-      #{height,jdbcType=DOUBLE}, #{weight,jdbcType=DOUBLE}, #{waist,jdbcType=DOUBLE}, 
-      #{hip,jdbcType=DOUBLE}, #{pulmonary,jdbcType=INTEGER}, #{tjsy,jdbcType=DOUBLE}, 
-      #{wl,jdbcType=DOUBLE}, #{ywqz,jdbcType=INTEGER}, #{fwc,jdbcType=INTEGER}, #{zwtqq,jdbcType=DOUBLE}, 
-      #{bmr,jdbcType=DOUBLE}, #{ytb,jdbcType=DOUBLE}, #{bmi,jdbcType=DOUBLE}, #{sjfxjy,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.health.model.po.TestData" >
-    insert into test_data
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        ID,
-      </if>
-      <if test="studentId != null" >
-        STUDENT_ID,
-      </if>
-      <if test="testDate != null" >
-        TEST_DATE,
-      </if>
-      <if test="height != null" >
-        HEIGHT,
-      </if>
-      <if test="weight != null" >
-        WEIGHT,
-      </if>
-      <if test="waist != null" >
-        WAIST,
-      </if>
-      <if test="hip != null" >
-        HIP,
-      </if>
-      <if test="pulmonary != null" >
-        PULMONARY,
-      </if>
-      <if test="tjsy != null" >
-        TJSY,
-      </if>
-      <if test="wl != null" >
-        WL,
-      </if>
-      <if test="ywqz != null" >
-        YWQZ,
-      </if>
-      <if test="fwc != null" >
-        FWC,
-      </if>
-      <if test="zwtqq != null" >
-        ZWTQQ,
-      </if>
-      <if test="bmr != null" >
-        BMR,
-      </if>
-      <if test="ytb != null" >
-        YTB,
-      </if>
-      <if test="bmi != null" >
-        BMI,
-      </if>
-      <if test="sjfxjy != null" >
-        SJFXJY,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="studentId != null" >
-        #{studentId,jdbcType=INTEGER},
-      </if>
-      <if test="testDate != null" >
-        #{testDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="height != null" >
-        #{height,jdbcType=DOUBLE},
-      </if>
-      <if test="weight != null" >
-        #{weight,jdbcType=DOUBLE},
-      </if>
-      <if test="waist != null" >
-        #{waist,jdbcType=DOUBLE},
-      </if>
-      <if test="hip != null" >
-        #{hip,jdbcType=DOUBLE},
-      </if>
-      <if test="pulmonary != null" >
-        #{pulmonary,jdbcType=INTEGER},
-      </if>
-      <if test="tjsy != null" >
-        #{tjsy,jdbcType=DOUBLE},
-      </if>
-      <if test="wl != null" >
-        #{wl,jdbcType=DOUBLE},
-      </if>
-      <if test="ywqz != null" >
-        #{ywqz,jdbcType=INTEGER},
-      </if>
-      <if test="fwc != null" >
-        #{fwc,jdbcType=INTEGER},
-      </if>
-      <if test="zwtqq != null" >
-        #{zwtqq,jdbcType=DOUBLE},
-      </if>
-      <if test="bmr != null" >
-        #{bmr,jdbcType=DOUBLE},
-      </if>
-      <if test="ytb != null" >
-        #{ytb,jdbcType=DOUBLE},
-      </if>
-      <if test="bmi != null" >
-        #{bmi,jdbcType=DOUBLE},
-      </if>
-      <if test="sjfxjy != null" >
-        #{sjfxjy,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="update" parameterType="com.health.model.po.TestData" >
-    update test_data
-    <set >
-      <if test="studentId != null" >
-        STUDENT_ID = #{studentId,jdbcType=INTEGER},
-      </if>
-      <if test="testDate != null" >
+<mapper namespace="testData">
+    <resultMap id="BaseResultMap" type="com.health.model.po.TestData">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="STUDENT_ID" property="studentId" jdbcType="INTEGER"/>
+        <result column="TEST_DATE" property="testDate" jdbcType="TIMESTAMP"/>
+        <result column="HEIGHT" property="height" jdbcType="DOUBLE"/>
+        <result column="WEIGHT" property="weight" jdbcType="DOUBLE"/>
+        <result column="WAIST" property="waist" jdbcType="DOUBLE"/>
+        <result column="HIP" property="hip" jdbcType="DOUBLE"/>
+        <result column="PULMONARY" property="pulmonary" jdbcType="INTEGER"/>
+        <result column="TJSY" property="tjsy" jdbcType="DOUBLE"/>
+        <result column="WL" property="wl" jdbcType="DOUBLE"/>
+        <result column="YWQZ" property="ywqz" jdbcType="INTEGER"/>
+        <result column="FWC" property="fwc" jdbcType="INTEGER"/>
+        <result column="ZWTQQ" property="zwtqq" jdbcType="DOUBLE"/>
+        <result column="BMR" property="bmr" jdbcType="DOUBLE"/>
+        <result column="YTB" property="ytb" jdbcType="DOUBLE"/>
+        <result column="BMI" property="bmi" jdbcType="DOUBLE"/>
+        <result column="SJFXJY" property="sjfxjy" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        ID, STUDENT_ID, TEST_DATE, HEIGHT, WEIGHT, WAIST, HIP, PULMONARY, TJSY, WL, YWQZ,
+        FWC, ZWTQQ, BMR, YTB, BMI, SJFXJY
+    </sql>
+
+    <select id="queryByStudentLast" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from test_data
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc limit 1
+    </select>
+
+
+    <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from test_data
+        where ID = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.TestData">
+        select
+        <include refid="Base_Column_List"/>
+        from test_data
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc
+    </select>
+
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from test_data
+        where ID = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.health.model.po.TestData">
+        insert into test_data (ID, STUDENT_ID, TEST_DATE,
+        HEIGHT, WEIGHT, WAIST,
+        HIP, PULMONARY, TJSY,
+        WL, YWQZ, FWC, ZWTQQ,
+        BMR, YTB, BMI, SJFXJY
+        )
+        values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, now(),
+        #{height,jdbcType=DOUBLE}, #{weight,jdbcType=DOUBLE}, #{waist,jdbcType=DOUBLE},
+        #{hip,jdbcType=DOUBLE}, #{pulmonary,jdbcType=INTEGER}, #{tjsy,jdbcType=DOUBLE},
+        #{wl,jdbcType=DOUBLE}, #{ywqz,jdbcType=INTEGER}, #{fwc,jdbcType=INTEGER}, #{zwtqq,jdbcType=DOUBLE},
+        #{bmr,jdbcType=DOUBLE}, #{ytb,jdbcType=DOUBLE}, #{bmi,jdbcType=DOUBLE}, #{sjfxjy,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.health.model.po.TestData">
+        insert into test_data
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="studentId != null">
+                STUDENT_ID,
+            </if>
+            <if test="testDate != null">
+                TEST_DATE,
+            </if>
+            <if test="height != null">
+                HEIGHT,
+            </if>
+            <if test="weight != null">
+                WEIGHT,
+            </if>
+            <if test="waist != null">
+                WAIST,
+            </if>
+            <if test="hip != null">
+                HIP,
+            </if>
+            <if test="pulmonary != null">
+                PULMONARY,
+            </if>
+            <if test="tjsy != null">
+                TJSY,
+            </if>
+            <if test="wl != null">
+                WL,
+            </if>
+            <if test="ywqz != null">
+                YWQZ,
+            </if>
+            <if test="fwc != null">
+                FWC,
+            </if>
+            <if test="zwtqq != null">
+                ZWTQQ,
+            </if>
+            <if test="bmr != null">
+                BMR,
+            </if>
+            <if test="ytb != null">
+                YTB,
+            </if>
+            <if test="bmi != null">
+                BMI,
+            </if>
+            <if test="sjfxjy != null">
+                SJFXJY,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="studentId != null">
+                #{studentId,jdbcType=INTEGER},
+            </if>
+            <if test="testDate != null">
+                #{testDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="height != null">
+                #{height,jdbcType=DOUBLE},
+            </if>
+            <if test="weight != null">
+                #{weight,jdbcType=DOUBLE},
+            </if>
+            <if test="waist != null">
+                #{waist,jdbcType=DOUBLE},
+            </if>
+            <if test="hip != null">
+                #{hip,jdbcType=DOUBLE},
+            </if>
+            <if test="pulmonary != null">
+                #{pulmonary,jdbcType=INTEGER},
+            </if>
+            <if test="tjsy != null">
+                #{tjsy,jdbcType=DOUBLE},
+            </if>
+            <if test="wl != null">
+                #{wl,jdbcType=DOUBLE},
+            </if>
+            <if test="ywqz != null">
+                #{ywqz,jdbcType=INTEGER},
+            </if>
+            <if test="fwc != null">
+                #{fwc,jdbcType=INTEGER},
+            </if>
+            <if test="zwtqq != null">
+                #{zwtqq,jdbcType=DOUBLE},
+            </if>
+            <if test="bmr != null">
+                #{bmr,jdbcType=DOUBLE},
+            </if>
+            <if test="ytb != null">
+                #{ytb,jdbcType=DOUBLE},
+            </if>
+            <if test="bmi != null">
+                #{bmi,jdbcType=DOUBLE},
+            </if>
+            <if test="sjfxjy != null">
+                #{sjfxjy,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.health.model.po.TestData">
+        update test_data
+        <set>
+            <if test="studentId != null">
+                STUDENT_ID = #{studentId,jdbcType=INTEGER},
+            </if>
+            <if test="testDate != null">
+                TEST_DATE = #{testDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="height != null">
+                HEIGHT = #{height,jdbcType=DOUBLE},
+            </if>
+            <if test="weight != null">
+                WEIGHT = #{weight,jdbcType=DOUBLE},
+            </if>
+            <if test="waist != null">
+                WAIST = #{waist,jdbcType=DOUBLE},
+            </if>
+            <if test="hip != null">
+                HIP = #{hip,jdbcType=DOUBLE},
+            </if>
+            <if test="pulmonary != null">
+                PULMONARY = #{pulmonary,jdbcType=INTEGER},
+            </if>
+            <if test="tjsy != null">
+                TJSY = #{tjsy,jdbcType=DOUBLE},
+            </if>
+            <if test="wl != null">
+                WL = #{wl,jdbcType=DOUBLE},
+            </if>
+            <if test="ywqz != null">
+                YWQZ = #{ywqz,jdbcType=INTEGER},
+            </if>
+            <if test="fwc != null">
+                FWC = #{fwc,jdbcType=INTEGER},
+            </if>
+            <if test="zwtqq != null">
+                ZWTQQ = #{zwtqq,jdbcType=DOUBLE},
+            </if>
+            <if test="bmr != null">
+                BMR = #{bmr,jdbcType=DOUBLE},
+            </if>
+            <if test="ytb != null">
+                YTB = #{ytb,jdbcType=DOUBLE},
+            </if>
+            <if test="bmi != null">
+                BMI = #{bmi,jdbcType=DOUBLE},
+            </if>
+            <if test="sjfxjy != null">
+                SJFXJY = #{sjfxjy,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.health.model.po.TestData">
+        update test_data
+        set STUDENT_ID = #{studentId,jdbcType=INTEGER},
         TEST_DATE = #{testDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="height != null" >
         HEIGHT = #{height,jdbcType=DOUBLE},
-      </if>
-      <if test="weight != null" >
         WEIGHT = #{weight,jdbcType=DOUBLE},
-      </if>
-      <if test="waist != null" >
         WAIST = #{waist,jdbcType=DOUBLE},
-      </if>
-      <if test="hip != null" >
         HIP = #{hip,jdbcType=DOUBLE},
-      </if>
-      <if test="pulmonary != null" >
         PULMONARY = #{pulmonary,jdbcType=INTEGER},
-      </if>
-      <if test="tjsy != null" >
         TJSY = #{tjsy,jdbcType=DOUBLE},
-      </if>
-      <if test="wl != null" >
         WL = #{wl,jdbcType=DOUBLE},
-      </if>
-      <if test="ywqz != null" >
         YWQZ = #{ywqz,jdbcType=INTEGER},
-      </if>
-      <if test="fwc != null" >
         FWC = #{fwc,jdbcType=INTEGER},
-      </if>
-      <if test="zwtqq != null" >
         ZWTQQ = #{zwtqq,jdbcType=DOUBLE},
-      </if>
-      <if test="bmr != null" >
         BMR = #{bmr,jdbcType=DOUBLE},
-      </if>
-      <if test="ytb != null" >
         YTB = #{ytb,jdbcType=DOUBLE},
-      </if>
-      <if test="bmi != null" >
         BMI = #{bmi,jdbcType=DOUBLE},
-      </if>
-      <if test="sjfxjy != null" >
-        SJFXJY = #{sjfxjy,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where ID = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.health.model.po.TestData" >
-    update test_data
-    set STUDENT_ID = #{studentId,jdbcType=INTEGER},
-      TEST_DATE = #{testDate,jdbcType=TIMESTAMP},
-      HEIGHT = #{height,jdbcType=DOUBLE},
-      WEIGHT = #{weight,jdbcType=DOUBLE},
-      WAIST = #{waist,jdbcType=DOUBLE},
-      HIP = #{hip,jdbcType=DOUBLE},
-      PULMONARY = #{pulmonary,jdbcType=INTEGER},
-      TJSY = #{tjsy,jdbcType=DOUBLE},
-      WL = #{wl,jdbcType=DOUBLE},
-      YWQZ = #{ywqz,jdbcType=INTEGER},
-      FWC = #{fwc,jdbcType=INTEGER},
-      ZWTQQ = #{zwtqq,jdbcType=DOUBLE},
-      BMR = #{bmr,jdbcType=DOUBLE},
-      YTB = #{ytb,jdbcType=DOUBLE},
-      BMI = #{bmi,jdbcType=DOUBLE},
-      SJFXJY = #{sjfxjy,jdbcType=VARCHAR}
-    where ID = #{id,jdbcType=INTEGER}
-  </update>
+        SJFXJY = #{sjfxjy,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -10,34 +10,34 @@ import java.util.List;
 @Repository
 public class ClasssDao {
 
-	@Autowired
-	private SQLManager sqlManager;
+    @Autowired
+    private SQLManager sqlManager;
 
-	public Classs selectCityById (long id) {
-		return (Classs)sqlManager.query("class.selectByPrimaryKey", id);
-	}
+    public Classs selectCityById(long id) {
+        return (Classs) sqlManager.query("class.selectByPrimaryKey", id);
+    }
 
-	public int insert (Classs record) {
-		return sqlManager.insert("class.insert", record);
-	}
+    public int insert(Classs record) {
+        return sqlManager.insert("class.insert", record);
+    }
 
-	public int insertSelective (Classs record) {
-		return sqlManager.insert("class.insertSelective", record);
-	}
+    public int insertSelective(Classs record) {
+        return sqlManager.insert("class.insertSelective", record);
+    }
 
-	public int updateByPrimaryKeySelective (Classs record) {
-		return sqlManager.update("class.updateByPrimaryKeySelective", record);
-	}
+    public int updateByPrimaryKeySelective(Classs record) {
+        return sqlManager.update("class.updateByPrimaryKeySelective", record);
+    }
 
-	public int updateByPrimaryKey (Classs record) {
-		return sqlManager.update("class.updateByPrimaryKey", record);
-	}
+    public int updateByPrimaryKey(Classs record) {
+        return sqlManager.update("class.updateByPrimaryKey", record);
+    }
 
-	public int deleteByPrimaryKey (long id) {
-		return sqlManager.delete("class.deleteByPrimaryKey", id);
-	}
+    public int deleteByPrimaryKey(long id) {
+        return sqlManager.delete("class.deleteByPrimaryKey", id);
+    }
 
-	public List<Classs> pageByKeyWord (Classs record, Integer page, Integer pageSize) {
-		return (List<Classs>) sqlManager.list("class.pageByKeyWord", record, page, pageSize);
-	}
+    public List<Classs> pageByKeyWord(Classs record, Integer page, Integer pageSize) {
+        return (List<Classs>) sqlManager.list("class.pageByKeyWord", record, page, pageSize);
+    }
 }

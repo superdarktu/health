@@ -5,146 +5,51 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
     <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
     <link href="../css/bodybuilder.css" rel="stylesheet">
 
 </head>
 
 <body class="gray-bg">
-    
 
-    <div class="wrapper wrapper-content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>信息查询</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="row">
-                            
-                            <div class="col-sm-8 m-b-xs">
-                                <div data-toggle="buttons" class="btn-group">
-                                    <label class="btn btn-sm btn-white active">
-                                        <input type="radio" value="food" id="option1" checked name="options">食物</label>
-                                    <label class="btn btn-sm btn-white">
-                                        <input type="radio" id="option2" value="equipment" name="options">器械</label>
-                                    <label class="btn btn-sm btn-white">
-                                        <input type="radio" value="classs" id="option3" name="options">课程</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span class="input-group-btn"><button type="button" id="search" class="btn btn-sm btn-primary"> 搜索</button> </span>
-                                </div>
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>信息查询</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="col-sm-8 m-b-xs">
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-sm btn-white active">
+                                    <input type="radio" value="food" id="option1" checked name="options">食物</label>
+                                <label class="btn btn-sm btn-white">
+                                    <input type="radio" id="option2" value="equipment" name="options">器械</label>
+                                <label class="btn btn-sm btn-white">
+                                    <input type="radio" value="classs" id="option3" name="options">课程</label>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row content" id="equipment" style="display:none">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>器械查询结果</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>器材编号</th>
-                                    <th>器材名称</th>
-                                    <th>锻炼部位</th>
-                                    <th>使用方法说明</th>
-                                    <th>使用注意事项</th>
-                                </tr>
-                            </thead>
-                            <tbody id="equipment_main">
-                                <tr>
-                                    <td>D43G87</td>
-                                    <td>杠铃</td>
-                                    <td>手臂</td>
-                                    <td>请按说明书使用</td>
-                                    <td>注意安全</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row content" id="food" style="display:none">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>食物查询结果</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>食物名称</th>
-                                    <th>实物类别</th>
-                                    <th>热量(100g/kj)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="food_main">
-                                <tr>
-                                    <td>牛肉</td>
-                                    <td>肉类</td>
-                                    <td>500</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row content" id="classs" style="display:none">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>课程查询结果</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>课程编号</th>
-                                    <th>课程名称</th>
-                                    <th>教师姓名</th>
-                                    <th>周几上课</th>
-                                    <th>课程时间</th>
-                                    <th>上课地点</th>
-                                    <th>开课时段</th>
-                                </tr>
-                            </thead>
-                            <tbody id="classs_main">
-                                <tr>
-                                    <td>D43G87</td>
-                                    <td>杠铃</td>
-                                    <td>手臂</td>
-                                    <td>请按说明书使用</td>
-                                    <td>注意安全</td>
-                                    <td>注意安全</td>
-                                    <td>注意安全</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span
+                                    class="input-group-btn"><button type="button" id="search"
+                                                                    class="btn btn-sm btn-primary"> 搜索</button> </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,10 +57,109 @@
 
     </div>
 
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/content.min.js?v=1.0.0"></script>
-    <script src="../js/info/info.js"></script>
+    <div class="row content" id="equipment" style="display:none">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>器械查询结果</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>器材编号</th>
+                            <th>器材名称</th>
+                            <th>锻炼部位</th>
+                            <th>使用方法说明</th>
+                            <th>使用注意事项</th>
+                        </tr>
+                        </thead>
+                        <tbody id="equipment_main">
+                        <tr>
+                            <td>D43G87</td>
+                            <td>杠铃</td>
+                            <td>手臂</td>
+                            <td>请按说明书使用</td>
+                            <td>注意安全</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row content" id="food" style="display:none">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>食物查询结果</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>食物名称</th>
+                            <th>实物类别</th>
+                            <th>热量(100g/kj)</th>
+                        </tr>
+                        </thead>
+                        <tbody id="food_main">
+                        <tr>
+                            <td>牛肉</td>
+                            <td>肉类</td>
+                            <td>500</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row content" id="classs" style="display:none">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>课程查询结果</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>课程编号</th>
+                            <th>课程名称</th>
+                            <th>教师姓名</th>
+                            <th>周几上课</th>
+                            <th>课程时间</th>
+                            <th>上课地点</th>
+                            <th>开课时段</th>
+                        </tr>
+                        </thead>
+                        <tbody id="classs_main">
+                        <tr>
+                            <td>D43G87</td>
+                            <td>杠铃</td>
+                            <td>手臂</td>
+                            <td>请按说明书使用</td>
+                            <td>注意安全</td>
+                            <td>注意安全</td>
+                            <td>注意安全</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+<script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/info/info.js"></script>
 </body>
 
 </html>

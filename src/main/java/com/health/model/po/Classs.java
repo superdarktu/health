@@ -15,10 +15,6 @@ public class Classs {
      */
     private String teacherName;
 
-    /**
-     * 教师id 弃用
-     */
-    private Integer teacherId;
 
     /**
      * 上课时间 周几
@@ -69,14 +65,6 @@ public class Classs {
         this.teacherName = teacherName;
     }
 
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
-
     public String getDaytime() {
         return daytime;
     }
@@ -95,14 +83,14 @@ public class Classs {
 
 
     public String getClassTime() {
-		return classTime;
-	}
+        return classTime;
+    }
 
-	public void setClassTime(String classTime) {
-		this.classTime = classTime;
-	}
+    public void setClassTime(String classTime) {
+        this.classTime = classTime;
+    }
 
-	public Date getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 

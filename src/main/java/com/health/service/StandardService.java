@@ -1,14 +1,15 @@
 package com.health.service;
 
-import java.util.List;
-
 import com.health.model.po.Standard;
 
+import java.util.List;
+
 public interface StandardService {
-	
+
 
     /**
      * 添加
+     *
      * @param list
      * @return
      */
@@ -16,12 +17,13 @@ public interface StandardService {
 
     /**
      * 根据ID查询
+     *
      * @param name
      * @return
      */
-    List<Standard> selectByPrimaryKey(String  name);
+    List<Standard> selectByPrimaryKey(String name);
 
 
-    List<Standard> selectByAge(Integer age,String sex);
+    List<Standard> selectByAge(Integer age, String sex);
 
 }

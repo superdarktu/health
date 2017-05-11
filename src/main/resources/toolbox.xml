@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <toolbox>
-	<tool>
-		<key>date</key>
-		<scope>request</scope>
-		<class>com.health.util.DateUtil</class>
-	</tool>
+    <tool>
+        <key>date</key>
+        <scope>request</scope>
+        <class>com.health.util.DateUtil</class>
+    </tool>
 </toolbox>

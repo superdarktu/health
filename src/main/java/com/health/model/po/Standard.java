@@ -1,10 +1,10 @@
 package com.health.model.po;
 
 public class Standard {
-	
-	/**
-	 * ID
-	 */
+
+    /**
+     * ID
+     */
     private Integer id;
 
     /**
@@ -51,20 +51,20 @@ public class Standard {
      * 五分的标准
      */
     private Double five;
-    
-    
+
+
     private Integer num;
-    
+
 
     public Integer getNum() {
-		return num;
-	}
+        return num;
+    }
 
-	public void setNum(Integer num) {
-		this.num = num;
-	}
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

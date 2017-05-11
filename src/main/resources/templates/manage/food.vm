@@ -5,144 +5,149 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 
     <title>健身俱乐部管理系统</title>
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
     <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
     <link href="../css/bodybuilder.css" rel="stylesheet">
 
 </head>
 
 <body class="gray-bg">
 
-    <div class="wrapper wrapper-content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>食物添加</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <form method="get" class="form-horizontal">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="col-sm-6">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>食物添加</h5>
+                </div>
+                <div class="ibox-content">
+                    <form method="get" class="form-horizontal">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-6">
 
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">食物名称</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="name" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">类别</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="sort" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">热量100g/kj</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" id="number" name="" class="form-control" placeholder="请输入数据">
-                                            </div>
-                                        </div>
-
-                                        
-
-
-                                    </div>
-                                    
-                                    
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="hr-line-dashed"></div>
                                     <div class="form-group">
-                                        <div class="col-sm-4 col-sm-offset-2">
-                                            <button class="btn btn-primary" id="submit" type="button">确认添加</button>
+                                        <label class="col-sm-4 control-label">食物名称</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="name" name="" class="form-control"
+                                                   placeholder="请输入数据">
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">类别</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="sort" name="" class="form-control"
+                                                   placeholder="请输入数据">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">热量100g/kj</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="number" name="" class="form-control"
+                                                   placeholder="请输入数据">
+                                        </div>
+                                    </div>
+
+
                                 </div>
-                                
+
+
                             </div>
-                            
-                        </form>
-                    </div>
+                            <div class="col-sm-12">
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <button class="btn btn-primary" id="submit" type="button">确认添加</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>食物列表</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="row">
-                            
-                            <div class="col-sm-4 pull-right">
-                                <div class="input-group">
-                                    <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span class="input-group-btn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>食物列表</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="col-sm-4 pull-right">
+                            <div class="input-group">
+                                <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span
+                                    class="input-group-btn">
                                     <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
-                                </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>食物名称</th>
-                                        <th>类别</th>
-                                        <th>热量100g/kj</th>
-                                        <th>操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="food_list">
-                                    <tr>
-                                        <td>牛肉</td>
-                                        <td>肉类</td>
-                                        <td>500</td>
-                                        <td>
-                                            <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                            <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
                     </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>食物名称</th>
+                                <th>类别</th>
+                                <th>热量100g/kj</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="food_list">
+                            <tr>
+                                <td>牛肉</td>
+                                <td>肉类</td>
+                                <td>500</td>
+                                <td>
+                                    <a id="add"><i class="fa fa-pencil text-navy"></i></a>
+                                    <a id="delete"><i class="fa fa-close text-navy"></i></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
-
         </div>
 
     </div>
 
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/content.min.js?v=1.0.0"></script>
-    <script src="../js/plugins/layer/layer.js"></script>
-    <script type="text/javascript">
-    $('#delete').on('click', function(){
+</div>
+
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+<script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/plugins/layer/layer.js"></script>
+<script src="../js/manage/food.js"></script>
+<script type="text/javascript">
+   /* $('#delete').on('click', function () {
         layer.msg('确定删除吗？', {
             time: 0 //不自动关闭
-            ,btn: ['确定删除', '还是算了吧']
-            ,yes: function(index){
+            , btn: ['确定删除', '还是算了吧']
+            , yes: function (index) {
                 layer.close(index);
                 alert("你点了确定");
             }
         });
     });
 
-    $('#add').on('click', function(){
+    $('#add').on('click', function () {
         layer.open({
             type: 2,
             title: '信息修改',
@@ -151,11 +156,10 @@
             content: '111'
 
         });
-    });
+    });*/
 
-        
 
-    </script>
+</script>
 </body>
 
 </html>

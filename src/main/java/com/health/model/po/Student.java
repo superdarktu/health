@@ -1,13 +1,11 @@
 package com.health.model.po;
 
-import java.util.Date;
-
 public class Student {
-	/**
-	 * 学生ID
-	 */
+    /**
+     * 学生ID
+     */
     private Integer id;
-    
+
     /**
      * 登录ID
      */
@@ -62,12 +60,12 @@ public class Student {
      * 健身方案ID
      */
     private String jsfaid;
-    
+
     /**
      * 学员编号
      */
     private String no;
-    
+
     /**
      * 年龄
      */
@@ -82,14 +80,14 @@ public class Student {
     }
 
     public Integer getLoginId() {
-		return loginId;
-	}
+        return loginId;
+    }
 
-	public void setLoginId(Integer loginId) {
-		this.loginId = loginId;
-	}
+    public void setLoginId(Integer loginId) {
+        this.loginId = loginId;
+    }
 
-	public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -169,20 +167,20 @@ public class Student {
         this.jsfaid = jsfaid;
     }
 
-	public String getNo() {
-		return no;
-	}
+    public String getNo() {
+        return no;
+    }
 
-	public void setNo(String no) {
-		this.no = no;
-	}
+    public void setNo(String no) {
+        this.no = no;
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-    
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
 }

@@ -1,21 +1,23 @@
 package com.health.service;
 
-import java.util.List;
-
 import com.health.model.po.Student;
 import com.health.model.vo.ProgramVO;
 
+import java.util.List;
+
 public interface StudentService {
-	
-	/**
-	 * 根据ID删除
-	 * @param id
-	 * @return
-	 */
+
+    /**
+     * 根据ID删除
+     *
+     * @param id
+     * @return
+     */
     boolean deleteByPrimaryKey(Integer id);
 
     /**
      * 添加
+     *
      * @param student
      * @return
      */
@@ -23,13 +25,15 @@ public interface StudentService {
 
     /**
      * 根据ID查询
+     *
      * @param id
      * @return
      */
     Student selectByPrimaryKey(Integer id);
-    
+
     /**
      * 根据登录ID查询
+     *
      * @param loginId
      * @return
      */
@@ -37,6 +41,7 @@ public interface StudentService {
 
     /**
      * 修改
+     *
      * @param student
      * @return
      */
@@ -44,12 +49,13 @@ public interface StudentService {
 
     /**
      * 分页查询
+     *
      * @param student
      * @param page
      * @param pageSize
      * @return
      */
-    List<Student> page(Student student,Integer page ,Integer pageSize);
+    List<Student> page(Student student, Integer page, Integer pageSize);
 
     List<ProgramVO> getProgram(Integer studentId);
 }

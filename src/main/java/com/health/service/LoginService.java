@@ -3,16 +3,18 @@ package com.health.service;
 import com.health.model.po.Login;
 
 public interface LoginService {
-	
-	/**
-	 * 删除
-	 * @param id
-	 * @return
-	 */
+
+    /**
+     * 删除
+     *
+     * @param id
+     * @return
+     */
     boolean deleteByPrimaryKey(Integer id);
 
     /**
      * 添加
+     *
      * @param login
      * @return
      */
@@ -20,14 +22,16 @@ public interface LoginService {
 
     /**
      * 登录
+     *
      * @param username
      * @param password
      * @return
      */
-    Login login(String username , String password);
+    Login login(String username, String password);
 
     /**
      * 修改
+     *
      * @param login
      * @return
      */

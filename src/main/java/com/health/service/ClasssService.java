@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ClasssService {
     List<Classs> pageByKeyWord(Classs record, Integer page, Integer pageSize);
-    
+
     List<Classs> pageByName(String name);
 
     int deleteByPrimaryKey(Integer id);
@@ -21,5 +21,4 @@ public interface ClasssService {
 
     int updateByPrimaryKey(Classs record);
 
-    int save(Classs record);
 }

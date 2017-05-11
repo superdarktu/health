@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <title>健身俱乐部管理系统</title>
 
     <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html" />
+    <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
 
     <link rel="shortcut icon" href="favicon.ico">
@@ -21,162 +21,166 @@
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
-    <div id="wrapper">
-        <!--左侧导航开始-->
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="nav-close"><i class="fa fa-times-circle"></i>
-            </div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element">
-                            <!-- <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span> -->
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+<div id="wrapper">
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"><i class="fa fa-times-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <!-- <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span> -->
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                <span class="block m-t-xs"><strong class="font-bold">王小明</strong></span>
                                 <span class="text-muted text-xs block">VIP组<b class="caret"></b></span>
                                 </span>
-                            </a>
-                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <!-- <li><a class="J_menuItem" href="contacts.html">联系我们</a>
-                                </li> --><!-- 
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <!-- <li><a class="J_menuItem" href="contacts.html">联系我们</a>
+                            </li> --><!--
                                 <li class="divider"></li> -->
-                                <li><a href="login.html">安全退出</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="logo-element">BB+
-                        </div>
-                    </li>
-                    <li>
-                        <a class="J_menuItem" href="user_about_edit.html">
-                            <i class="fa fa-user"></i>
-                            <span class="nav-label">个人信息</span>
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li>
-                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">体测管理</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="buildata_input.html">体测数据录入</a>
-                            </li>
-                            <li><a class="J_menuItem" href="buildata_result.html">数据分析结果</a>
-                            </li>
-                            <li><a class="J_menuItem" href="buildata_search.html">历史数据查询</a>
+                            <li><a href="login.html">安全退出</a>
                             </li>
                         </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa fa-bar-chart-o"></i>
-                            <span class="nav-label">健身管理</span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="J_menuItem" href="buildplan.html">健身方案</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="buildeffect.html">效果反馈</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a class="J_menuItem" href="infosearch.html">
-                            <i class="fa fa-desktop"></i>
-                            <span class="nav-label">信息查询</span>
-                        </a>
-                    </li>
-
-                    <!-- <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">其他</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="table_basic.html">备用1</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_data_tables.html">备用2</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_jqgrid.html">备用3</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_foo_table.html">备用4</a>
-                            </li>
-                        </ul>
-                    </li> -->
-
-                </ul>
-            </div>
-        </nav>
-        <!--左侧导航结束-->
-        <!--右侧部分开始-->
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                        <h2 class="text-right">健身俱乐部管理系统</h2>
                     </div>
-                    <!-- <ul class="nav navbar-top-links navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-messages">
-                                <li class="m-t-xs">
-                                    <div class="dropdown-messages-box">
-                                        
-                                        <div class="media-body">
-                                            <small class="pull-right text-navy">46小时前</small>
-                                            <strong>小四</strong> 这个在日本投降书上签字的军官，建国后一定是个不小的干部吧？
-                                            <br>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                       
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">25小时前</small>
-                                            <strong>国民岳父</strong> 如何看待“男子不满自己爱犬被称为狗，刺伤路人”？——这人比犬还凶
-                                            <br>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="mailbox.html">
-                                            <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul> -->
-                </nav>
-            </div>
-           
-            <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="user_about_default.html" frameborder="0" seamless></iframe>
-            </div>
-            <div class="footer">
-                <div class="pull-right">&copy; 2017 <a href="http://www.ruanis.com" target="_blank">Design by Wendale</BODY></a>
-                </div>
-            </div>
-        </div>
-        <!--右侧部分结束-->
-    </div>
+                    <div class="logo-element">BB+
+                    </div>
+                </li>
+                <li>
+                    <a class="J_menuItem" href="user_about_edit.html">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-label">个人信息</span>
+                    </a>
+                </li>
 
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="../js/plugins/layer/layer.min.js"></script>
-    <script src="../js/hplus.min.js?v=4.0.0"></script>
-    <script type="text/javascript" src="../js/contabs.min.js"></script>
-    <script src="../js/plugins/pace/pace.min.js"></script>
+
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">体测管理</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a class="J_menuItem" href="buildata_input.html">体测数据录入</a>
+                        </li>
+                        <li><a class="J_menuItem" href="buildata_result.html">数据分析结果</a>
+                        </li>
+                        <li><a class="J_menuItem" href="buildata_search.html">历史数据查询</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa fa-bar-chart-o"></i>
+                        <span class="nav-label">健身管理</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="buildplan.html">健身方案</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="buildeffect.html">效果反馈</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="J_menuItem" href="infosearch.html">
+                        <i class="fa fa-desktop"></i>
+                        <span class="nav-label">信息查询</span>
+                    </a>
+                </li>
+
+                <!-- <li>
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">其他</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a class="J_menuItem" href="table_basic.html">备用1</a>
+                        </li>
+                        <li><a class="J_menuItem" href="table_data_tables.html">备用2</a>
+                        </li>
+                        <li><a class="J_menuItem" href="table_jqgrid.html">备用3</a>
+                        </li>
+                        <li><a class="J_menuItem" href="table_foo_table.html">备用4</a>
+                        </li>
+                    </ul>
+                </li> -->
+
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                        class="fa fa-bars"></i> </a>
+                    <h2 class="text-right">健身俱乐部管理系统</h2>
+                </div>
+                <!-- <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li class="m-t-xs">
+                                <div class="dropdown-messages-box">
+
+                                    <div class="media-body">
+                                        <small class="pull-right text-navy">46小时前</small>
+                                        <strong>小四</strong> 这个在日本投降书上签字的军官，建国后一定是个不小的干部吧？
+                                        <br>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+
+                                    <div class="media-body ">
+                                        <small class="pull-right text-navy">25小时前</small>
+                                        <strong>国民岳父</strong> 如何看待“男子不满自己爱犬被称为狗，刺伤路人”？——这人比犬还凶
+                                        <br>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a class="J_menuItem" href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul> -->
+            </nav>
+        </div>
+
+        <div class="row J_mainContent" id="content-main">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="user_about_default.html"
+                    frameborder="0" seamless></iframe>
+        </div>
+        <div class="footer">
+            <div class="pull-right">&copy; 2017 <a href="http://www.ruanis.com" target="_blank">Design by Wendale
+</BODY>
+</a>
+</div>
+</div>
+</div>
+<!--右侧部分结束-->
+</div>
+
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+<script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../js/plugins/layer/layer.min.js"></script>
+<script src="../js/hplus.min.js?v=4.0.0"></script>
+<script type="text/javascript" src="../js/contabs.min.js"></script>
+<script src="../js/plugins/pace/pace.min.js"></script>
 </body>
 
 </html>

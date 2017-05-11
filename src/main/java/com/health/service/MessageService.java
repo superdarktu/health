@@ -1,8 +1,8 @@
 package com.health.service;
 
-import java.util.List;
-
 import com.health.model.po.Message;
+
+import java.util.List;
 
 public interface MessageService {
     int deleteByPrimaryKey(Integer id);

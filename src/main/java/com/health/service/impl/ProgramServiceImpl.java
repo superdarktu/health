@@ -1,80 +1,79 @@
 package com.health.service.impl;
 
-import java.util.List;
-
 import com.health.model.po.Item;
+import com.health.model.po.Program;
 import com.health.model.vo.ProgramVO;
 import com.health.service.ItemService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.health.model.po.Program;
 import com.health.service.ProgramService;
 import com.health.util.SQLManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
-public class ProgramServiceImpl implements ProgramService{
-	
-	@Autowired
-   	private SQLManager sqlManager;
+public class ProgramServiceImpl implements ProgramService {
 
-	@Autowired
-	private ItemService itemService;
+    @Autowired
+    private SQLManager sqlManager;
 
-	/**
-	 * 根据ID删除
-	 */
-	@Transactional
-	public boolean deleteByPrimaryKey(String no) {
+    @Autowired
+    private ItemService itemService;
 
-		itemService.deleteByPrimaryKey(no);
-		return sqlManager.delete("program.deleteByPrimaryKey", no) > 0 ? true : false;
-	}
+    /**
+     * 根据ID删除
+     */
+    @Transactional
+    public boolean deleteByPrimaryKey(String no) {
 
-	/**
-	 * 添加
-	 */
-	@Transactional
-	public boolean addProgram(List<ProgramVO> list,String no) {
+        itemService.deleteByPrimaryKey(no);
+        return sqlManager.delete("program.deleteByPrimaryKey", no) > 0 ? true : false;
+    }
 
-		for(int i=0;i<list.size();i++){
-			ProgramVO po = list.get(i);
-			List<Item> items = po.getItemList();
-			po.setTeacherNo(no);
-			sqlManager.insert("program.insert", po);
-			for(int u=00;u<items.size();u++){
+    /**
+     * 添加
+     */
+    @Transactional
+    public boolean addProgram(List<ProgramVO> list, String no) {
 
-				Item item = items.get(u);
-				item.setProgramId(po.getId());
-				item.setNo(po.getNo());
-				itemService.insert(item);
-			}
-		}
-		return true;
-	}
+        for (int i = 0; i < list.size(); i++) {
+            ProgramVO po = list.get(i);
+            List<Item> items = po.getItemList();
+            po.setTeacherNo(no);
+            sqlManager.insert("program.insert", po);
+            for (int u = 00; u < items.size(); u++) {
 
-	/**
-	 * 根据ID查询
-	 */
-	public List<ProgramVO> selectByNo(String no) {
+                Item item = items.get(u);
+                item.setProgramId(po.getId());
+                item.setNo(po.getNo());
+                itemService.insert(item);
+            }
+        }
+        return true;
+    }
 
-		List<ProgramVO> lpv = (List<ProgramVO>)sqlManager.list("program.selectByNo",no);
+    /**
+     * 根据ID查询
+     */
+    public List<ProgramVO> selectByNo(String no) {
 
-		for(int i=0;i<lpv.size();i++){
-			ProgramVO pv = lpv.get(i);
-			pv.setItemList(itemService.pageByKeyWord(pv.getId()));
-		}
-		return lpv;
-	}
+        List<ProgramVO> lpv = (List<ProgramVO>) sqlManager.list("program.selectByNo", no);
+
+        for (int i = 0; i < lpv.size(); i++) {
+            ProgramVO pv = lpv.get(i);
+            pv.setItemList(itemService.pageByKeyWord(pv.getId()));
+        }
+        return lpv;
+    }
 
 
-	/**
-	 * 分页查询
-	 */
-	public List<Program> page(Program program, Integer page, Integer pageSize) {
-		
-		return (List<Program>) sqlManager.list("program.page", program, page, pageSize);
-	}
+    /**
+     * 分页查询
+     */
+    public List<Program> page(Program program, Integer page, Integer pageSize) {
+
+        return (List<Program>) sqlManager.list("program.page", program, page, pageSize);
+    }
 
 }

@@ -1,18 +1,12 @@
 package com.health.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.health.model.po.Food;
 import com.health.model.ro.ResultRO;
 import com.health.service.FoodService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/food")
@@ -53,17 +47,19 @@ public class FoodController {
     @ResponseBody
     @RequestMapping("save")
     public ResultRO insertOrUpdate(Food record) {
-    	
-    	if(record.getId() == null){
-    		if(foodService.insert(record) > 0){
-    			return new ResultRO(true);
-    		}
-    	}else{
-    		if(foodService.updateByPrimaryKeySelective(record) > 0){
-    			return new ResultRO(true);
-    		}
-    	}
-    	
+
+        if (record.getId() == null) {
+            if(record.getName() == null)
+                return new ResultRO("名字不能为空");
+            if (foodService.insert(record) > 0) {
+                return new ResultRO(true,"food");
+            }
+        } else {
+            if (foodService.updateByPrimaryKeySelective(record) > 0) {
+                return new ResultRO(true);
+            }
+        }
+
         return new ResultRO("保存失败");
     }
 
@@ -73,10 +69,10 @@ public class FoodController {
     @ResponseBody
     @RequestMapping("delete")
     public ResultRO remove(Integer id) {
-    	
-    	if(foodService.deleteByPrimaryKey(id) > 0){
-    		return new ResultRO(true);
-    	}
+
+        if (foodService.deleteByPrimaryKey(id) > 0) {
+            return new ResultRO(true,"food");
+        }
         return new ResultRO("删除失败");
     }
 }
