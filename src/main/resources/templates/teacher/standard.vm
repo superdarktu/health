@@ -34,16 +34,19 @@
                 <div class="ibox-content">
                     <div class="row">
                         <div class="col-sm-4">
-                            <select class="form-control m-b">
-                                <option>选择运动项</option>
-                                <option>选项 1</option>
-                                <option>选项 2</option>
-                                <option>选项 3</option>
-                                <option>选项 4</option>
+                            <select id="name" class="form-control m-b">
+                                <option value="">选择运动项</option>
+                                <option value="bmi">BMI</option>
+                                <option value="pulmonary">肺活量</option>
+                                <option value="tjsy">台阶试验</option>
+                                <option value="wl">握力</option>
+                                <option value="ywqz">仰卧起坐</option>
+                                <option value="fwc">俯卧撑</option>
+                                <option value="zwtqq">坐位体前屈</option>
                             </select>
                         </div>
                         <div class="col-sm-8 ">
-                            <button class="btn btn-primary pull-right" type="submit">保存内容</button>
+                            <button class="btn btn-primary pull-right" id="save" type="button">保存内容</button>
                         </div>
                     </div>
                     <table class="table table-bordered">
@@ -59,71 +62,79 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr class="boy">
                             <td rowspan="4">男</td>
+                            <input type="hidden"  value="1" class="age">
                             <td>15~24</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="boy">
                             <td>25~34</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="2" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="boy">
                             <td>35~44</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="3" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="boy">
                             <td>45~55</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="4" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="girl">
                             <td rowspan="4">女</td>
                             <td>15~24</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="1" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="girl">
                             <td>25~34</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="2" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="girl">
                             <td>35~44</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="3" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
-                        <tr>
+                        <tr class="girl">
                             <td>45~55</td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
-                            <td><input type="text" placeholder="输入该分值最低数值"></td>
+                            <input type="hidden" value="4" class="age">
+                            <td><input type="text" class="one value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="two value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="three value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="four value" placeholder="输入该分值最低数值"></td>
+                            <td><input type="text" class="five value" placeholder="输入该分值最低数值"></td>
                         </tr>
 
                         </tbody>
@@ -139,6 +150,7 @@
 <script src="../js/jquery.min.js?v=2.1.4"></script>
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/teacher/standard.js"></script>
 </body>
 
 </html>

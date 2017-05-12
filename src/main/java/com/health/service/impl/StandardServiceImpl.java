@@ -23,11 +23,14 @@ public class StandardServiceImpl implements StandardService {
     public int insert(List<Standard> list) {
 
         if (list.size() <= 0) return 0;
+        Integer result =0;
+
+        sqlManager.delete("standard.delete",list.get(0).getName());
         for (int i = 0; i < list.size(); i++) {
 
-            sqlManager.insert("standard.insert", list.get(i));
+            result = sqlManager.insert("standard.insert", list.get(i));
         }
-        return list.get(0).getId();
+        return result;
     }
 
 

@@ -1,5 +1,4 @@
-function
-delete(id)
+function del(id)
 {
     layer.msg('确定删除吗？', {
         time: 0 //不自动关闭

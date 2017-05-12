@@ -42,7 +42,7 @@ public class ProgramServiceImpl implements ProgramService {
             List<Item> items = po.getItemList();
             po.setTeacherNo(no);
             sqlManager.insert("program.insert", po);
-            for (int u = 00; u < items.size(); u++) {
+            for (int u = 0; u < items.size(); u++) {
 
                 Item item = items.get(u);
                 item.setProgramId(po.getId());

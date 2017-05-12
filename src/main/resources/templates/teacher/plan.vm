@@ -132,8 +132,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td width="10%" rowspan="2">第1天</td>
+                        <tr class="day">
+                            <td width="10%"  rowspan="2">第1天</td>
                             <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
                             <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
                             <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
@@ -141,26 +141,10 @@
                             <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
                             <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
                         </tr>
-                        <tr>
+                        <tr class="aaa">
                             <td colspan="6"><a href="javascript:;">添加行</a></td>
                         </tr>
-                        <tr>
-                            <td rowspan="2">第2天</td>
-                            <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-                            <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
-                            <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
-                        </tr>
-                        <tr>
-                            <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-                            <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-                            <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
-                            <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
-                        </tr>
+
                         <tr>
                             <td colspan="7"><a href="javascript:;">添加行</a></td>
                         </tr>
@@ -179,6 +163,7 @@
                 <div class="ibox-content">
                     <table class="table table-bordered">
                         <thead>
+
                         <tr>
                             <th rowspan="2">天数</th>
                             <th colspan="2">早餐</th>
@@ -194,7 +179,7 @@
                             <th>食用量</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="">
                         <tr>
                             <td rowspan="2">第1天</td>
                             <td width="14%"><input type="text" style="width: 100%"></td>
@@ -250,7 +235,53 @@
 <script src="../js/jquery.min.js?v=2.1.4"></script>
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
+<script id="item1" type="text/html">
+    <tr>
+        <td rowspan="2">第2天</td>
+        <input type="hidden" class="day" value="">
+        <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+        <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+    </tr>
+</script>
 
+<script id="item2" type="text/html">
+    <tr>
+        <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+        <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+    </tr>
+</script>
+
+<script id="food1" type="text/html">
+    <tr>
+        <td rowspan="2">第2天</td>
+        <input type="hidden" class="day" value="">
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+    </tr>
+</script>
+
+<script id="food2" type="text/html">
+    <tr>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+        <td width="14%"><input type="text" style="width: 100%"></td>
+    </tr>
+</script>
 
 </body>
 
