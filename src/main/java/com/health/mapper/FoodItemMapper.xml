@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.health.service.FoodItemMapper" >
+  <resultMap id="BaseResultMap" type="com.health.model.po.FoodItem" >
+    <id column="PROGRAM_ID" property="programId" jdbcType="INTEGER" />
+    <result column="FOOD" property="food" jdbcType="VARCHAR" />
+    <result column="NUMBER" property="number" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PROGRAM_ID, FOOD, NUMBER
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from food_item
+    where PROGRAM_ID = #{programId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from food_item
+    where PROGRAM_ID = #{programId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.health.model.po.FoodItem" >
+    insert into food_item (PROGRAM_ID, FOOD, NUMBER
+      )
+    values (#{programId,jdbcType=INTEGER}, #{food,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.health.model.po.FoodItem" >
+    insert into food_item
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="programId != null" >
+        PROGRAM_ID,
+      </if>
+      <if test="food != null" >
+        FOOD,
+      </if>
+      <if test="number != null" >
+        NUMBER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="programId != null" >
+        #{programId,jdbcType=INTEGER},
+      </if>
+      <if test="food != null" >
+        #{food,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.FoodItem" >
+    update food_item
+    <set >
+      <if test="food != null" >
+        FOOD = #{food,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        NUMBER = #{number,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PROGRAM_ID = #{programId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.health.model.po.FoodItem" >
+    update food_item
+    set FOOD = #{food,jdbcType=VARCHAR},
+      NUMBER = #{number,jdbcType=VARCHAR}
+    where PROGRAM_ID = #{programId,jdbcType=INTEGER}
+  </update>
+</mapper>

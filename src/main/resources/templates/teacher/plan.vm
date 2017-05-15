@@ -36,15 +36,14 @@
                 <div class="ibox-content">
                     <div class="table-responsive">
                         <table class="table table-striped">
-                            <thead>
+                        	<div>
                             <tr>
                                 <th>处方编号</th>
                                 <th>处方目的</th>
                                 <th>制作者编号</th>
                                 <th>操作</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                            </div>
                             <tr>
                                 <td>840000</td>
                                 <td>王小明</td>
@@ -63,7 +62,6 @@
                                     <a href=""><i class="fa fa-close text-navy"></i></a>
                                 </td>
                             </tr>
-                            </tbody>
                         </table>
                     </div>
 
@@ -120,7 +118,7 @@
                 </div>
                 <div class="ibox-content">
                     <table class="table table-bordered">
-                        <thead>
+                    <div>
                         <tr>
                             <th>天数</th>
                             <th>项目</th>
@@ -130,8 +128,7 @@
                             <th>动作要点</th>
                             <th>注意事项</th>
                         </tr>
-                        </thead>
-                        <tbody>
+                    </div>
                         <tr class="day">
                             <td width="10%"  rowspan="2">第1天</td>
                             <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
@@ -142,13 +139,12 @@
                             <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
                         </tr>
                         <tr class="aaa">
-                            <td colspan="6"><a href="javascript:;">添加行</a></td>
+                            <td colspan="6"><a class="itemadd1" href="javascript:;">添加行</a></td>
                         </tr>
 
                         <tr>
-                            <td colspan="7"><a href="javascript:;">添加行</a></td>
+                            <td colspan="7"><a class="itemadd" href="javascript:;">添加行</a></td>
                         </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -162,8 +158,6 @@
                 </div>
                 <div class="ibox-content">
                     <table class="table table-bordered">
-                        <thead>
-
                         <tr>
                             <th rowspan="2">天数</th>
                             <th colspan="2">早餐</th>
@@ -178,10 +172,8 @@
                             <th>食物名称</th>
                             <th>食用量</th>
                         </tr>
-                        </thead>
-                        <tbody class="">
-                        <tr>
-                            <td rowspan="2">第1天</td>
+                        <tr class="foodday">
+                            <td class="day" rowspan="3">第1天</td>
                             <td width="14%"><input type="text" style="width: 100%"></td>
                             <td width="14%"><input type="text" style="width: 100%"></td>
                             <td width="14%"><input type="text" style="width: 100%"></td>
@@ -190,7 +182,15 @@
                             <td width="14%"><input type="text" style="width: 100%"></td>
                         </tr>
                         <tr>
-                            <td colspan="6"><a href="javascript:;">添加行</a></td>
+        					<td width="14%"><input type="text" style="width: 100%"></td>
+        					<td width="14%"><input type="text" style="width: 100%"></td>
+       						<td width="14%"><input type="text" style="width: 100%"></td>
+       						<td width="14%"><input type="text" style="width: 100%"></td>
+      						<td width="14%"><input type="text" style="width: 100%"></td>
+      						<td width="14%"><input type="text" style="width: 100%"></td>
+   						 </tr>
+                        <tr class="bbb">
+                            <td colspan="6"><a class="foodadd1" href="javascript:;">添加行</a></td>
                         </tr>
                         <tr>
                             <td rowspan="2">第2天</td>
@@ -210,9 +210,8 @@
                             <td width="14%"><input type="text" style="width: 100%"></td>
                         </tr>
                         <tr>
-                            <td colspan="7"><a href="javascript:;">添加行</a></td>
+                            <td colspan="7"><a class="foodadd" href="javascript:;">添加行</a></td>
                         </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -235,6 +234,7 @@
 <script src="../js/jquery.min.js?v=2.1.4"></script>
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
+<script src="../js/teacher/plan.js"></script>
 <script id="item1" type="text/html">
     <tr>
         <td rowspan="2">第2天</td>
@@ -245,6 +245,9 @@
         <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
         <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
         <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+    </tr>
+    <tr>
+        <td colspan="6"><a class="add1" href="javascript:;">添加行</a></td>
     </tr>
 </script>
 
@@ -260,7 +263,7 @@
 </script>
 
 <script id="food1" type="text/html">
-    <tr>
+    <tr class="foodday">
         <td rowspan="2">第2天</td>
         <input type="hidden" class="day" value="">
         <td width="14%"><input type="text" style="width: 100%"></td>
@@ -270,6 +273,10 @@
         <td width="14%"><input type="text" style="width: 100%"></td>
         <td width="14%"><input type="text" style="width: 100%"></td>
     </tr>
+    <tr>
+        <td colspan="6"><a class="add1" href="javascript:;">添加行</a></td>
+    </tr>
+    
 </script>
 
 <script id="food2" type="text/html">

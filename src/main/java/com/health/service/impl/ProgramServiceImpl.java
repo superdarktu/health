@@ -1,11 +1,14 @@
 package com.health.service.impl;
 
+import com.health.model.po.FoodItem;
 import com.health.model.po.Item;
 import com.health.model.po.Program;
 import com.health.model.vo.ProgramVO;
+import com.health.service.FoodItemService;
 import com.health.service.ItemService;
 import com.health.service.ProgramService;
 import com.health.util.SQLManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +23,9 @@ public class ProgramServiceImpl implements ProgramService {
 
     @Autowired
     private ItemService itemService;
+    
+    @Autowired
+    private FoodItemService foodItemService;
 
     /**
      * 根据ID删除
@@ -40,6 +46,7 @@ public class ProgramServiceImpl implements ProgramService {
         for (int i = 0; i < list.size(); i++) {
             ProgramVO po = list.get(i);
             List<Item> items = po.getItemList();
+            List<FoodItem> foods = po.getFoodList();
             po.setTeacherNo(no);
             sqlManager.insert("program.insert", po);
             for (int u = 0; u < items.size(); u++) {
@@ -48,6 +55,12 @@ public class ProgramServiceImpl implements ProgramService {
                 item.setProgramId(po.getId());
                 item.setNo(po.getNo());
                 itemService.insert(item);
+            }
+            for(int u = 0; u < items.size(); u++){
+            	
+            	FoodItem food = foods.get(u);
+            	food.setProgramId(po.getId());
+            	foodItemService.insert(food);
             }
         }
         return true;

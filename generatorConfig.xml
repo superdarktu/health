@@ -14,7 +14,7 @@
         <javaModelGenerator targetPackage="com.health.model.po" targetProject="health"/>
         <sqlMapGenerator targetPackage="com.health.mapper" targetProject="health"/>
         <javaClientGenerator targetPackage="com.health.service" targetProject="health" type="XMLMAPPER"/>
-        <table schema="health_db" tableName="message" enableCountByExample="false" enableUpdateByExample="false"
+        <table schema="health_db" tableName="food_item" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
     </context>
