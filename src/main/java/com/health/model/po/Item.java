@@ -41,20 +41,6 @@ public class Item {
      */
     private String matter;
 
-    /**
-     * 食物名称
-     */
-    private String food;
-
-    /**
-     * 食用时间
-     */
-    private String eatDate;
-
-    /**
-     * 食用量
-     */
-    private String eatNumber;
 
     public Integer getProgramId() {
         return programId;
@@ -112,29 +98,6 @@ public class Item {
         this.matter = matter;
     }
 
-    public String getFood() {
-        return food;
-    }
-
-    public void setFood(String food) {
-        this.food = food;
-    }
-
-    public String getEatDate() {
-        return eatDate;
-    }
-
-    public void setEatDate(String eatDate) {
-        this.eatDate = eatDate;
-    }
-
-    public String getEatNumber() {
-        return eatNumber;
-    }
-
-    public void setEatNumber(String eatNumber) {
-        this.eatNumber = eatNumber;
-    }
 
     public Integer getId() {
         return id;

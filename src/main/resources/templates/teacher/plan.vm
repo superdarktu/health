@@ -29,7 +29,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>处方列表</h5>
-                        <a href="javascript:;" class="pull-right">添加处方</a>
+                        <a href="javascript:;" onclick="submit();" class="pull-right">添加处方</a>
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
@@ -84,7 +84,7 @@
                                     <div class="form-group col-sm-4">
                                         <label class="col-sm-4 control-label">处方编号：</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            <input type="text" id="no" name="" class="form-control" placeholder="请输入数据">
                                         </div>
                                     </div>
 
@@ -92,16 +92,16 @@
                                     <div class="form-group col-sm-4">
                                         <label class="col-sm-4 control-label">处方目的：</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            <input type="text" id="cfmd" name="" class="form-control" placeholder="请输入数据">
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-sm-4">
+                                <!--    <div class="form-group col-sm-4">
                                         <label class="col-sm-5 control-label">制作者编号：</label>
                                         <div class="col-sm-7">
                                             <input type="text" name="" class="form-control" placeholder="请输入数据">
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                                     
                             </div>
@@ -143,7 +143,7 @@
                         <h5>健身注意点</h5>
                     </div>
                     <div class="ibox-content">
-                        <input type="text" style="width: 100%" placeholder="请输入要备注的注意点">
+                        <input type="text" id="jszyd" style="width: 100%" placeholder="请输入要备注的注意点">
                     </div>
                 </div>
             </div>
@@ -156,13 +156,13 @@
     <script src="../js/teacher/plan.js"></script>
 
 <script id="item1" type="text/html">
-    <tr>
-        <td width="14%"><input type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
-        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20"></td>
-        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-        <td width="10%"><input type="text" style="width: 100%" placeholder="如：20/20"></td>
-        <td width="20%"><input type="text" style="width: 100%" placeholder="如：腹部用力"></td>
-        <td width="26%"><input type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
+    <tr class="itemtr">
+        <td width="14%"><input class="name" type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
+        <td width="10%"><input class="load" type="text" style="width: 100%" placeholder="如：20"></td>
+        <td width="10%"><input class="interval" type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="10%"><input class="number" type="text" style="width: 100%" placeholder="如：20/20"></td>
+        <td width="20%"><input class="points" type="text" style="width: 100%" placeholder="如：腹部用力"></td>
+        <td width="26%"><input class="matter" type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
     </tr>
 </script>
 <script id="item2" type="text/html">
@@ -177,15 +177,7 @@
                 <th>注意事项</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td width="14%"><input class="name"  type="text" style="width: 100%" placeholder="如：仰卧起坐"></td>
-                <td width="10%"><input class="load" type="text" style="width: 100%" placeholder="如：20"></td>
-                <td width="10%"><input class="interval" type="text" style="width: 100%" placeholder="如：20/20"></td>
-                <td width="10%"><input class="number" type="text" style="width: 100%" placeholder="如：20/20"></td>
-                <td width="20%"><input class="points" type="text" style="width: 100%" placeholder="如：腹部用力"></td>
-                <td width="26%"><input class="matter" type="text" style="width: 100%" placeholder="如：注意肌肉紧缩"></td>
-            </tr>
+            <tbody class="itemmain">
             <tr>
                 <td colspan="6"><a class="itemadd1" href="javascript:;">添加行</a></td>
             </tr>
@@ -195,13 +187,13 @@
     </div>
 </script>
 <script id="food1" type="text/html">
-    <tr>
-        <td width="14%"><input type="text" style="width: 100%"></td>
-        <td width="14%"><input type="text" style="width: 100%"></td>
-        <td width="14%"><input type="text" style="width: 100%"></td>
-        <td width="14%"><input type="text" style="width: 100%"></td>
-        <td width="14%"><input type="text" style="width: 100%"></td>
-        <td width="14%"><input type="text" style="width: 100%"></td>
+    <tr class="foodtr">
+        <td width="14%"><input class="name1" type="text" style="width: 100%"></td>
+        <td width="14%"><input class="num1" type="text" style="width: 100%"></td>
+        <td width="14%"><input class="name2" type="text" style="width: 100%"></td>
+        <td width="14%"><input class="num2" type="text" style="width: 100%"></td>
+        <td width="14%"><input class="name3" type="text" style="width: 100%"></td>
+        <td width="14%"><input class="num3" type="text" style="width: 100%"></td>
     </tr>
 </script>
 <script id="food2" type="text/html">
@@ -222,15 +214,7 @@
                 <th>食用量</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td width="14%"><input class="name1" type="text" style="width: 100%"></td>
-                <td width="14%"><input class="num1" type="text" style="width: 100%"></td>
-                <td width="14%"><input class="name2" type="text" style="width: 100%"></td>
-                <td width="14%"><input class="num2" type="text" style="width: 100%"></td>
-                <td width="14%"><input class="name3" type="text" style="width: 100%"></td>
-                <td width="14%"><input class="num3" type="text" style="width: 100%"></td>
-            </tr>
+            <tbody class="foodmain">
             <tr>
                 <td colspan="6"><a class="foodadd1" href="javascript:;">添加行</a></td>
             </tr>

@@ -11,12 +11,9 @@
         <result column="NUMBER" property="number" jdbcType="INTEGER"/>
         <result column="POINTS" property="points" jdbcType="VARCHAR"/>
         <result column="MATTER" property="matter" jdbcType="VARCHAR"/>
-        <result column="FOOD" property="food" jdbcType="VARCHAR"/>
-        <result column="EAT_DATE" property="eatDate" jdbcType="VARCHAR"/>
-        <result column="EAT_NUMBER" property="eatNumber" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        ID,PROGRAM_ID,NO, NAME, LOAD, INTERVAL, NUMBER, POINTS, MATTER, FOOD, EAT_DATE, EAT_NUMBER
+        ID,PROGRAM_ID,NO, NAME, LOAD, INTERVAL, NUMBER, POINTS, MATTER
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
@@ -36,8 +33,7 @@
         values (#{id,jdbcType=INTEGER},#{programId,jdbcType=INTEGER},#{no,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
         #{load,jdbcType=DOUBLE},
         #{interval,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, #{points,jdbcType=VARCHAR},
-        #{matter,jdbcType=VARCHAR}, #{food,jdbcType=VARCHAR}, #{eatDate,jdbcType=VARCHAR},
-        #{eatNumber,jdbcType=VARCHAR})
+        #{matter,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.health.model.po.Item">
         insert into item

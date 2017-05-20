@@ -1,9 +1,9 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.Program;
 import com.health.model.vo.ProgramVO;
-
-import java.util.List;
 
 public interface ProgramService {
 
@@ -36,6 +36,10 @@ public interface ProgramService {
     List<Program> page(Program program, Integer page, Integer pageSize);
 
 
-    boolean addProgram(List<ProgramVO> list, String no);
+//    boolean addProgram(List<ProgramVO> list, String no);
+    
+    boolean insert(ProgramVO pv);
+    
+    boolean update(ProgramVO pv);
 
 }

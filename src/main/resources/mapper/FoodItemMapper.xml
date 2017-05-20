@@ -7,9 +7,10 @@
     <result column="PROGRAM_ID" property="programId" jdbcType="INTEGER" />
     <result column="FOOD" property="food" jdbcType="VARCHAR" />
     <result column="NUMBER" property="number" jdbcType="VARCHAR" />
+    <result column="WHEN" property="when" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID,PROGRAM_ID, FOOD, NUMBER
+    ID,PROGRAM_ID, FOOD, NUMBER,WHEN
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -22,10 +23,10 @@
     where PROGRAM_ID = #{programId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.health.model.po.FoodItem" >
-    insert into food_item (ID,PROGRAM_ID, FOOD, NUMBER
+    insert into food_item (ID,PROGRAM_ID, FOOD, NUMBER,WHEN
       )
     values (#{id,jdbcType=INTEGER},#{programId,jdbcType=INTEGER}, #{food,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}
-      )
+      ,#{when,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.health.model.po.FoodItem" >
     insert into food_item

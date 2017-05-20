@@ -9,9 +9,18 @@ public class FoodItem {
     
     private Integer id;
     
+    private Integer when;
     
 
-    public Integer getId() {
+    public Integer getWhen() {
+		return when;
+	}
+
+	public void setWhen(Integer when) {
+		this.when = when;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 

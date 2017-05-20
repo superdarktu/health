@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>健身俱乐部管理系统</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="../css/bodybuilder.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
+
+</head>
+
+<body class="gray-bg">
+    
+
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>健身效果信息收集</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">体重(kg)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">腰围(cm)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">臀围(cm)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">肺活量(ml)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">台阶指数：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据"><span class="help-block m-b-none">台阶指数 = [运动持续时间(s)/(3次测量脉搏数之和 x2)] x100</span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">握力(kg)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">仰卧起坐(个/min)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">俯卧撑(个/min)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">坐位体前屈(个/min)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <button class="btn btn-primary" type="submit">提交数据</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>健身效果反馈</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>体重</th>
+                                    <th>腰围</th>
+                                    <th>臀围</th>
+                                    <th>肺活量</th>
+                                    <th>台阶指数</th>
+                                    <th>握力</th>
+                                    <th>仰卧起坐</th>
+                                    <th>俯卧撑</th>
+                                    <th>坐位体前屈</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>数值</th>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                                <tr>
+                                    <th>变化百分百</th>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h5>与第一次体测数据进行比较，XXX提高XX% ，请继续努力!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>健身效果图表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="chartdiv" style="width: 100%;height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+    
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chartdiv'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            // title : {
+            //     text: '某地区蒸发量和降水量',
+            //     subtext: '纯属虚构'
+            // },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['上次','本次']
+            },
+            // toolbox: {
+            //     show : true,
+            //     feature : {
+            //         dataView : {show: true, readOnly: false},
+            //         magicType : {show: true, type: ['line', 'bar']},
+            //         restore : {show: true},
+            //         saveAsImage : {show: true}
+            //     }
+            // },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['体重','腰围','臀围','肺活量','台阶指数','握力','仰卧起坐','俯卧撑','坐位体前屈']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'上次',
+                    type:'bar',
+                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6],
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: '最大值'},
+                            {type : 'min', name: '最小值'}
+                        ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name: '平均值'}
+                        ]
+                    }
+                },
+                {
+                    name:'本次',
+                    type:'bar',
+                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7],
+                    markPoint : {
+                        data : [
+                            {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                            {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                        ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name : '平均值'}
+                        ]
+                    }
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

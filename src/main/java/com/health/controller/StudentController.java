@@ -28,6 +28,18 @@ public class StudentController {
         map.put("student", studentService.selectByPrimaryKey(1));
         return "student/edit";
     }
+    
+    @RequestMapping("to_plan")
+    public String toPlan(){
+    	
+    	return "student/plan";
+    }
+    
+    @RequestMapping("to_effect")
+    public String toEffect(){
+    	
+    	return "student/effect";
+    }
 
     @RequestMapping("update")
     @ResponseBody

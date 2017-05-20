@@ -77,10 +77,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="buildplan.html">健身方案</a>
+                            <a class="J_menuItem" href="student/to_plan">健身方案</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="buildeffect.html">效果反馈</a>
+                            <a class="J_menuItem" href="student/to_effect">效果反馈</a>
                         </li>
                     </ul>
                 </li>

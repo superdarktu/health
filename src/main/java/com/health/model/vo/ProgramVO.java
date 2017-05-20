@@ -10,24 +10,27 @@ import java.util.List;
  * Created by Administrator on 2017/5/9.
  */
 public class ProgramVO extends Program {
+	
 
-    private List<Item> itemList;
+	private List<List<Item>> items;
     
-    private List<FoodItem> foodList;
-    
-    public List<FoodItem> getFoodList() {
-		return foodList;
+    private List<List<FoodItemVO>> foods;
+
+	public List<List<Item>> getItems() {
+		return items;
 	}
 
-	public void setFoodList(List<FoodItem> foodList) {
-		this.foodList = foodList;
+	public void setItems(List<List<Item>> items) {
+		this.items = items;
 	}
 
-	public List<Item> getItemList() {
-        return itemList;
-    }
+	public List<List<FoodItemVO>> getFoods() {
+		return foods;
+	}
 
-    public void setItemList(List<Item> itemList) {
-        this.itemList = itemList;
-    }
+	public void setFoods(List<List<FoodItemVO>> foods) {
+		this.foods = foods;
+	}
+
+
 }

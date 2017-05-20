@@ -41,13 +41,13 @@
         delete from program
         where NO = #{no,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Program">
+    <insert id="insert" parameterType="com.health.model.vo.ProgramVO">
         insert into program (ID, CFMD, TEACHER_ID,
         JSZYD, TEACHER_NAME, DAYS,
         CREATE_DATE,NO)
         values (#{id,jdbcType=INTEGER}, #{cfmd,jdbcType=VARCHAR},
         #{jszyd,jdbcType=VARCHAR}, #{teacherNo,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER},
-        #{createDate,jdbcType=TIMESTAMP},#{no,jdbcType=VARCHAR})
+        now(),#{no,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.health.model.po.Program">
         insert into program
