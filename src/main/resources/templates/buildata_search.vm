@@ -62,27 +62,25 @@
                                     <th>数据分析建议</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr >
-                                    <td>2017.01.01</td>
-                                    <td>175</td>
-                                    <td>68</td>
-                                    <td>37</td>
-                                    <td>43</td>
-                                    <td>2869</td>
-                                    <td>65</td>
-                                    <td>4.3</td>
-                                    <td>48</td>
-                                    <td>36</td>
-                                    <td>77</td>
-                                    <td>0.8</td>
-                                    <td>6.6</td>
-                                    <td>3.2</td>
-                                    <td>多喝热水，巴拉巴拉拉</td>
-                                </tr>
-                                
-                                
-                            </tbody>
+                            <tbody id="content">
+	                            #foreach($!data in $!datas)
+	                            <td>$!date.formatYYYYMMDD($!data.testDate)</td>
+	                            <td>$!data.height</td>
+	                            <td>$!data.weight</td>
+	                            <td>$!data.waist</td>
+	                            <td>$!data.hip</td>
+	                            <td>$!data.pulmonary</td>
+	                            <td>$!data.tjsy</td>
+	                            <td>$!data.wl</td>
+	                            <td>$!data.ywqz</td>
+	                            <td>$!data.fwc</td>
+	                            <td>$!data.zwtqq</td>
+	                            <td>$!data.bmr</td>
+	                            <td>$!data.ytb</td>
+	                            <td>$!data.bmi</td>
+	                            <td>$!data.sjfxjy</td>
+	                            #end
+	                        </tbody>
                             <tfoot>
                                 <tr>
                                     <th>测试时间</th>

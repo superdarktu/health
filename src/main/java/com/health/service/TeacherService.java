@@ -55,4 +55,6 @@ public interface TeacherService {
      * @return
      */
     List<Teacher> page(Teacher teacher, Integer page, Integer pageSize);
+    
+    Teacher login(String username,String password);
 }

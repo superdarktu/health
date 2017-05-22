@@ -23,6 +23,8 @@ public interface ProgramService {
      * @return
      */
     List<ProgramVO> selectByNo(String no);
+    
+    ProgramVO  getProgram(String no);
 
 
     /**

@@ -34,7 +34,7 @@
         delete from class
         where ID = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Classs">
+    <insert id="insert" parameterType="com.health.model.po.Classs" useGeneratedKeys="true" keyProperty="id">
         insert into class (ID, NAME, TEACHER_NAME,
          DAYTIME, PLACE,
         CLASS_TIME, END_TIME, LONG_TIME

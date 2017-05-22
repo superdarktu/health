@@ -25,5 +25,7 @@ public interface StandardService {
 
 
     List<Standard> selectByAge(Integer age, String sex);
+    
+    List<Standard> getYiban(Integer age,String sex);
 
 }

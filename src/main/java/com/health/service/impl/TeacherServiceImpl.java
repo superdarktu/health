@@ -3,6 +3,7 @@ package com.health.service.impl;
 import com.health.model.po.Teacher;
 import com.health.service.TeacherService;
 import com.health.util.SQLManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -71,5 +72,12 @@ public class TeacherServiceImpl implements TeacherService {
 
         return (List<Teacher>) sqlManager.list("teacher.selectByStr", teacher, page, pageSize);
     }
+
+	public Teacher login(String username, String password) {
+		Teacher teacher = new Teacher();
+		teacher.setPhone(username);
+		teacher.setPassword(password);
+		return (Teacher) sqlManager.query("teacher.login", teacher);
+	}
 
 }

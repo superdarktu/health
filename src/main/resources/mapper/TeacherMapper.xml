@@ -12,9 +12,10 @@
         <result column="JG" property="jg" jdbcType="VARCHAR"/>
         <result column="LOGIN_ID" property="loginId" jdbcType="INTEGER"/>
         <result column="NO" property="no" jdbcType="VARCHAR"/>
+        <result column="PASSWORD" property="password" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG ,LOGIN_ID,NO
+        ID, NAME, SEX, BIRTHDAY, SFID, PHONE, EMAIL, JG ,LOGIN_ID,NO,PASSWORD
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
@@ -22,6 +23,13 @@
         <include refid="Base_Column_List"/>
         from teacher
         where ID = #{id,jdbcType=INTEGER}
+    </select>
+    
+    <select id="login" resultMap="BaseResultMap" parameterType="com.health.model.po.Teacher">
+        select
+        <include refid="Base_Column_List"/>
+        from teacher
+        where PHONE=#{phone,jdbcType=VARCHAR} AND PASSWORD=#{password,jdbcType=VARCHAR}
     </select>
 
     <select id="selectByLoginId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
@@ -53,13 +61,13 @@
         where ID = #{id,jdbcType=INTEGER}
     </delete>
 
-    <insert id="insert" parameterType="com.health.model.po.Teacher">
+    <insert id="insert" parameterType="com.health.model.po.Teacher" useGeneratedKeys="true" keyProperty="id">
         insert into teacher (ID, NAME, SEX, BIRTHDAY,
         SFID, PHONE, EMAIL,
-        JG,LOGIN_ID,NO)
+        JG,LOGIN_ID,NO,PASSWORD)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR},
         #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
-        #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR})
+        #{jg,jdbcType=VARCHAR} , #{loginId,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.health.model.po.Teacher">
         insert into teacher
@@ -114,6 +122,7 @@
             <if test="jg != null">
                 #{jg,jdbcType=VARCHAR},
             </if>
+            
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Teacher">
@@ -139,6 +148,9 @@
             </if>
             <if test="jg != null">
                 JG = #{jg,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=VARCHAR},
             </if>
         </set>
         where ID = #{id,jdbcType=INTEGER}

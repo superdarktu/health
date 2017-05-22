@@ -1,9 +1,10 @@
 package com.health.service;
 
+import java.util.List;
+
 import com.health.model.po.Student;
 import com.health.model.po.TestData;
-
-import java.util.List;
+import com.health.model.vo.TestDataVO;
 
 public interface TestDataService {
 
@@ -72,5 +73,7 @@ public interface TestDataService {
      * @return
      */
     List<TestData> pageAll(TestData testData);
+    
+    List<TestData> pageByTime(TestDataVO testData);
 
 }

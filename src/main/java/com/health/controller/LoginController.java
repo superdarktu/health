@@ -37,6 +37,11 @@ public class LoginController {
     public String aaa() {
         return "admin_login";
     }
+    
+    @RequestMapping("/teacher_login")
+    public String bbb() {
+        return "teacher_login";
+    }
 
     /**
      * 学员登录
@@ -50,10 +55,9 @@ public class LoginController {
     @ResponseBody
     public ResultRO loginIn(String username, String password, HttpServletRequest req) {
 
-        Login login = loginService.login(username, password);
-        if (login != null && "3".equals(login.getUsertype())) {
+        Student student = studentService.login(username, password);
+        if (student != null) {
 
-            Student student = studentService.selectByLoginId(login.getId());
             HttpSession session = req.getSession();
             session.setAttribute("userId", student.getId());
             return new ResultRO(true, "index");
@@ -77,24 +81,29 @@ public class LoginController {
         Login login = loginService.login(username, password);
         if (login != null) {
 
-            if ("1".equals(login.getUsertype())) {
-
                 HttpSession session = req.getSession();
                 session.setAttribute("isManage", 1);
                 return new ResultRO(true, "manage_index");
-            }
-            if ("2".equals(login.getUsertype())) {
-                Teacher teacher = teacherService.selectByLoginId(login.getId());
-                HttpSession session = req.getSession();
-                session.setAttribute("teacherId", teacher.getId());
-                return new ResultRO(true, "teacher_index");
-            }
 
         }
 
         return new ResultRO("用户名不存在或者用户名密码错误");
     }
+    
+    @RequestMapping("/teacher_login_in")
+    @ResponseBody
+    public ResultRO teacherLoginin(String username, String password, HttpServletRequest req) {
 
+        Teacher teacher = teacherService.login(username, password);
+        if (teacher != null) {
+            HttpSession session = req.getSession();
+            session.setAttribute("teacherId", teacher.getId());
+            session.setAttribute("teacherNo", teacher.getId());
+            return new ResultRO(true, "teacher_index");
+        }
+
+        return new ResultRO("用户名不存在或者用户名密码错误");
+    }
 	/*
 	 * HttpSession session = req.getSession();
 		Login login = loginService.login(username, password);

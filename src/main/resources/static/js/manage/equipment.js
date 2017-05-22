@@ -47,6 +47,10 @@ $(document).ready(function () {
     var pageSize = 10;
     init(page,pageSize);
     $("#add").click(function () {
+    	if($("#name").val() == ""){
+    		alert("请填写所有的数据");
+    		return;
+    	}
         $.post("../equipment/save", {
             "name": $("#name").val(),
             "part": $("#part").val(),

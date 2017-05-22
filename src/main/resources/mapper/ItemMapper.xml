@@ -13,7 +13,7 @@
         <result column="MATTER" property="matter" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        ID,PROGRAM_ID,NO, NAME, LOAD, INTERVAL, NUMBER, POINTS, MATTER
+        ID,PROGRAM_ID,NO, NAME, `LOAD`, `INTERVAL`, NUMBER, POINTS, MATTER
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
@@ -26,13 +26,9 @@
         where NO = #{no,jdbcType=VARCHAR}
     </delete>
     <insert id="insert" parameterType="com.health.model.po.Item">
-        insert into item (ID,PROGRAM_ID,NO, NAME, LOAD,
-        INTERVAL, NUMBER, POINTS,
-        MATTER, FOOD, EAT_DATE,
-        EAT_NUMBER)
-        values (#{id,jdbcType=INTEGER},#{programId,jdbcType=INTEGER},#{no,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
-        #{load,jdbcType=DOUBLE},
-        #{interval,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, #{points,jdbcType=VARCHAR},
+        insert into item (ID,PROGRAM_ID, NAME, `LOAD`,`INTERVAL`, NUMBER, POINTS,MATTER)
+        values (#{id,jdbcType=INTEGER},#{programId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+        #{load,jdbcType=DOUBLE},#{interval,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, #{points,jdbcType=VARCHAR},
         #{matter,jdbcType=VARCHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.health.model.po.Item">

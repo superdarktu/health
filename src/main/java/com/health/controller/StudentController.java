@@ -1,16 +1,21 @@
 package com.health.controller;
 
-import com.health.model.po.Student;
-import com.health.model.ro.ResultRO;
-import com.health.service.StudentService;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.Map;
+import com.health.model.po.Student;
+import com.health.model.po.TestData;
+import com.health.model.ro.ResultRO;
+import com.health.service.ProgramService;
+import com.health.service.StudentService;
+import com.health.service.TestDataService;
 
 
 @Controller
@@ -19,25 +24,45 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+    
+    @Autowired
+    private ProgramService programService;
+    
+    @Autowired
+    private TestDataService testDataService;
 
     @RequestMapping("to_edit")
     public String toEdit(Map<String, Object> map, HttpServletRequest req) {
 
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
-        map.put("student", studentService.selectByPrimaryKey(1));
+        map.put("student", studentService.selectByPrimaryKey(userId));
         return "student/edit";
     }
     
     @RequestMapping("to_plan")
-    public String toPlan(){
+    public String toPlan(Map<String,Object> map,HttpServletRequest req){
     	
+    	HttpSession session = req.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        Student student = studentService.selectByPrimaryKey(userId);
+        if(student.getJsfaid() != null){
+        	map.put("pv",programService.getProgram(student.getJsfaid()));
+        }
     	return "student/plan";
     }
     
     @RequestMapping("to_effect")
-    public String toEffect(){
+    public String toEffect(Map<String,Object> map, HttpServletRequest req){
     	
+    	HttpSession session = req.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        Student student = studentService.selectByPrimaryKey(userId);
+        TestData td = testDataService.queryByStudentLast(userId);
+        if(td == null) return "student/effect";
+    	map.put("testData",td);
+    	map.put("no",student.getJsfaid());
+    	map.put("student", student);
     	return "student/effect";
     }
 
@@ -47,7 +72,7 @@ public class StudentController {
 
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
-        student.setId(1);
+        student.setId(userId);
         if (studentService.update(student)) {
 
             return new ResultRO(true, "../default");

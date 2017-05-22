@@ -3,7 +3,11 @@ package com.health.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,14 +35,17 @@ public class ProgramController {
 	
 	@RequestMapping("add")
     @ResponseBody
-    public ResultRO add(String json) throws  Exception{
+    public ResultRO add(HttpServletRequest req ,String json) throws  Exception{
 
         ObjectMapper mapper = new ObjectMapper();
         JavaType javaType = mapper.getTypeFactory().constructParametricType(ArrayList.class, Standard.class);
         ProgramVO pv =  (ProgramVO)mapper.readValue(json, ProgramVO.class);
-
+        HttpSession session = req.getSession();
+        Integer teacherNo = (Integer) session.getAttribute("teacherNo");
+        
+        pv.setTeacherNo("teacherNo");
         if(service.insert(pv)){
-            return new ResultRO(true);
+            return new ResultRO(true,"to_plan");
         }
         return new ResultRO("添加失败");
     }

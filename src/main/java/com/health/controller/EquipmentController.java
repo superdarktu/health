@@ -15,11 +15,6 @@ public class EquipmentController {
     @Autowired
     private EquipmentService equipmentService;
 
-    @RequestMapping("/test")
-    @ResponseBody
-    public int home() {
-        return equipmentService.deleteByPrimaryKey(1);
-    }
 
     /**
      * 首页跳转

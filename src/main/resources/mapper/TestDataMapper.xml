@@ -37,22 +37,30 @@
         select
         <include refid="Base_Column_List"/>
         from test_data
-        where ID = #{id,jdbcType=INTEGER}
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER}
     </select>
 
     <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.TestData">
         select
         <include refid="Base_Column_List"/>
         from test_data
-        where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc limit 10
     </select>
-
+	
+	
+	<select id="pageByTime" resultMap="BaseResultMap" parameterType="com.health.model.vo.TestDataVO">
+        select
+        <include refid="Base_Column_List"/>
+        from test_data
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER}  and 
+        date_format(TEST_DATE,'%Y-%m-%d') = #{date,jdbcType=VARCHAR}
+    </select>
 
     <delete id="delete" parameterType="java.lang.Integer">
         delete from test_data
         where ID = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.TestData">
+    <insert id="insert" parameterType="com.health.model.po.TestData" useGeneratedKeys="true" keyProperty="id">
         insert into test_data (ID, STUDENT_ID, TEST_DATE,
         HEIGHT, WEIGHT, WAIST,
         HIP, PULMONARY, TJSY,

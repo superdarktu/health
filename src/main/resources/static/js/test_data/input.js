@@ -11,9 +11,10 @@ $(document).ready(function () {
             "ywqz": $("#ywqz").val(),
             "fwc": $("#fwc").val(),
             "zwtqq": $("#zwtqq").val(),
+            "studentNo":$("#studentNo").val(),
         }, function (result) {
             if (result.status == true) {
-                location.href = result.href;
+                alert("添加成功");
             } else {
                 alert(result.message);
             }

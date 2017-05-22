@@ -38,35 +38,35 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">体重(kg)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="weight" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">腰围(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="waist" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">臀围(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="hip" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">肺活量(ml)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="pulmonary" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">台阶指数：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据"><span class="help-block m-b-none">台阶指数 = [运动持续时间(s)/(3次测量脉搏数之和 x2)] x100</span>
+                                                <input type="text" id="tjsy" name="" class="form-control" placeholder="请输入数据"><span class="help-block m-b-none">台阶指数 = [运动持续时间(s)/(3次测量脉搏数之和 x2)] x100</span>
                                             </div>
                                         </div>
 
@@ -74,31 +74,37 @@
                                     </div>
                                     <div class="col-sm-6">
 
+										<div class="form-group">
+                                            <label class="col-sm-4 control-label">身高(cm)：</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="height" name="" class="form-control" placeholder="请输入数据">
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">握力(kg)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="wl" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">仰卧起坐(个/min)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="ywqz" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">俯卧撑(个/min)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="fwc" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-sm-4 control-label">坐位体前屈(个/min)：</label>
+                                            <label class="col-sm-4 control-label">坐位体前屈(cm)：</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="" class="form-control" placeholder="请输入数据">
+                                                <input type="text" id="zwtqq" name="" class="form-control" placeholder="请输入数据">
                                             </div>
                                         </div>
 
@@ -110,7 +116,7 @@
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-2">
-                                            <button class="btn btn-primary" type="submit">提交数据</button>
+                                         #if("$!testData" == "") 没有体测数据  #else    <button class="btn btn-primary" id="submit" type="button">提交数据</button>#end
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +129,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="main1" style="display:none;">
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -149,44 +155,53 @@
                             <tbody>
                                 <tr>
                                     <th>数值</th>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
+                                    <td id="weight1"> </td>
+                                    <td id="waist1"> </td>
+                                    <td id="hip1"> </td>
+                                    <td id="pulmonary1"> </td>
+                                    <td id="tjsy1"> </td>
+                                    <td id="wl1"> </td>
+                                    <td id="ywqz1"> </td>
+                                    <td id="fwc1"> </td>
+                                    <td id="zwtqq1"> </td>
                                 </tr>
                                 <tr>
                                     <th>变化百分百</th>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
+                                    <td id="weight2"> </td>
+                                    <td id="waist2"> </td>
+                                    <td id="hip2"> </td>
+                                    <td id="pulmonary2"> </td>
+                                    <td id="tjsy2"> </td>
+                                    <td id="wl2"> </td>
+                                    <td id="ywqz2"> </td>
+                                    <td id="fwc2"> </td>
+                                    <td id="zwtqq2"> </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <h5>与第一次体测数据进行比较，XXX提高XX% ，请继续努力!</h5>
+                       <!-- <h5>与第一次体测数据进行比较，XXX提高XX% ，请继续努力!</h5> -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="main2" style="display:none;">
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>健身效果图表</h5>
                     </div>
                     <div class="ibox-content">
-                        <div id="chartdiv" style="width: 100%;height: 400px;"></div>
+                        <div id="chartdiv1" style="width: 100%;height: 400px;"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="chartdiv2" style="width: 100%;height: 400px;"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="chartdiv3" style="width: 100%;height: 400px;"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="chartdiv4" style="width: 100%;height: 400px;"></div>
                     </div>
                 </div>
             </div>
@@ -199,81 +214,208 @@
     <script src="../js/content.min.js?v=1.0.0"></script>
     
     <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chartdiv'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            // title : {
-            //     text: '某地区蒸发量和降水量',
-            //     subtext: '纯属虚构'
-            // },
-            tooltip : {
-                trigger: 'axis'
-            },
-            legend: {
-                data:['上次','本次']
-            },
-            // toolbox: {
-            //     show : true,
-            //     feature : {
-            //         dataView : {show: true, readOnly: false},
-            //         magicType : {show: true, type: ['line', 'bar']},
-            //         restore : {show: true},
-            //         saveAsImage : {show: true}
-            //     }
-            // },
-            calculable : true,
-            xAxis : [
-                {
-                    type : 'category',
-                    data : ['体重','腰围','臀围','肺活量','台阶指数','握力','仰卧起坐','俯卧撑','坐位体前屈']
-                }
-            ],
-            yAxis : [
-                {
-                    type : 'value'
-                }
-            ],
-            series : [
-                {
-                    name:'上次',
-                    type:'bar',
-                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6],
-                    markPoint : {
-                        data : [
-                            {type : 'max', name: '最大值'},
-                            {type : 'min', name: '最小值'}
-                        ]
-                    },
-                    markLine : {
-                        data : [
-                            {type : 'average', name: '平均值'}
-                        ]
-                    }
-                },
-                {
-                    name:'本次',
-                    type:'bar',
-                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7],
-                    markPoint : {
-                        data : [
-                            {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
-                            {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
-                        ]
-                    },
-                    markLine : {
-                        data : [
-                            {type : 'average', name : '平均值'}
-                        ]
-                    }
-                }
-            ]
-        };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+    
+    	var weight = $!testData.weight;
+    	var waist = $!testData.waist;
+    	var hip = $!testData.hip;
+    	var pulmonary = $!testData.pulmonary;
+    	var tjsy = $!testData.tjsy;
+    	var wl = $!testData.wl;
+    	var ywqz = $!testData.ywqz;
+    	var fwc = $!testData.fwc;
+    	var zwtqq = $!testData.zwtqq;
+    	var bmi = $!testData.bmi;
+    	var bmr = $!testData.bmr;
+    	var ytb = $!testData.ytb;
+    	
+    
+    	$("#submit").click(function(){
+    		// 基于准备好的dom，初始化echarts实例
+    		$("#main1").css("display","block");
+    		$("#main2").css("display","block");
+    		
+    		var weight1 = $("#weight").val();
+    		var height1 = $("#height").val();
+	    	var waist1 = $("#waist").val();
+	    	var hip1 = $("#hip").val();
+	    	var pulmonary1 = $("#pulmonary").val();
+	    	var tjsy1 = $("#tjsy").val();
+	    	var wl1 = $("#wl").val();
+	    	var ywqz1 = $("#ywqz").val();
+	    	var fwc1 = $("#fwc").val();
+	    	var zwtqq1 = $("#zwtqq").val();
+	    	
+	    	
+	    	var ytb1 = waist1/hip1;
+	    	#if("$!{student.sex}" == "1")
+	    		var bmr1 = 66 + 13.7 * weight1 + 5 * height1 - 6.8 * $!{student.age};
+	    	#else
+	    		var bmr1 = 655 + 9.6 * weight1 + 1.8 * height1 - 64.7 * $!{student.age};
+	    	#end
+	    	var bmi1 = weight1/height1/height1;
+	    	
+	    	$("#weight1").text(weight1);
+	    	$("#waist1").text(waist1);
+	    	$("#hip1").text(hip1);
+	    	$("#pulmonary1").text(pulmonary1);
+	    	$("#tjsy1").text(tjsy1);
+	    	$("#wl1").text(wl1);
+	    	$("#ywqz1").text(ywqz1);
+	    	$("#fwc1").text(fwc1);
+	    	$("#zwtqq1").text(zwtqq1);
+	    	
+	    	$("#weight2").text(Math.abs(parseInt((weight1-weight)/weight*100)));
+	    	$("#waist2").text(Math.abs(parseInt((waist1-waist)/waist*100)));
+	    	$("#hip2").text(Math.abs(parseInt((hip1-hip)/hip*100)));
+	    	$("#pulmonary2").text(Math.abs(parseInt((pulmonary1-pulmonary)/pulmonary*100)));
+	    	$("#tjsy2").text(Math.abs(parseInt((tjsy1-tjsy)/tjsy*100)));
+	    	$("#wl2").text(Math.abs(parseInt((wl1-wl)/wl*100)));
+	    	$("#ywqz2").text(Math.abs(parseInt((ywqz1-ywqz)/ywqz*100)));
+	    	$("#fwc2").text(Math.abs(parseInt((fwc1-fwc)/fwc*100)));
+	    	$("#zwtqq2").text(Math.abs(parseInt((zwtqq1-zwtqq)/zwtqq*100)));
+	    	
+	    	
+	    	
+	    	
+			var myChart1 = echarts.init(document.getElementById('chartdiv1'));
+			var myChart2 = echarts.init(document.getElementById('chartdiv2'));
+			var myChart3 = echarts.init(document.getElementById('chartdiv3'));
+			var myChart4 = echarts.init(document.getElementById('chartdiv4'));
+	
+			// 指定图表的配置项和数据
+			var option1 = {
+			    tooltip : {
+					trigger: 'axis'
+			    },
+			    legend: {
+					data:['上次','本次']
+			    },
+			    calculable : true,
+			    xAxis : [
+					{
+					    type : 'category',
+					    data : ['肺活量','台阶指数','握力','BMR']
+					}
+			    ],
+			    yAxis : [
+					{
+					    type : 'value'
+					}
+			    ],
+			    series : [
+				{
+				    name:'上次',
+				    type:'bar',
+				    data:[pulmonary,tjsy,wl,bmr],
+				    markLine : {
+					data : [
+					    {type : 'average', name: '平均值'}
+					]
+				    }
+				},
+				{
+				    name:'本次',
+				    type:'bar',
+				    data:[pulmonary1,tjsy1,wl1,bmr1],
+				    markLine : {
+					data : [
+					    {type : 'average', name : '平均值'}
+					]
+				    }
+				}
+			    ]
+			};
+			var option2 = {
+			    tooltip : {
+					trigger: 'axis'
+			    },
+			    legend: {
+					data:['上次','本次']
+			    },
+			    calculable : true,
+			    xAxis : [
+					{
+					    type : 'category',
+					    data : ['体重','腰围','臀围','仰卧起坐','俯卧撑']
+					}
+			    ],
+			    yAxis : [
+					{
+					    type : 'value'
+					}
+			    ],
+			    series : [
+				{
+				    name:'上次',
+				    type:'bar',
+				    data:[weight,waist,hip,ywqz,fwc],
+				    markLine : {
+					data : [
+					    {type : 'average', name: '平均值'}
+					]
+				    }
+				},
+				{
+				    name:'本次',
+				    type:'bar',
+				    data:[weight1,waist1,hip1,ywqz1,fwc1],
+				    markLine : {
+					data : [
+					    {type : 'average', name : '平均值'}
+					]
+				    }
+				}
+			    ]
+			};
+			var option3 = {
+			    tooltip : {
+					trigger: 'axis'
+			    },
+			    legend: {
+					data:['上次','本次']
+			    },
+			    calculable : true,
+			    xAxis : [
+					{
+					    type : 'category',
+					    data : ['坐位体前屈','BMI','腰臀比']
+					}
+			    ],
+			    yAxis : [
+					{
+					    type : 'value'
+					}
+			    ],
+			    series : [
+				{
+				    name:'上次',
+				    type:'bar',
+				    data:[zwtqq,bmi,ytb],
+				    markLine : {
+					data : [
+					    {type : 'average', name: '平均值'}
+					]
+				    }
+				},
+				{
+				    name:'本次',
+				    type:'bar',
+				    data:[zwtqq1,bmi1,ytb1],
+				    markLine : {
+					data : [
+					    {type : 'average', name : '平均值'}
+					]
+				    }
+				}
+			    ]
+			};
+	
+			// 使用刚指定的配置项和数据显示图表。
+			myChart1.setOption(option1);
+			myChart2.setOption(option2);
+			myChart3.setOption(option3);
+    	});
+        
     </script>
 </body>
 

@@ -26,7 +26,9 @@ public class IndexController {
 
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
-        map.put("student", studentService.selectByPrimaryKey(1));
+        if(userId == null || userId <0)
+        	return "login";
+        map.put("student", studentService.selectByPrimaryKey(userId));
         return "index";
     }
 
@@ -35,6 +37,12 @@ public class IndexController {
     public String manageIndex(Map<String, Object> map, HttpServletRequest req) {
 
         return "manage/index";
+    }
+    
+    @RequestMapping("/test")
+    public String test() {
+
+        return "buildata_search";
     }
 
     @RequestMapping("/teacher_index")
@@ -60,7 +68,7 @@ public class IndexController {
 
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
-        map.put("student", studentService.selectByPrimaryKey(1));
+        map.put("student", studentService.selectByPrimaryKey(userId));
         return "student/default";
     }
 }

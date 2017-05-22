@@ -15,11 +15,6 @@ public class FoodController {
     @Autowired
     private FoodService foodService;
 
-    @RequestMapping("/test")
-    @ResponseBody
-    public int home() {
-        return foodService.deleteByPrimaryKey(1);
-    }
 
     /**
      * 首页跳转

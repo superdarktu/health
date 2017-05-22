@@ -60,8 +60,7 @@
                     <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">体测管理</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="test_data/to_input">体测数据录入</a>
-                        </li>
+                        
                         <li><a class="J_menuItem" href="test_data/to_result">数据分析结果</a>
                         </li>
                         <li><a class="J_menuItem" href="test_data/to_search">历史数据查询</a>

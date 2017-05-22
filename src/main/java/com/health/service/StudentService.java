@@ -58,4 +58,8 @@ public interface StudentService {
     List<Student> page(Student student, Integer page, Integer pageSize);
 
     List<ProgramVO> getProgram(Integer studentId);
+    
+    Student login(String username,String password);
+    
+    Student findByNo(String no);
 }

@@ -25,23 +25,30 @@
 <body class="gray-bg">
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-8">
-        <h2>健身方案（目标：减肥20斤）</h2>
+        
+        #if("$!pv" == "")
+        	<h2>暂无健身方案，等待录入体测数据或者等待教练生成方案</h2>
+        #else
+        	<h2>健身方案（$!pv.cfmd）</h2>
+        #end
         <ol class="breadcrumb">
             <li>
-                <span>方案编号：00001（未生成之前显示暂无）</span>
+                <span>方案编号：#if("$!no" == "") 暂无  #else $!no #end</span>
             </li>
             <li>
-                <span>制作者编号：3034534（未生成之前显示暂无）</span>
+                <span>制作者编号：#if("$!pv.teacherNo" == "") 暂无  #else $!pv.teacherNo #end</span>
             </li>
         </ol>
     </div>
     <div class="col-sm-4">
         <div class="title-action">
-            <a onClick="showtoast()" class="btn btn-primary">生成健身方案</a>
+         <!--   <a onClick="showtoast()" class="btn btn-primary">生成健身方案</a> -->
         </div>
     </div>
 </div>
+#if("$!{pv}" == "")
 
+#else
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-sm-12">
@@ -63,57 +70,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td rowspan="2">第1天</td>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
-                        <tr>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">第3天</td>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
-                        <tr>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">第3天</td>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
-                        <tr>
-                            <td>仰卧起坐</td>
-                            <td>20</td>
-                            <td>20 / 20</td>
-                            <td>10 / 20</td>
-                            <td>标准一点</td>
-                            <td>尽量做完不要停</td>
-                        </tr>
+                        #foreach($!items in $!pv.items)
+                        	#set($days = $!{velocityCount})
+                        	#foreach($!item in $!items)
+                        		<tr>
+                            		#if("$!{velocityCount}" == "1")<td rowspan="$!{items.size()}">第$days天</td>#end
+                            		<td>$!item.name</td>
+                           		    <td>$!item.load</td>
+                          		    <td>$!item.interval</td>
+                          		    <td>$!item.number</td>
+                          		    <td>$!item.points</td>
+                        		    <td>$!item.matter</td>
+                       			 </tr>
+                        	#end
+                        #end
                         </tbody>
                     </table>
                 </div>
@@ -145,40 +115,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td rowspan="2">第1天</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">第2天</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        #foreach($!foods in $!pv.foods)
+                        	#set($days = $!{velocityCount})
+                        	#foreach($!food in $!foods)
+                        		<tr>
+                            		#if("$!{velocityCount}" == "1")<td rowspan="$!{foods.size()}">第$days天</td>#end
+                            		<td>$!food.name1</td>
+                           		    <td>$!food.num1</td>
+                          		    <td>$!food.name2</td>
+                          		    <td>$!food.num2</td>
+                          		    <td>$!food.name3</td>
+                        		    <td>$!food.num3</td>
+                       			 </tr>
+                        	#end
+                        #end
                         </tbody>
                     </table>
                 </div>
@@ -192,13 +142,13 @@
                     <h5>健身注意点</h5>
                 </div>
                 <div class="ibox-content">
-                    <p>巴拉巴拉巴那把爸爸啊</p>
+                    <p>$!pv.jszyd</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+#end
 <script src="../js/jquery.min.js?v=2.1.4"></script>
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>

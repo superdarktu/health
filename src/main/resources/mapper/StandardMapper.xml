@@ -32,12 +32,21 @@
         order by id DESC ) as t
         group by NAME order by NUM
     </select>
+    
+    <select id="getYiban" resultMap="BaseResultMap" parameterType="com.health.model.po.Standard">
+        select
+        <include refid="Base_Column_List"/>
+        from (select * from standard where START_AGE &lt; #{startAge,jdbcType=INTEGER} and SEX = #{sex,jdbcType=CHAR}
+        order by id DESC ) as t
+        group by NAME order by NUM
+    </select>
+    
 
     <delete id="delete" parameterType="java.lang.String">
         delete from standard
         where NAME = #{name,jdbcType=VARCHAR}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Standard">
+    <insert id="insert" parameterType="com.health.model.po.Standard" useGeneratedKeys="true" keyProperty="id">
         insert into standard (ID, NAME, SEX, START_AGE,
         END_AGE, ONE, TWO, THREE,
         FOUR, FIVE)

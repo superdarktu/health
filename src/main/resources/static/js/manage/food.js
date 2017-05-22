@@ -46,6 +46,10 @@ $(document).ready(function () {
     var pageSize = 10;
     init(page,pageSize);
     $("#submit").click(function () {
+    	if($("#name").val() == ""){
+    		alert("请填写所有的数据");
+    		return;
+    	}
         $.post("../food/save", {
             "name": $("#name").val(),
             "number": $("#number").val(),

@@ -70,8 +70,20 @@ public class Student {
      * 年龄
      */
     private Integer age;
+    
+    private String password;
+    
+    
 
-    public Integer getId() {
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Integer getId() {
         return id;
     }
 

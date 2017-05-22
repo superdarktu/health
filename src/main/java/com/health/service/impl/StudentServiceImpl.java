@@ -7,6 +7,7 @@ import com.health.model.po.TestData;
 import com.health.model.vo.ProgramVO;
 import com.health.service.*;
 import com.health.util.SQLManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,13 +50,7 @@ public class StudentServiceImpl implements StudentService {
      */
     public int insert(Student student) {
 
-        String no = (sqlManager.count("student.count", null) + 1) + "";
-        StringBuilder sb = new StringBuilder("");
-        for (int i = 0; i < (8 - no.length()); i++) {
-            sb.append("0");
-        }
-        sb.append(no);
-        student.setNo(sb.toString());
+        student.setNo(student.getPhone());
         return sqlManager.insert("student.insert", student);
     }
 
@@ -181,4 +176,17 @@ public class StudentServiceImpl implements StudentService {
             return "0";
         }
     }
+
+	public Student login(String username, String password) {
+		
+		Student student  = new Student();
+		student.setPhone(username);
+		student.setPassword(password);
+		return (Student) sqlManager.query("student.login", student);
+	}
+
+	public Student findByNo(String no) {
+		
+		return (Student) sqlManager.query("student.findByNo", no);
+	}
 }

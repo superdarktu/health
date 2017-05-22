@@ -41,9 +41,9 @@
         delete from program
         where NO = #{no,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.vo.ProgramVO">
-        insert into program (ID, CFMD, TEACHER_ID,
-        JSZYD, TEACHER_NAME, DAYS,
+    <insert id="insert" parameterType="com.health.model.vo.ProgramVO" useGeneratedKeys="true" keyProperty="id">
+        insert into program (ID, CFMD,
+        JSZYD, TEACHER_NO, DAYS,
         CREATE_DATE,NO)
         values (#{id,jdbcType=INTEGER}, #{cfmd,jdbcType=VARCHAR},
         #{jszyd,jdbcType=VARCHAR}, #{teacherNo,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER},

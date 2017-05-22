@@ -30,9 +30,9 @@ function init(page, pageSize) {
                 html += "<td>" + data[i].no + "</td><td>" + data[i].name + "</td>";
                 if (data.sex == "1") html += "<td>男</td>";
                 else html += "<td>女</td>"
-                html += "<td>" + data[i].birthday + "</td><td>" + data[i].sfid + "</td>";
+                html += "<td>" + data[i].birthday + "</td>";
                 html += "<td>" + data[i].phone + "</td><td>" + data[i].job + "</td><td>" + data[i].email + "</td>";
-                html += "<td>" + data[i].jg + "</td><td>" + data[i].jsfaid + "</td>";
+                html += "<td>" + data[i].jsfaid + "</td>";
                 html += '<td><a id="add"><i class="fa fa-pencil text-navy"></i></a> ';
                 html += '<a id="delete" onclick="del('+data[i].id+')"><i class="fa fa-close text-navy"></i></a></td>';
                 html += "</tr>";
@@ -55,11 +55,10 @@ $(document).ready(function () {
             "email": $("#email").val(),
             "job": $("#job").val(),
             "birthday": $("#birthday").val(),
-            "sfid": $("#sfid").val(),
             "age": $("#age").val(),
-            "jg": $("#jg").val(),
             "phone": $("#phone").val(),
             "sex": $("input[name='sex']:checked").val(),
+            "password":$("#password").val(),
         }, function (result) {
             if (result.status == true) {
                 location.href = result.href;
@@ -80,9 +79,9 @@ $(document).ready(function () {
             "email": $("#email").val(),
             "job": $("#job").val(),
             "birthday": $("#birthday").val(),
-            "jg": $("#jg").val(),
             "phone": $("#phone").val(),
             "sex": $("input[name='sex']:checked").val(),
+            "password":$("#password").val(),
         }, function (result) {
             if (result.status == true) {
                 location.href = result.href;

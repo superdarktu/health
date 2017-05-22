@@ -27,6 +27,29 @@ function itemadd1(){
     });
 }
 
+function init(page, pageSise) {
+    $.get("../program/list", {
+      //  "name": $("#name").val(),
+        "page":page,
+        "pageSize":pageSise,
+    }, function (result) {
+        if (result.status == true) {
+            data = result.data;
+            html = "";
+            for (i = 0; i < data.length; i++) {
+                
+                html += "<tr>";
+                html += "<td>"+data[i].no+"</td><td>"+data[i].cfmd+"</td><td>"+data[i].teacherNo+"</td>";
+                html += '<td><a id="add"><i class="fa fa-pencil text-navy"></i></a>';
+                html += '<a id="delete"><i class="fa fa-close text-navy"></i></a></td>';
+                html += "</tr>";
+            }
+            $("#listmain").html(html);
+        } else {
+            alert(result.message);
+        }
+    });
+};
 function submit(){
 	
 	var foodmains = $(".foodmain");
@@ -43,12 +66,12 @@ function submit(){
 		itemtr = $(itemmains[i]).find(".itemtr");
 		for(u=0;u<itemtr.length;u++){
 			item = {};
-			item['name'] = $(itemtr[i]).find(".name").val();
-			item['load'] = $(itemtr[i]).find(".load").val();
-			item['interval'] = $(itemtr[i]).find(".interval").val();
-			item['number'] = $(itemtr[i]).find(".number").val();
-			item['points'] = $(itemtr[i]).find(".points").val();
-			item['matter'] = $(itemtr[i]).find(".matter").val();
+			item['name'] = $(itemtr[u]).find(".name").val();
+			item['load'] = $(itemtr[u]).find(".load").val();
+			item['interval'] = $(itemtr[u]).find(".interval").val();
+			item['number'] = $(itemtr[u]).find(".number").val();
+			item['points'] = $(itemtr[u]).find(".points").val();
+			item['matter'] = $(itemtr[u]).find(".matter").val();
 			items.push(item);
 		}
 		itemlist.push(items);
@@ -57,14 +80,14 @@ function submit(){
 	for(i=0;i<foodmains.length;i++){
 		foods = [];
 		foodtr = $(foodmains[i]).find(".foodtr");
-		for(u=0;u<itemtr.length;u++){
+		for(u=0;u<foodtr.length;u++){
 			food = {};
-			food['name1'] = $(foodtr[i]).find(".name1").val();
-			food['num1'] = $(foodtr[i]).find(".num1").val();
-			food['name2'] = $(foodtr[i]).find(".name2").val();
-			food['num2'] = $(foodtr[i]).find(".num2").val();
-			food['name3'] = $(foodtr[i]).find(".name3").val();
-			food['num3'] = $(foodtr[i]).find(".num3").val();
+			food['name1'] = $(foodtr[u]).find(".name1").val();
+			food['num1'] = $(foodtr[u]).find(".num1").val();
+			food['name2'] = $(foodtr[u]).find(".name2").val();
+			food['num2'] = $(foodtr[u]).find(".num2").val();
+			food['name3'] = $(foodtr[u]).find(".name3").val();
+			food['num3'] = $(foodtr[u]).find(".num3").val();
 			foods.push(food);
 		}
 		foodlist.push(foods);
@@ -82,18 +105,21 @@ function submit(){
 	json['jszyd'] = $("#jszyd").val();
 	json['items'] = itemlist;
 	json['foods'] = foodlist;
-	console.log(JSON.stringify(json));
+	console.log(json);
 	$.post("../program/add", {
         "json":JSON.stringify(json),
     }, function (result) {
         if (result.status == true) {
-            layer.msg("保存成功",{icon:1});
+        	location.href = result.href;
         } else {
             alert(result.message);
         }
     });
 }
 $(document).ready(function () {
+	var page = 0;
+    var pageSize = 10;
+    init(page,pageSize);
 	foodadd();
 	foodadd1();
 	itemadd();

@@ -1,13 +1,15 @@
 package com.health.service.impl;
 
-import com.health.model.po.Student;
-import com.health.model.po.TestData;
-import com.health.service.TestDataService;
-import com.health.util.SQLManager;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.health.model.po.Student;
+import com.health.model.po.TestData;
+import com.health.model.vo.TestDataVO;
+import com.health.service.TestDataService;
+import com.health.util.SQLManager;
 
 @Service
 public class TestDataServiceImpl implements TestDataService {
@@ -74,10 +76,16 @@ public class TestDataServiceImpl implements TestDataService {
         return (TestData) sqlManager.query("testData.queryByStudentFirst", studentId);
     }
 
-    @Override
     public List<TestData> pageAll(TestData testData) {
 
         return (List<TestData>) sqlManager.list("testData.page", testData);
     }
+    
+    public List<TestData> pageByTime(TestDataVO testData) {
+
+        return (List<TestData>) sqlManager.list("testData.pageByTime", testData);
+    }
+    
+    
 
 }

@@ -51,6 +51,17 @@ public class Teacher {
      * 教练编号
      */
     private String no;
+    
+    private String password;
+    
+
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
     public Integer getId() {
         return id;

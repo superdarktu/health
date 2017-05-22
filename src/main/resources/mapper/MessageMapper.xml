@@ -18,7 +18,7 @@
         delete from message
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Message">
+    <insert id="insert" parameterType="com.health.model.po.Message" useGeneratedKeys="true" keyProperty="id">
         insert into message (id, no, date)
         values (#{id,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, date_format(now(), '%Y-%m-%d'))
     </insert>

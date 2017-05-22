@@ -62,10 +62,12 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-desktop"></i>
-                        <span class="nav-label">查询信息管理</span>
+                        <span class="nav-label">录入信息管理</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
+                    	<li><a class="J_menuItem" href="test_data/to_input">体测数据录入</a>
+                        </li>
                         <li>
                             <a class="J_menuItem" href="manage/equipment">器材</a>
                         </li>

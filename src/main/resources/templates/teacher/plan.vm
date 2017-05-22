@@ -42,25 +42,8 @@
                                         <th>操作</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>840000</td>
-                                        <td>王小明</td>
-                                        <td>男</td>
-                                        <td>
-                                            <a id="add"><i class="fa fa-pencil text-navy"></i></a>
-                                            <a id="delete"><i class="fa fa-close text-navy"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>840000</td>
-                                        <td>王小明</td>
-                                        <td>男</td>
-                                        <td>
-                                            <a href=""><i class="fa fa-pencil text-navy"></i></a>
-                                            <a href=""><i class="fa fa-close text-navy"></i></a>
-                                        </td>
-                                    </tr>
+                                <tbody id="listmain">
+                                    
                                 </tbody>
                             </table>
                         </div>

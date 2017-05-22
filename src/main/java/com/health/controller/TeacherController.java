@@ -26,7 +26,7 @@ public class TeacherController {
 
         HttpSession session = req.getSession();
         Integer teacherId = (Integer) session.getAttribute("teacherId");
-        teacher.setId(1);
+        teacher.setId(teacherId);
         if (teacherService.updateByPrimaryKeySelective(teacher)) {
 
             return new ResultRO(true, "../teacher_about");
@@ -39,7 +39,7 @@ public class TeacherController {
 
         HttpSession session = req.getSession();
         Integer teacherId = (Integer) session.getAttribute("teacherId");
-        map.put("teacher", teacherService.selectByPrimaryKey(2));
+        map.put("teacher", teacherService.selectByPrimaryKey(teacherId));
         return "teacher/edit";
     }
     

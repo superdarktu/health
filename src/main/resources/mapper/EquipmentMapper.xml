@@ -30,7 +30,7 @@
         delete from equipment
         where ID = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Equipment">
+    <insert id="insert" parameterType="com.health.model.po.Equipment" useGeneratedKeys="true" keyProperty="id">
         insert into equipment (ID, NAME, PART,
         USEWAY, USEATTENTION)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{part,jdbcType=VARCHAR},

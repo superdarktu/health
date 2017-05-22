@@ -58,6 +58,7 @@ $(document).ready(function () {
             "jg": $("#jg").val(),
             "phone": $("#phone").val(),
             "sex": $("input[name='sex']:checked").val(),
+            "password" : $("#password").val(),
         }, function (result) {
             if (result.status == true) {
                 location.href = result.href;
@@ -81,6 +82,7 @@ $(document).ready(function () {
             "jg": $("#jg").val(),
             "phone": $("#phone").val(),
             "sex": $("input[name='sex']:checked").val(),
+            "password" : $("#password").val(),
         }, function (result) {
             if (result.status == true) {
                 location.href = result.href;

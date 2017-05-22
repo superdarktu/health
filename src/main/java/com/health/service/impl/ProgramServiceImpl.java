@@ -104,41 +104,47 @@ public class ProgramServiceImpl implements ProgramService {
 			
 			pv.setId(null);
 			pv.setDays(i+1);
-			int pid  = sqlManager.insert("program.insert", pv);
-			List<Item> items  = itemss.get(i);
-			List<FoodItemVO> foods = foodss.get(i);
-			if(items.size()>0){
-				for(int u=0;u<items.size();u++){
-
-					Item item = items.get(u);
-					item.setNo(pv.getNo());
-					item.setProgramId(pid);
-					sqlManager.insert("item.insert", item);
+			sqlManager.insert("program.insert", pv);
+			int pid  = pv.getId();
+			System.out.println(pid);
+			if(itemss.size()>i){
+				List<Item> items  = itemss.get(i);
+				if(items.size()>0){
+					for(int u=0;u<items.size();u++){
+	
+						Item item = items.get(u);
+						item.setNo(pv.getNo());
+						item.setProgramId(pid);
+						sqlManager.insert("item.insert", item);
+					}
 				}
 			}
-			if(foods.size()>0){
-			
-				for(int u=0;u<foods.size();u++){
-					
-					FoodItemVO  fo  = foods.get(u);
-					FoodItem f1 = new FoodItem();
-					FoodItem f2 = new FoodItem();
-					FoodItem f3 = new FoodItem();
-					f1.setFood(fo.getName1());
-					f2.setFood(fo.getName2());
-					f3.setFood(fo.getName3());
-					f1.setNumber(fo.getNum1());
-					f2.setNumber(fo.getNum2());
-					f3.setNumber(fo.getNum3());
-					f1.setWhen(1);
-					f2.setWhen(2);
-					f3.setWhen(3);
-					f1.setProgramId(pid);
-					f1.setProgramId(pid);
-					f1.setProgramId(pid);
-					sqlManager.insert("foodItem.insert", f1);
-					sqlManager.insert("foodItem.insert", f2);
-					sqlManager.insert("foodItem.insert", f3);
+			if(foodss.size()>i){
+				List<FoodItemVO> foods = foodss.get(i);
+				if(foods.size()>0){
+				
+					for(int u=0;u<foods.size();u++){
+						
+						FoodItemVO  fo  = foods.get(u);
+						FoodItem f1 = new FoodItem();
+						FoodItem f2 = new FoodItem();
+						FoodItem f3 = new FoodItem();
+						f1.setFood(fo.getName1());
+						f2.setFood(fo.getName2());
+						f3.setFood(fo.getName3());
+						f1.setNumber(fo.getNum1());
+						f2.setNumber(fo.getNum2());
+						f3.setNumber(fo.getNum3());
+						f1.setWhen(1);
+						f2.setWhen(2);
+						f3.setWhen(3);
+						f1.setProgramId(pid);
+						f2.setProgramId(pid);
+						f3.setProgramId(pid);
+						sqlManager.insert("foodItem.insert", f1);
+						sqlManager.insert("foodItem.insert", f2);
+						sqlManager.insert("foodItem.insert", f3);
+					}
 				}
 			}
 		}
@@ -148,18 +154,19 @@ public class ProgramServiceImpl implements ProgramService {
 	public ProgramVO getProgram(String no){
 		
 		ProgramVO pv = new ProgramVO();
-		List<Program> programs = (List<Program>)sqlManager.list("program.listByNo", no);
+		List<Program> programs = (List<Program>)sqlManager.list("program.selectByNo", no);
+		if(programs.size() == 0) return null;
 		List<List<Item>> itemss = new ArrayList<List<Item>>();
 		List<List<FoodItemVO>> foodss = new ArrayList<List<FoodItemVO>>();
 		for(int i=0;i<programs.size();i++){
 			Program program = programs.get(i);
-			List<Item> items = (List<Item>)sqlManager.list("item.listByPid", program.getId());
+			List<Item> items = (List<Item>)sqlManager.list("item.selectByPrimaryKey", program.getId());
 			if(items.size() > 0)
 				itemss.add(items);
 			
-			List<FoodItem> foods1 = (List<FoodItem>) sqlManager.list("item.listByPid1", program.getId());
-			List<FoodItem> foods2 = (List<FoodItem>) sqlManager.list("item.listByPid2", program.getId());
-			List<FoodItem> foods3 = (List<FoodItem>) sqlManager.list("item.listByPid3", program.getId());
+			List<FoodItem> foods1 = (List<FoodItem>) sqlManager.list("foodItem.selectByPrimaryKey", program.getId());
+			List<FoodItem> foods2 = (List<FoodItem>) sqlManager.list("foodItem.selectByPrimaryKey", program.getId());
+			List<FoodItem> foods3 = (List<FoodItem>) sqlManager.list("foodItem.selectByPrimaryKey", program.getId());
 			int length = foods1.size();
 			if(foods2.size()>length) length = foods2.size();
 			if(foods3.size() > length) length = foods3.size();
@@ -171,12 +178,12 @@ public class ProgramServiceImpl implements ProgramService {
 					fv.setNum1(foods1.get(u).getNumber());
 				}
 				if(foods2.get(u) != null){
-					fv.setName1(foods2.get(u).getFood());
-					fv.setNum1(foods2.get(u).getNumber());
+					fv.setName2(foods2.get(u).getFood());
+					fv.setNum2(foods2.get(u).getNumber());
 				}
 				if(foods3.get(u) != null){
-					fv.setName1(foods3.get(u).getFood());
-					fv.setNum1(foods3.get(u).getNumber());
+					fv.setName3(foods3.get(u).getFood());
+					fv.setNum3(foods3.get(u).getNumber());
 				}
 				foods.add(fv);
 			}
@@ -184,6 +191,7 @@ public class ProgramServiceImpl implements ProgramService {
 		}
 		pv.setFoods(foodss);
 		pv.setItems(itemss);
+		pv.setTeacherNo(programs.get(0).getTeacherNo());
 		pv.setCfmd(programs.get(0).getCfmd());
 		pv.setNo(programs.get(0).getNo());
 		pv.setJszyd(programs.get(0).getJszyd());

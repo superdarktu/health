@@ -16,9 +16,10 @@
         <result column="JSFAID" property="jsfaid" jdbcType="VARCHAR"/>
         <result column="NO" property="no" jdbcType="VARCHAR"/>
         <result column="AGE" property="age" jdbcType="INTEGER"/>
+        <result column="PASSWORD" property="password" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID ,LOGIN_ID,NO,AGE
+        ID, NAME, SEX, BIRTHDAY, SFID, PHONE, JOB, EMAIL, JG, TCDID, JSFAID ,LOGIN_ID,NO,AGE,PASSWORD
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
@@ -27,12 +28,19 @@
         from student
         where ID = #{id,jdbcType=INTEGER}
     </select>
-
-    <select id="selectByLoginId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    
+    <select id="findByNo" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
         from student
-        where LOGIN_ID = #{loginId,jdbcType=INTEGER}
+        where NO = #{no,jdbcType=VARCHAR}
+    </select>
+
+    <select id="login" resultMap="BaseResultMap" parameterType="com.health.model.po.Student">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where PHONE=#{phone,jdbcType=VARCHAR} AND PASSWORD=#{password,jdbcType=VARCHAR}
     </select>
 
     <select id="count" resultType="java.lang.Integer">
@@ -54,14 +62,14 @@
         delete from student
         where ID = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.health.model.po.Student">
+    <insert id="insert" parameterType="com.health.model.po.Student" useGeneratedKeys="true" keyProperty="id">
         insert into student (ID, NAME, SEX, BIRTHDAY,
         SFID, PHONE, JOB, EMAIL,
-        JG, TCDID, JSFAID,LOGIN_ID,NO,AGE)
+        JG, TCDID, JSFAID,LOGIN_ID,NO,AGE,PASSWORD)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{birthday,jdbcType=VARCHAR},
         #{sfid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
         #{jg,jdbcType=VARCHAR}, 0, #{jsfaid,jdbcType=VARCHAR}, #{loginId,jdbcType=INTEGER},
-        #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+        #{no,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},#{password,jdbcType=VARCHAR})
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.health.model.po.Student">
         update student
@@ -98,6 +106,9 @@
             </if>
             <if test="age != null">
                 AGE = #{age,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=INTEGER},
             </if>
         </set>
         where ID = #{id,jdbcType=INTEGER}
