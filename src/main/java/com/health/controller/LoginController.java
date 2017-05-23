@@ -98,7 +98,7 @@ public class LoginController {
         if (teacher != null) {
             HttpSession session = req.getSession();
             session.setAttribute("teacherId", teacher.getId());
-            session.setAttribute("teacherNo", teacher.getId());
+            session.setAttribute("teacherNo", teacher.getNo());
             return new ResultRO(true, "teacher_index");
         }
 

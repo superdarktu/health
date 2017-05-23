@@ -14,6 +14,17 @@ $(document).ready(function () {
             "studentNo":$("#studentNo").val(),
         }, function (result) {
             if (result.status == true) {
+            	$("#height").val("");
+            	$("#weight").val("");
+            	$("#waist").val("");
+            	$("#hip").val("");
+            	$("#pulmonary").val("");
+            	$("#wl").val("");
+            	$("#tjsy").val("");
+            	$("#ywqz").val("");
+            	$("#fwc").val("");
+            	$("#zwtqq").val("");
+            	$("#studentNo").val("");
                 alert("添加成功");
             } else {
                 alert(result.message);

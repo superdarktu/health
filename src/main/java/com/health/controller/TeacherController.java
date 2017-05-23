@@ -24,12 +24,9 @@ public class TeacherController {
     @ResponseBody
     public ResultRO adminUpdate(HttpServletRequest req, Teacher teacher) {
 
-        HttpSession session = req.getSession();
-        Integer teacherId = (Integer) session.getAttribute("teacherId");
-        teacher.setId(teacherId);
         if (teacherService.updateByPrimaryKeySelective(teacher)) {
 
-            return new ResultRO(true, "../teacher_about");
+            return new ResultRO(true);
         }
         return new ResultRO("保存失败");
     }

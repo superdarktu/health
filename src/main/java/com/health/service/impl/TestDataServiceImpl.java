@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.health.model.po.Student;
 import com.health.model.po.TestData;
 import com.health.model.vo.TestDataVO;
+import com.health.service.StudentService;
 import com.health.service.TestDataService;
 import com.health.util.SQLManager;
 
@@ -16,6 +17,9 @@ public class TestDataServiceImpl implements TestDataService {
 
     @Autowired
     private SQLManager sqlManager;
+    
+    @Autowired
+    private StudentService studentService;
 
 
     /**
@@ -41,7 +45,9 @@ public class TestDataServiceImpl implements TestDataService {
         }
         testData.setBmr(bmr);
         testData.setBmi(testData.getWeight() / testData.getHeight() / testData.getHeight());
-        return sqlManager.insert("testData.insert", testData);
+        sqlManager.insert("testData.insert", testData);
+        studentService.getProgram(student.getId());
+        return 1;
     }
 
     /**

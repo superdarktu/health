@@ -23,7 +23,7 @@
 <body class="gray-bg">
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-8">
-        <h2>王小明</h2>
+        <h2> $!{teacher.name}</h2>
         <ol class="breadcrumb">
             <li>
                 <span>会员编号 $!{teacher.no}</span>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="ibox-content">
                     <form method="get" class="form-horizontal">
-
+						<input type="hidden" id="id" value="$!{teacher.id}" >
                         <div class="form-group">
                             <label class="col-sm-2 control-label">性别</label>
                             <div class="col-sm-10">

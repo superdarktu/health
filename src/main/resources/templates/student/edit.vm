@@ -102,7 +102,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-primary" id="change" type="button">保存内容</button>
-                                <button class="btn btn-white" type="submit">取消</button>
+                                <a href="../default" target="_self"><button class="btn btn-white" type="button">取消</button></a>
                             </div>
                         </div>
                     </form>

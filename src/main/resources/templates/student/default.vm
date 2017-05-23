@@ -35,7 +35,7 @@
     </div>
     <div class="col-sm-4">
         <div class="title-action">
-            <a href="#" class="btn btn-primary">修改</a>
+            <a href="student/to_edit" target="_self" class="btn btn-primary">修改</a>
         </div>
     </div>
 </div>

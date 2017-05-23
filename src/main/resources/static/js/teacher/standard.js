@@ -62,7 +62,7 @@ $(document).ready(function () {
             "json":JSON.stringify(json),
         }, function (result) {
             if (result.status == true) {
-                layer.msg("保存成功",{icon:1});
+                alert("保存成功");
             } else {
                 alert(result.message);
             }

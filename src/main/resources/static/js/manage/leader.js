@@ -33,7 +33,7 @@ function init(page, pageSize) {
                 html += "<td>" + data[i].birthday + "</td><td>" + data[i].sfid + "</td>";
                 html += "<td>" + data[i].phone + "</td><td>" + data[i].email + "</td>";
                 html += "<td>" + data[i].jg + "</td>";
-                html += '<td><a id="add"><i class="fa fa-pencil text-navy"></i></a> ';
+                html += '<td><a onclick="oo('+data[i].id+')" class="change"><i class="fa fa-pencil text-navy"></i></a> ';
                 html += '<a id="delete" onclick="del('+data[i].id+')"><i class="fa fa-close text-navy"></i></a></td>';
                 html += "</tr>";
             }
@@ -43,7 +43,16 @@ function init(page, pageSize) {
         }
     });
 };
+function oo(id){
+	layer.open({
+        type: 2,
+        title: '信息修改',
+        area: ['600px', '360px'],
+        shadeClose: true, //点击遮罩关闭
+        content: 'leaded?id='+id
 
+    });
+}
 $(document).ready(function () {
 
     var page = 0;
@@ -85,7 +94,7 @@ $(document).ready(function () {
             "password" : $("#password").val(),
         }, function (result) {
             if (result.status == true) {
-                location.href = result.href;
+            	parent.location.reload();
             } else {
                 alert(result.message);
             }

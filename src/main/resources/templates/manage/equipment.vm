@@ -140,31 +140,6 @@
 <script src="../js/content.min.js?v=1.0.0"></script>
 <script src="../js/plugins/layer/layer.js"></script>
 <script src="../js/manage/equipment.js"></script>
-<script type="text/javascript">
-   /* $('#delete').on('click', function () {
-        layer.msg('确定删除吗？', {
-            time: 0 //不自动关闭
-            , btn: ['确定删除', '还是算了吧']
-            , yes: function (index) {
-                layer.close(index);
-                alert("你点了确定");
-            }
-        });
-    });*/
-
-    $('#add').on('click', function () {
-        layer.open({
-            type: 2,
-            title: '信息修改',
-            area: ['600px', '360px'],
-            shadeClose: true, //点击遮罩关闭
-            content: '111'
-
-        });
-    });
-
-
-</script>
 </body>
 
 </html>

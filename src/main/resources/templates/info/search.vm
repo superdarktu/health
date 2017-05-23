@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="input-group">
-                                <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span
+                                <input type="text" placeholder="请输入关键词" id="name" class="input-sm form-control"> <span
                                     class="input-group-btn"><button type="button" id="search"
                                                                     class="btn btn-sm btn-primary"> 搜索</button> </span>
                             </div>

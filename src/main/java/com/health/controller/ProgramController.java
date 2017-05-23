@@ -41,7 +41,7 @@ public class ProgramController {
         JavaType javaType = mapper.getTypeFactory().constructParametricType(ArrayList.class, Standard.class);
         ProgramVO pv =  (ProgramVO)mapper.readValue(json, ProgramVO.class);
         HttpSession session = req.getSession();
-        Integer teacherNo = (Integer) session.getAttribute("teacherNo");
+        String teacherNo = (String) session.getAttribute("teacherNo");
         
         pv.setTeacherNo("teacherNo");
         if(service.insert(pv)){

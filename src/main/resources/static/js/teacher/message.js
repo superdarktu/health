@@ -17,7 +17,6 @@ function del(id)
     });
 
 }
-;
 $(document).ready(function () {
     $("#change").click(function () {
         $.post("admin_update", {

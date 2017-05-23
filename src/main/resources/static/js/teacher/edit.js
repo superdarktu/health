@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#change").click(function () {
         $.post("admin_update", {
+        	"id":$("#id").val(),
             "jg": $("#jg").val(),
             "phone": $("#phone").val(),
             "email": $("#email").val(),
@@ -9,7 +10,7 @@ $(document).ready(function () {
             "sex": $("input[name='sex']:checked").val(),
         }, function (result) {
             if (result.status == true) {
-                location.href = result.href;
+                location.href = "../teacher_about";
             } else {
                 alert(result.message);
             }

@@ -10,13 +10,14 @@ function search(page, pageSize) {
             if (result.status == true) {
 
                 data = result.data;
-                html = "<tr>";
+                html = "";
                 for (i = 0; i < data.length; i++) {
+                    html += "<tr>";
                     html += "<td>" + data[i].name + "</td>";
                     html += "<td>" + data[i].sort + "</td>";
                     html += "<td>" + data[i].number + "</td>";
+                    html += "</tr>"
                 }
-                html += "</tr>"
                 $("#food_main").html(html);
                 $(".content").css("display", "none");
                 $("#food").css("display", "block");
@@ -33,8 +34,9 @@ function search(page, pageSize) {
             if (result.status == true) {
 
                 data = result.data;
-                html = "<tr>";
+                html = "";
                 for (i = 0; i < data.length; i++) {
+                    html += "<tr>";
                     html += "<td>" + data[i].id + "</td>";
                     html += "<td>" + data[i].name + "</td>";
                     html += "<td>" + data[i].teacherName + "</td>";
@@ -42,8 +44,8 @@ function search(page, pageSize) {
                     html += "<td>" + data[i].startTime + "</td>";
                     html += "<td>" + data[i].place + "</td>";
                     html += "<td>" + data[i].longTime + "</td>";
+                    html += "</tr>"
                 }
-                html += "</tr>"
                 $("#classs_main").html(html);
                 $(".content").css("display", "none");
                 $("#classs").css("display", "block");
@@ -60,15 +62,16 @@ function search(page, pageSize) {
             if (result.status == true) {
 
                 data = result.data;
-                html = "<tr>";
+                html = "";
                 for (i = 0; i < data.length; i++) {
+                    html += "<tr>";
                     html += "<td>" + data[i].id + "</td>";
                     html += "<td>" + data[i].name + "</td>";
                     html += "<td>" + data[i].part + "</td>";
                     html += "<td>" + data[i].useway + "</td>";
                     html += "<td>" + data[i].useattention + "</td>";
+                    html += "</tr>"
                 }
-                html += "</tr>"
                 $("#equipment_main").html(html);
                 $(".content").css("display", "none");
                 $("#equipment").css("display", "block");

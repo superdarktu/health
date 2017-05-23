@@ -1,3 +1,22 @@
+function del(id)
+{
+    layer.msg('确定删除吗？', {
+        time: 0 //不自动关闭
+        , btn: ['确定删除', '还是算了吧']
+        , yes: function (index) {
+            $.post("delete", {
+                "id": id,
+            }, function (result) {
+                if (result.status == true) {
+                    location.href = result.href;
+                } else {
+                    alert(result.message);
+                }
+            });
+        }
+    });
+
+}
 function foodadd(){
 //	$("#foodadd2").unbind();
     $("#foodadd2").click(function(){
