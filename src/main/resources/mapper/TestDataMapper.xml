@@ -37,7 +37,7 @@
         select
         <include refid="Base_Column_List"/>
         from test_data
-        where STUDENT_ID = #{studentId,jdbcType=INTEGER}
+        where STUDENT_ID = #{studentId,jdbcType=INTEGER} order by ID desc limit 1
     </select>
 
     <select id="page" resultMap="BaseResultMap" parameterType="com.health.model.po.TestData">

@@ -35,7 +35,12 @@ public class ProgramServiceImpl implements ProgramService {
     @Transactional
     public boolean deleteByPrimaryKey(String no) {
 
-        itemService.deleteByPrimaryKey(no);
+		List<ProgramVO> lpv = (List<ProgramVO>) sqlManager.list("program.selectByNo", no);
+
+		for(ProgramVO pv : lpv){
+			itemService.deleteByPid(pv.getId());
+			foodItemService.deleteByPid(pv.getId());
+		}
         return sqlManager.delete("program.deleteByPrimaryKey", no) > 0 ? true : false;
     }
 

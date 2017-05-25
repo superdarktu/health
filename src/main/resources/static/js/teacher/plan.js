@@ -1,14 +1,14 @@
-function del(id)
+function del(no)
 {
     layer.msg('确定删除吗？', {
         time: 0 //不自动关闭
         , btn: ['确定删除', '还是算了吧']
         , yes: function (index) {
             $.post("delete", {
-                "id": id,
+                "no": no,
             }, function (result) {
                 if (result.status == true) {
-                    location.href = result.href;
+                    location.reload();
                 } else {
                     alert(result.message);
                 }
@@ -60,7 +60,7 @@ function init(page, pageSise) {
                 html += "<tr>";
                 html += "<td>"+data[i].no+"</td><td>"+data[i].cfmd+"</td><td>"+data[i].teacherNo+"</td>";
                 html += '<td><a id="add"><i class="fa fa-pencil text-navy"></i></a>';
-                html += '<a id="delete"><i class="fa fa-close text-navy"></i></a></td>';
+                html += '<a onclick="del('+data[i].no+')" class="delete"><i class="fa fa-close text-navy"></i></a></td>';
                 html += "</tr>";
             }
             $("#listmain").html(html);

@@ -18,7 +18,7 @@
     from food_item
     where PROGRAM_ID = #{programId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPid" parameterType="java.lang.Integer" >
     delete from food_item
     where PROGRAM_ID = #{programId,jdbcType=INTEGER}
   </delete>

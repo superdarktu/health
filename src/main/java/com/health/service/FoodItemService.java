@@ -10,4 +10,6 @@ public interface FoodItemService {
 
     List<FoodItem> selectByProgramId(Integer programId);
 
+    int deleteByPid(Integer pid);
+
 }

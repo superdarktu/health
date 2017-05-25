@@ -43,7 +43,7 @@ public class ProgramController {
         HttpSession session = req.getSession();
         String teacherNo = (String) session.getAttribute("teacherNo");
         
-        pv.setTeacherNo("teacherNo");
+        pv.setTeacherNo(teacherNo);
         if(service.insert(pv)){
             return new ResultRO(true,"to_plan");
         }

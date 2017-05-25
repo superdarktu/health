@@ -9,6 +9,8 @@ public interface ItemService {
 
     int deleteByPrimaryKey(String no);
 
+    int deleteByPid(Integer id);
+
     int insert(Item record);
 
 }

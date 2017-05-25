@@ -64,21 +64,23 @@
                             </thead>
                             <tbody id="content">
 	                            #foreach($!data in $!datas)
-	                            <td>$!date.formatYYYYMMDD($!data.testDate)</td>
-	                            <td>$!data.height</td>
-	                            <td>$!data.weight</td>
-	                            <td>$!data.waist</td>
-	                            <td>$!data.hip</td>
-	                            <td>$!data.pulmonary</td>
-	                            <td>$!data.tjsy</td>
-	                            <td>$!data.wl</td>
-	                            <td>$!data.ywqz</td>
-	                            <td>$!data.fwc</td>
-	                            <td>$!data.zwtqq</td>
-	                            <td>$!data.bmr</td>
-	                            <td>$!data.ytb</td>
-	                            <td>$!data.bmi</td>
-	                            <td>$!data.sjfxjy</td>
+                                <tr>
+                                    <td>$!date.formatYYYYMMDD($!data.testDate)</td>
+                                    <td>$!data.height</td>
+                                    <td>$!data.weight</td>
+                                    <td>$!data.waist</td>
+                                    <td>$!data.hip</td>
+                                    <td>$!data.pulmonary</td>
+                                    <td>$!data.tjsy</td>
+                                    <td>$!data.wl</td>
+                                    <td>$!data.ywqz</td>
+                                    <td>$!data.fwc</td>
+                                    <td>$!data.zwtqq</td>
+                                    <td>$!data.bmr</td>
+                                    <td>$!data.ytb</td>
+                                    <td>$!data.bmi</td>
+                                    <td>$!data.sjfxjy</td>
+                                </tr>
 	                            #end
 	                        </tbody>
                             <tfoot>

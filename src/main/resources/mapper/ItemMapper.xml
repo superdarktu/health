@@ -25,6 +25,10 @@
         delete from item
         where NO = #{no,jdbcType=VARCHAR}
     </delete>
+    <delete id="deleteByPid" parameterType="java.lang.Integer">
+        delete from item
+        where  PROGRAM_ID = #{id,jdbcType=VARCHAR}
+    </delete>
     <insert id="insert" parameterType="com.health.model.po.Item">
         insert into item (ID,PROGRAM_ID, NAME, `LOAD`,`INTERVAL`, NUMBER, POINTS,MATTER)
         values (#{id,jdbcType=INTEGER},#{programId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},

@@ -26,4 +26,9 @@ public class FoodItemServiceImpl implements FoodItemService{
 		return (List<FoodItem>) sqlManage.list("foodItem.selectByPrimaryKey", programId);
 	}
 
+	public int deleteByPid(Integer pid) {
+
+		return  sqlManage.delete("foodItem.deleteByPid", pid);
+	}
+
 }

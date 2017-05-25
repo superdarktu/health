@@ -29,6 +29,12 @@ public class ItemServiceImpl implements ItemService {
         return sqlManager.delete("item.deleteByPrimaryKey", no);
     }
 
+    @Override
+    public int deleteByPid(Integer id) {
+
+        return sqlManager.delete("item.deleteByPid", id);
+    }
+
     public int insert(Item item) {
         return sqlManager.insert("item.insert", item);
     }
